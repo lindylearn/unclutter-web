@@ -32,7 +32,7 @@ export default function Home() {
           </div>
 
           <div>
-            <p>What didn't work for you?</p>
+            <p>What didn&apos;t work for you?</p>
             <ul className="ml-3 flex flex-col gap-0.5">
               <Option id="didnt-work" text="The extension does not work well" />
               <Option id="not-useful" text="It isn't useful to me" />
