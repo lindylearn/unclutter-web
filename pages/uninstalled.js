@@ -26,10 +26,10 @@ export default function Home() {
           src="https://tally.so/embed/3qy1O3?alignLeft=1&hideTitle=1&transparentBackground=1"
           width="100%"
           height="700px"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          className="mt-5"
+          frameBorder="0"
+          marginHeight="0"
+          marginWidth="0"
+          className="mt-5 -ml-1"
         ></iframe>
       </main>
 
