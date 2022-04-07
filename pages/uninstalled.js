@@ -22,48 +22,18 @@ export default function Home() {
         <h1 className="text-4xl font-bold">Uninstall Successful</h1>
         <p>The Unclutter browser extension has been successully uninstalled.</p>
 
-        <div className="mt-5 flex flex-col gap-3">
-          <div>
-            <h2 className="text-2xl font-bold">Quick feedback</h2>
-            <p>
-              Thank you for trying out the extension! I would seriously
-              appreciate some quick feedback.
-            </p>
-          </div>
-
-          <div>
-            <p>What didn&apos;t work for you?</p>
-            <ul className="ml-3 flex flex-col gap-0.5">
-              <Option id="didnt-work" text="The extension does not work well" />
-              <Option id="not-useful" text="It isn't useful to me" />
-              <Option id="too-annoying" text="It's too annoying" />
-              <Option id="other" text="Other" />
-            </ul>
-          </div>
-
-          <div>
-            <p>Anything else you want to share?</p>
-            <textarea className="mt-2 ml-3 px-3 py-1 w-5/6 h-28 rounded bg-[#faf3ce]" />
-          </div>
-
-          <p>
-            <b>Thank you so much!</b>
-            <br />
-            Peter Hagen
-          </p>
-        </div>
+        <iframe
+          src="https://tally.so/embed/3qy1O3?alignLeft=1&hideTitle=1&transparentBackground=1"
+          width="100%"
+          height="700px"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          className="mt-5"
+        ></iframe>
       </main>
 
       <footer></footer>
     </div>
-  );
-}
-
-function Option({ text, id, name = "reason" }) {
-  return (
-    <li>
-      <input type="radio" className="mr-2" name={name} id={id} />
-      <label htmlFor={id}>{text}</label>
-    </li>
   );
 }
