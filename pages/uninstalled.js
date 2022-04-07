@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,10 +11,12 @@ export default function Home() {
       </Head>
 
       <h1 className="m-3 text-3xl font-bold">
-        <a href="/" className="flex gap-3 items-center">
-          <img className="w-14" src="/icon.svg" />
-          Unclutter
-        </a>
+        <Link href="/" passHref>
+          <a className="flex gap-3 items-center">
+            <img className="w-14" src="/icon.svg" />
+            Unclutter
+          </a>
+        </Link>
       </h1>
       <main className="mt-5 mx-auto max-w-xl flex flex-col items-start text-lg">
         <h1 className="text-4xl font-bold">Uninstall Successful</h1>
