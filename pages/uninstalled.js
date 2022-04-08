@@ -18,18 +18,15 @@ export default function Home() {
           </a>
         </Link>
       </h1>
-      <main className="mt-5 mx-auto max-w-xl flex flex-col items-start text-lg">
-        <h1 className="text-4xl font-bold">Uninstall Successful</h1>
-        <p>The Unclutter browser extension has been successully uninstalled.</p>
-
+      <main className="mx-auto max-w-xl flex flex-col items-start text-lg">
         <iframe
           src="https://tally.so/embed/3qy1O3?alignLeft=1&hideTitle=1&transparentBackground=1"
           width="100%"
-          height="700px"
+          height="800px"
           frameBorder="0"
           marginHeight="0"
           marginWidth="0"
-          className="mt-5 -ml-1"
+          className="-ml-1"
         ></iframe>
       </main>
 
