@@ -57,6 +57,7 @@ export default function Home() {
               src={`media/videos/${activeVideoSegement}.${
                 activeVideoSegement !== 5 ? "mov" : "mp4"
               }`}
+              poster="media/videos/thumnail.png"
               autoPlay
               muted
               onEnded={onSegmentComplete}
