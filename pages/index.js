@@ -34,7 +34,7 @@ export default function Home() {
             // loop
             muted
           />
-          <div className="">
+          <div className="flex flex-col justify-start">
             <header className="flex gap-3 items-center">
               <img className="w-20" src="/icon.svg" />
               <div className="">
@@ -48,10 +48,10 @@ export default function Home() {
               </div>
             </header>
 
-            <ul className="mt-16 ml-24 flex flex-col gap-1 text-3xl font-semibold">
+            <ul className="mt-20 ml-24 flex flex-col gap-1 text-3xl font-semibold">
               <li className="opacity-100">Remove distractions</li>
-              <li className="opacity-10">Keep original design</li>
-              <li className="opacity-10">Customize font & colors </li>
+              {/* <li className="opacity-10">Keep original design</li> */}
+              <li className="opacity-10">Customize colors & font</li>
               {/* <li className="opacity-10">Dark mode</li> */}
               <li className="opacity-10">Outline long pages</li>
               <li className="opacity-10">Automatically activate</li>
@@ -59,46 +59,44 @@ export default function Home() {
             </ul>
           </div>
         </div>
-
-        <div className="mt-10 flex flex-col items-center gap-4">
-          <div className="text-xl">
-            Install for free, follow the development on GitHub
-          </div>
-          <div className="flex gap-5 w-4/12">
-            <a
-              className="flex-shrink-0 w-48 bg-white rounded-lg shadow hover:shadow-lg"
-              href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
-            >
-              <img
-                className="object-contain h-14"
-                src="/chrome-badge.png"
-              ></img>
-            </a>
-
-            <a
-              className="flex-shrink-0 w-48 bg-[#109ad6] rounded-lg shadow hover:shadow-lg"
-              href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
-            >
-              <img
-                className="object-contain h-12 mt-1 mx-auto"
-                src="/firefox-badge.png"
-              ></img>
-            </a>
-
-            <iframe
-              src="https://ghbtns.com/github-btn.html?user=lindylearn&repo=unclutter&type=star&count=true&size=large"
-              frameBorder="0"
-              scrolling="0"
-              width="170"
-              height="30"
-              title="GitHub"
-            ></iframe>
-          </div>
-        </div>
       </main>
 
-      <div className="mt-10 mb-5 mx-10 flex flex-col items-center">
-        <div className="text-xl">For lovers of great internet articles</div>
+      <div className="mt-14 flex gap-5 justify-center items-stretch">
+        <a
+          className="flex-shrink-0 w-52 bg-white rounded-lg shadow hover:shadow-lg"
+          href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
+        >
+          <img className="object-contain h-16" src="/chrome-badge.png"></img>
+        </a>
+
+        <a
+          className="flex-shrink-0 w-40 bg-[#109ad6] rounded-lg shadow hover:shadow-lg"
+          href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
+        >
+          <img
+            className="object-contain h-12 my-2 mx-auto"
+            src="/firefox-badge.png"
+          ></img>
+        </a>
+
+        <a
+          className="flex-shrink-0"
+          href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
+        >
+          <iframe
+            src="https://ghbtns.com/github-btn.html?user=lindylearn&repo=unclutter&type=star&count=true&size=large"
+            className="mt-4 mx-auto scale-110"
+            frameBorder="0"
+            scrolling="0"
+            width="125"
+            height="30"
+            title="GitHub"
+          ></iframe>
+        </a>
+      </div>
+
+      <div className="mt-20 mb-5 mx-10 flex flex-col items-center">
+        <div className="text-xl">For the love of internet articles.</div>
         <div className="mt-5 flex flex-wrap justify-center gap-5">
           <ExamplePage src={screenshotPg} />
           <ExamplePage src={screenshotAtlatic} />
@@ -114,12 +112,19 @@ export default function Home() {
           <ExamplePage src={screenshotAtlatic} />
           <ExamplePage src={screenshotAtlatic} />
           <ExamplePage src={screenshotAtlatic} />
+          <ExamplePage src={screenshotAtlatic} />
+          <ExamplePage src={screenshotAtlatic} />
+          <ExamplePage src={screenshotAtlatic} />
+          <ExamplePage src={screenshotAtlatic} />
+          <ExamplePage src={screenshotAtlatic} />
+          <ExamplePage src={screenshotAtlatic} />
+          <ExamplePage src={screenshotAtlatic} />
         </div>
       </div>
 
-      <footer className="mt-3 p-3 flex justify-center">
+      {/* <footer className="mt-3 p-3 flex justify-center">
         From Amsterdam to the world.
-      </footer>
+      </footer> */}
     </div>
   );
 }
