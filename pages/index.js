@@ -36,7 +36,7 @@ export default function Home() {
           />
           <div className="flex flex-col justify-start">
             <header className="flex gap-3 items-center">
-              <svg className="w-20" src="/icon.svg" />
+              <img className="w-20" src="/icon.svg" />
               <div className="">
                 <h1 className="text-4xl font-bold">
                   <span className="">Unclutter</span>
@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="mt-14 flex gap-5 justify-center items-stretch">
+      <div className="mt-14 flex gap-5 justify-center items-center">
         <a
           className="flex-shrink-0 w-52 bg-white rounded-lg shadow hover:shadow-lg"
           href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
@@ -70,11 +70,11 @@ export default function Home() {
         </a>
 
         <a
-          className="flex-shrink-0 w-40 bg-[#109ad6] rounded-lg shadow hover:shadow-lg"
+          className="flex-shrink-0 w-36 bg-[#109ad6] rounded-lg shadow hover:shadow-lg"
           href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
         >
           <img
-            className="object-contain h-12 my-2 mx-auto"
+            className="object-contain h-12 my-1 mx-auto"
             src="/firefox-badge.png"
           ></img>
         </a>
@@ -85,7 +85,7 @@ export default function Home() {
         >
           <iframe
             src="https://ghbtns.com/github-btn.html?user=lindylearn&repo=unclutter&type=star&count=true&size=large"
-            className="mt-4 mx-auto scale-110"
+            className="mt-0 mx-auto scale-100"
             frameBorder="0"
             scrolling="0"
             width="125"
@@ -95,7 +95,7 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="mt-10 mb-5 mx-10 flex flex-col items-center">
+      <div className="mt-14 mb-5 mx-10 flex flex-col items-center">
         <div className="text-xl">For the love of internet articles.</div>
         <div className="mt-7 flex flex-wrap justify-center gap-5">
           {Array.from(Array(21).keys()).map((i) => (
