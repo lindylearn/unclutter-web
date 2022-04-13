@@ -48,7 +48,7 @@ export default function Home() {
       </header>
 
       <main className="">
-        <div className="mt-2 xl:mt-10 flex flex-col xl:flex-row gap-5 sm:gap-10 px-5 xl:px-20 justify">
+        <div className="mt-2 xl:mt-10 flex flex-col xl:flex-row gap-5 sm:gap-10 px-5 xl:px-10 justify">
           <div className="w-full xl:w-7/12">
             <video
               ref={videoRef}
