@@ -154,6 +154,7 @@ export default function Home() {
             className="inline-block font-semibold hover:rotate-1"
             href="https://twitter.com/lindylearn"
             target="_blank"
+            rel="noreferrer"
           >
             support
           </a>
@@ -234,6 +235,7 @@ function ExamplePage({ index }) {
       }
       href={exampleUrls[index]}
       target="_blank"
+      rel="noreferrer"
     >
       <Image
         className="rounded-lg"
