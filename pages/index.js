@@ -59,7 +59,7 @@ export default function Home() {
               }`}
               width={2114}
               height={1404}
-              poster="media/videos/thumnail.png"
+              poster="media/videos/thumbnail.png"
               autoPlay
               muted
               onEnded={onSegmentComplete}
