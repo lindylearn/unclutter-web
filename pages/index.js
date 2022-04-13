@@ -26,19 +26,30 @@ export default function Home() {
   }
 
   return (
-    <div className="font-display">
+    <div className="font-display text-neutral-900">
       <Head>
         <title>Unclutter - Immersive Reading Mode</title>
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-neutral-900">
-        <div className="mt-10 flex gap-10 px-20 justify">
-          <div style={{ width: "800px", height: "500px" }}>
+      <header className="flex md:hidden gap-3 items-center p-5">
+        <img className="w-20" src="/icon.svg" />
+        <div className="">
+          <h1 className="text-4xl font-bold">
+            <span className="">Unclutter</span>
+            <span className="font-semibold"> your reading</span>
+          </h1>
+          <h2 className="text-xl">A new approach to reader mode</h2>
+        </div>
+      </header>
+
+      <main className="">
+        <div className="md:mt-10 flex flex-col md:flex-row gap-10 px-5 md:px-20 justify">
+          <div>
             <video
               ref={videoRef}
-              className="rounded-xl shadow-xl transition-all hover:shadow-2xl hover:rotate-1"
+              className="rounded-xl shadow-xl transition-all hover:shadow-2xl hover:rotate-1 max-w-4xl"
               id="video"
               src={`media/videos/${activeVideoSegement}.${
                 activeVideoSegement !== 5 ? "mov" : "mp4"
@@ -50,7 +61,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col justify-start">
-            <header className="flex gap-3 items-center">
+            <header className="hidden md:flex gap-3 items-center">
               <img className="w-20" src="/icon.svg" />
               <div className="">
                 <h1 className="text-4xl font-bold">
@@ -61,7 +72,7 @@ export default function Home() {
               </div>
             </header>
 
-            <ul className="mt-24 ml-20 flex flex-col gap-1 text-3xl font-semibold">
+            <ul className="md:mt-24 ml-10 md:ml-20 flex flex-col gap-1 text-3xl font-semibold">
               <VideoSegmentCaption
                 index={1}
                 title="Remove distractions"
@@ -97,7 +108,7 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="mt-16 flex gap-5 justify-center items-center">
+      <div className="mt-10 md:mt-16 flex gap-5 justify-center items-center">
         <a
           className="flex-shrink-0 w-52 bg-white rounded-lg shadow transition-all hover:shadow-lg hover:-rotate-1"
           href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
@@ -131,14 +142,7 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="mt-14 mb-5 mx-10 flex flex-col items-center">
-        <div className="text-xl">For the love of internet articles.</div>
-        <div className="mt-7 flex flex-wrap justify-center gap-5">
-          {Array.from(Array(21).keys()).map((i) => (
-            <ExamplePage key={i} index={i} />
-          ))}
-        </div>
-      </div>
+      <ExamplePageList />
 
       <footer className="mt-3 p-3 flex gap-1 justify-center text-lg">
         From Amsterdam to the world. Only possible with your{" "}
@@ -200,11 +204,25 @@ const exampleUrls = [
   "https://www.theatlantic.com/magazine/archive/1982/02/have-you-ever-tried-to-sell-a-diamond/304575/ ",
 ];
 
+function ExamplePageList() {
+  // const count = window.matchMedia("max-width: 1000px") ? 12 : 21;
+  return (
+    <div className="mt-10 md:mt-14 mb-5 md:mx-10 flex flex-col items-center">
+      <div className="text-xl">For the love of internet articles.</div>
+      <div className="mt-5 md:mt-7 flex flex-wrap justify-center gap-5">
+        {Array.from(Array(21).keys()).map((i) => (
+          <ExamplePage key={i} index={i} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ExamplePage({ index }) {
   return (
     <a
       className={
-        "w-48 flex rounded-lg shadow-lg hover:shadow-2xl transition-all " +
+        "w-36 md:w-48 flex rounded-lg shadow-lg hover:shadow-2xl transition-all " +
         (index % 3 === 0 ? "hover:-rotate-1" : "hover:rotate-1")
       }
       href={exampleUrls[index]}
@@ -215,6 +233,7 @@ function ExamplePage({ index }) {
         src={`/media/pages/screenshot_${index}.png`}
         width={1360}
         height={1600}
+        priority={index < 7}
       />
     </a>
   );
