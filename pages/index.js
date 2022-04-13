@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import screenshotPg from "./screenshots/pg.png";
-import screenshotAtlatic from "./screenshots/atlantic.png";
+// import screenshotPg from "./screenshots/pg.png";
+// import screenshotAtlatic from "./screenshots/atlantic.png";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -95,30 +95,12 @@ export default function Home() {
         </a>
       </div>
 
-      <div className="mt-20 mb-5 mx-10 flex flex-col items-center">
+      <div className="mt-10 mb-5 mx-10 flex flex-col items-center">
         <div className="text-xl">For the love of internet articles.</div>
-        <div className="mt-5 flex flex-wrap justify-center gap-5">
-          <ExamplePage src={screenshotPg} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotPg} />
-          <ExamplePage src={screenshotPg} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotPg} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
-          <ExamplePage src={screenshotAtlatic} />
+        <div className="mt-7 flex flex-wrap justify-center gap-5">
+          {Array.from(Array(21).keys()).map((i) => (
+            <ExamplePage src={`/media/pages/screenshot_${i}.png`} />
+          ))}
         </div>
       </div>
 
@@ -132,7 +114,7 @@ export default function Home() {
 function ExamplePage({ src }) {
   return (
     <div className="w-48 rounded-lg shadow-lg hover:shadow-2xl">
-      <Image className="rounded-lg" src={src} />
+      <Image className="rounded-lg" src={src} width={1360} height={1600} />
     </div>
   );
 }
