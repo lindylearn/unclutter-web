@@ -57,11 +57,13 @@ export default function Home() {
               src={`media/videos/${activeVideoSegement}.${
                 activeVideoSegement !== 5 ? "mov" : "mp4"
               }`}
+              width={2114}
+              height={1404}
               poster="media/videos/thumnail.png"
               autoPlay
               muted
               onEnded={onSegmentComplete}
-            />
+            ></video>
           </div>
 
           <div className="flex flex-col justify-start">
