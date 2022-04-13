@@ -36,7 +36,7 @@ export default function Home() {
           />
           <div className="flex flex-col justify-start">
             <header className="flex gap-3 items-center">
-              <img className="w-20" src="/icon.svg" />
+              <svg className="w-20" src="/icon.svg" />
               <div className="">
                 <h1 className="text-4xl font-bold">
                   <span className="">Unclutter</span>
@@ -99,7 +99,7 @@ export default function Home() {
         <div className="text-xl">For the love of internet articles.</div>
         <div className="mt-7 flex flex-wrap justify-center gap-5">
           {Array.from(Array(21).keys()).map((i) => (
-            <ExamplePage src={`/media/pages/screenshot_${i}.png`} />
+            <ExamplePage key={i} src={`/media/pages/screenshot_${i}.png`} />
           ))}
         </div>
       </div>
