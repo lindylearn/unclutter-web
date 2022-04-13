@@ -12,9 +12,9 @@ export default function Home() {
 
       <main className="mt-10 mx-auto max-w-xl flex flex-col items-start text-lg">
         <iframe
-          src="https://tally.so/embed/3qy1O3?alignLeft=1&hideTitle=1&transparentBackground=1"
+          src="https://tally.so/embed/wAkeym?alignLeft=1&hideTitle=0&transparentBackground=1"
           width="100%"
-          height="800px"
+          height="1000px"
           frameBorder="0"
           marginHeight="0"
           marginWidth="0"
