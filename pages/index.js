@@ -33,23 +33,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="flex md:hidden gap-3 items-center p-5">
-        <img className="w-20" src="/icon.svg" />
+      <header className="flex xl:hidden gap-2 items-start p-2 sm:p-5">
+        <img className="w-16" src="/icon.svg" />
         <div className="">
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-3xl font-bold">
             <span className="">Unclutter</span>
-            <span className="font-semibold"> your reading</span>
+            <span className="font-semibold">
+              {" "}
+              <span className="hidden sm:inline">your reading</span>
+            </span>
           </h1>
-          <h2 className="text-xl">A new approach to reader mode</h2>
+          <h2 className="text-lg sm:text-xl">A new approach to reader mode</h2>
         </div>
       </header>
 
       <main className="">
-        <div className="md:mt-10 flex flex-col md:flex-row gap-10 px-5 md:px-20 justify">
-          <div>
+        <div className="mt-2 xl:mt-10 flex flex-col xl:flex-row gap-5 sm:gap-10 px-5 xl:px-20 justify">
+          <div className="w-full xl:w-7/12">
             <video
               ref={videoRef}
-              className="rounded-xl shadow-xl transition-all hover:shadow-2xl hover:rotate-1 max-w-4xl"
+              className="rounded-xl shadow-xl transition-all hover:shadow-2xl sm:hover:rotate-1"
               id="video"
               src={`media/videos/${activeVideoSegement}.${
                 activeVideoSegement !== 5 ? "mov" : "mp4"
@@ -61,7 +64,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col justify-start">
-            <header className="hidden md:flex gap-3 items-center">
+            <header className="hidden xl:flex gap-3 items-center">
               <img className="w-20" src="/icon.svg" />
               <div className="">
                 <h1 className="text-4xl font-bold">
@@ -72,7 +75,7 @@ export default function Home() {
               </div>
             </header>
 
-            <ul className="md:mt-24 ml-10 md:ml-20 flex flex-col gap-1 text-3xl font-semibold">
+            <ul className="xl:mt-24 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
               <VideoSegmentCaption
                 index={1}
                 title="Remove distractions"
@@ -108,7 +111,7 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="mt-10 md:mt-16 flex gap-5 justify-center items-center">
+      <div className="mt-5 sm:mt-10 xl:mt-16 flex flex-wrap md:flex-nowrap gap-5 justify-center items-center">
         <a
           className="flex-shrink-0 w-52 bg-white rounded-lg shadow transition-all hover:shadow-lg hover:-rotate-1"
           href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
@@ -144,16 +147,18 @@ export default function Home() {
 
       <ExamplePageList />
 
-      <footer className="mt-3 p-3 flex gap-1 justify-center text-lg">
-        From Amsterdam to the world. Only possible with your{" "}
-        <a
-          className="font-semibold hover:rotate-1"
-          href="https://twitter.com/lindylearn"
-          target="_blank"
-        >
-          support
-        </a>
-        !
+      <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">
+        <div>
+          From Amsterdam to the world. Only possible with your{" "}
+          <a
+            className="inline-block font-semibold hover:rotate-1"
+            href="https://twitter.com/lindylearn"
+            target="_blank"
+          >
+            support
+          </a>
+          !
+        </div>
       </footer>
     </div>
   );
@@ -207,9 +212,11 @@ const exampleUrls = [
 function ExamplePageList() {
   // const count = window.matchMedia("max-width: 1000px") ? 12 : 21;
   return (
-    <div className="mt-10 md:mt-14 mb-5 md:mx-10 flex flex-col items-center">
-      <div className="text-xl">For the love of internet articles.</div>
-      <div className="mt-5 md:mt-7 flex flex-wrap justify-center gap-5">
+    <div className="mt-5 sm:mt-10 xl:mt-14 mb-5 xl:mx-10 flex flex-col items-center">
+      <div className="text-lg sm:text-xl">
+        For the love of internet articles.
+      </div>
+      <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-center gap-2 sm:gap-5">
         {Array.from(Array(21).keys()).map((i) => (
           <ExamplePage key={i} index={i} />
         ))}
@@ -222,7 +229,7 @@ function ExamplePage({ index }) {
   return (
     <a
       className={
-        "w-36 md:w-48 flex rounded-lg shadow-lg hover:shadow-2xl transition-all " +
+        "w-28 sm:w-36 xl:w-48 flex rounded-lg shadow-lg hover:shadow-2xl transition-all " +
         (index % 3 === 0 ? "hover:-rotate-1" : "hover:rotate-1")
       }
       href={exampleUrls[index]}
