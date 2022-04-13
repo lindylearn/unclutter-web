@@ -3,9 +3,28 @@ import Image from "next/image";
 
 // import screenshotPg from "./screenshots/pg.png";
 // import screenshotAtlatic from "./screenshots/atlantic.png";
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
+  const videoRef = useRef();
+  const [activeVideoSegement, setActiveVideoSegment] = useState(1);
+  function selectSegment(newIndex) {
+    if (newIndex === activeVideoSegement) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+    } else {
+      setActiveVideoSegment(newIndex);
+    }
+  }
+  function onSegmentComplete() {
+    let newIndex = activeVideoSegement + 1;
+    if (newIndex === 6) {
+      return;
+    }
+    setActiveVideoSegment(newIndex);
+  }
+
   return (
     <div className="font-display">
       <Head>
@@ -15,62 +34,79 @@ export default function Home() {
       </Head>
 
       <main className="text-neutral-900">
-        {/* <header className="mt-5 mx-auto max-w-4xl flex gap-3 items-center">
-          <img className="w-20" src="/icon.svg" />
-          <div className="">
-            <h1 className="text-5xl font-bold">
-              Unclutter your reading process
-            </h1>
-            <h2 className="text-lg">Reader mode browser extension</h2>
-          </div>
-        </header> */}
-
         <div className="mt-10 flex gap-10 px-20 justify">
-          <video
-            className="w-3/6 rounded-xl shadow-xl hover:shadow-2xl"
-            id="video"
-            src="media/1.mov"
-            autoPlay
-            // loop
-            muted
-          />
+          <div style={{ width: "800px", height: "500px" }}>
+            <video
+              ref={videoRef}
+              className="rounded-xl shadow-xl transition-all hover:shadow-2xl hover:rotate-1"
+              id="video"
+              src={`media/videos/${activeVideoSegement}.${
+                activeVideoSegement !== 5 ? "mov" : "mp4"
+              }`}
+              autoPlay
+              muted
+              onEnded={onSegmentComplete}
+            />
+          </div>
+
           <div className="flex flex-col justify-start">
             <header className="flex gap-3 items-center">
               <img className="w-20" src="/icon.svg" />
               <div className="">
                 <h1 className="text-4xl font-bold">
                   <span className="">Unclutter</span>
-                  <span className="font-semibold"> your reading process</span>
+                  <span className="font-semibold"> your reading</span>
                 </h1>
-                <h2 className="text-xl">
-                  A better reader mode browser extension
-                </h2>
+                <h2 className="text-xl">A new approach to reader mode</h2>
               </div>
             </header>
 
-            <ul className="mt-20 ml-24 flex flex-col gap-1 text-3xl font-semibold">
-              <li className="opacity-100">Remove distractions</li>
-              {/* <li className="opacity-10">Keep original design</li> */}
-              <li className="opacity-10">Customize colors & font</li>
-              {/* <li className="opacity-10">Dark mode</li> */}
-              <li className="opacity-10">Outline long pages</li>
-              <li className="opacity-10">Automatically activate</li>
-              <li className="opacity-10">Right in your browser</li>
+            <ul className="mt-24 ml-20 flex flex-col gap-1 text-3xl font-semibold">
+              <VideoSegmentCaption
+                index={1}
+                title="Remove distractions"
+                activeVideoSegement={activeVideoSegement}
+                selectSegment={selectSegment}
+              />
+              <VideoSegmentCaption
+                index={2}
+                title="Customize colors & font"
+                activeVideoSegement={activeVideoSegement}
+                selectSegment={selectSegment}
+              />
+              <VideoSegmentCaption
+                index={3}
+                title="Outline long pages"
+                activeVideoSegement={activeVideoSegement}
+                selectSegment={selectSegment}
+              />
+              <VideoSegmentCaption
+                index={4}
+                title="Automatically activate"
+                activeVideoSegement={activeVideoSegement}
+                selectSegment={selectSegment}
+              />
+              <VideoSegmentCaption
+                index={5}
+                title="Right in your browser"
+                activeVideoSegement={activeVideoSegement}
+                selectSegment={selectSegment}
+              />
             </ul>
           </div>
         </div>
       </main>
 
-      <div className="mt-14 flex gap-5 justify-center items-center">
+      <div className="mt-16 flex gap-5 justify-center items-center">
         <a
-          className="flex-shrink-0 w-52 bg-white rounded-lg shadow hover:shadow-lg"
+          className="flex-shrink-0 w-52 bg-white rounded-lg shadow transition-all hover:shadow-lg hover:-rotate-1"
           href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
         >
           <img className="object-contain h-16" src="/chrome-badge.png"></img>
         </a>
 
         <a
-          className="flex-shrink-0 w-36 bg-[#109ad6] rounded-lg shadow hover:shadow-lg"
+          className="flex-shrink-0 w-36 bg-[#109ad6] rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1"
           href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
         >
           <img
@@ -104,10 +140,39 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <footer className="mt-3 p-3 flex justify-center">
-        From Amsterdam to the world.
-      </footer> */}
+      <footer className="mt-3 p-3 flex gap-1 justify-center text-lg">
+        From Amsterdam to the world. Only possible with your{" "}
+        <a
+          className="font-semibold hover:rotate-1"
+          href="https://twitter.com/lindylearn"
+          target="_blank"
+        >
+          support
+        </a>
+        !
+      </footer>
     </div>
+  );
+}
+
+function VideoSegmentCaption({
+  index,
+  title,
+  activeVideoSegement,
+  selectSegment,
+}) {
+  return (
+    <li
+      className={
+        "cursor-pointer " +
+        (index === activeVideoSegement
+          ? "opacity-100 animate-wiggle"
+          : "opacity-20")
+      }
+      onClick={() => selectSegment(index)}
+    >
+      {index}. {title}
+    </li>
   );
 }
 
