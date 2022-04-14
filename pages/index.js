@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const videoRef = useRef();
-  const [activeVideoSegement, setActiveVideoSegment] = useState(1);
+  const [activeVideoSegement, setActiveVideoSegment] = useState(0);
   function selectSegment(newIndex) {
     if (newIndex === activeVideoSegement) {
       videoRef.current.pause();
@@ -19,7 +19,7 @@ export default function Home() {
   }
   function onSegmentComplete() {
     let newIndex = activeVideoSegement + 1;
-    if (newIndex === 6) {
+    if (newIndex === 5) {
       return;
     }
     setActiveVideoSegment(newIndex);
@@ -52,14 +52,10 @@ export default function Home() {
           <div className="w-full xl:w-7/12">
             <video
               ref={videoRef}
-              className="rounded-xl shadow-xl transition-all hover:shadow-2xl sm:hover:rotate-1"
+              className="rounded-2xl shadow-xl transition-all hover:shadow-2xl sm:hover:rotate-1"
               id="video"
-              src={`media/videos/${activeVideoSegement}.${
-                activeVideoSegement !== 5 ? "mov" : "mp4"
-              }`}
-              width={2114}
-              height={1404}
-              poster="media/videos/thumbnail.png"
+              src={`media/clips/clip_${activeVideoSegement}.webm`}
+              poster={`media/clips/thumbnail_${activeVideoSegement}.png`}
               autoPlay
               muted
               onEnded={onSegmentComplete}
@@ -80,31 +76,31 @@ export default function Home() {
 
             <ul className="xl:mt-24 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
               <VideoSegmentCaption
-                index={1}
+                index={0}
                 title="Remove distractions"
                 activeVideoSegement={activeVideoSegement}
                 selectSegment={selectSegment}
               />
               <VideoSegmentCaption
-                index={2}
+                index={1}
                 title="Customize colors & font"
                 activeVideoSegement={activeVideoSegement}
                 selectSegment={selectSegment}
               />
               <VideoSegmentCaption
-                index={3}
+                index={2}
                 title="Outline long pages"
                 activeVideoSegement={activeVideoSegement}
                 selectSegment={selectSegment}
               />
               <VideoSegmentCaption
-                index={4}
+                index={3}
                 title="Automatically activate"
                 activeVideoSegement={activeVideoSegement}
                 selectSegment={selectSegment}
               />
               <VideoSegmentCaption
-                index={5}
+                index={4}
                 title="Right in your browser"
                 activeVideoSegement={activeVideoSegement}
                 selectSegment={selectSegment}
@@ -116,7 +112,7 @@ export default function Home() {
 
       <div className="mt-5 sm:mt-10 xl:mt-16 flex flex-wrap md:flex-nowrap gap-5 justify-center items-center">
         <a
-          className="flex-shrink-0 w-52 bg-white rounded-lg shadow transition-all hover:shadow-lg hover:-rotate-1"
+          className="flex-shrink-0 w-52 bg-white rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1"
           href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
         >
           <img className="object-contain h-16" src="/chrome-badge.png"></img>
