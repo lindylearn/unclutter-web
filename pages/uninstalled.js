@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="font-display text-neutral-800">
       <Head>
-        <title>Unclutter - Immersive Reading Mode</title>
+        <title>Unclutter Feedback</title>
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
