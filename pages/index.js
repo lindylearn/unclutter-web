@@ -180,7 +180,7 @@ function VideoSegmentCaption({
       }
       onClick={() => selectSegment(index)}
     >
-      {index}. {title}
+      {index + 1}. {title}
     </li>
   );
 }
