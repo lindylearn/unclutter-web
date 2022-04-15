@@ -113,7 +113,7 @@ function VideoSection() {
 
     return (
         <div className="mt-2 xl:mt-10 flex flex-col xl:flex-row gap-5 sm:gap-10 px-5 xl:px-10 justify">
-            <div className="w-full xl:w-7/12 relative shadow-xl hover:shadow-2xl">
+            <div className="w-full xl:w-7/12 relative rounded-2xl shadow-xl hover:shadow-2xl">
                 {Array.from(Array(5).keys()).map((i) => (
                     <video
                         key={i}
@@ -137,6 +137,10 @@ function VideoSection() {
                         onEnded={onSegmentComplete}
                     ></video>
                 ))}
+                <img
+                    className="rounded-2xl"
+                    src="media/clips/thumbnail_0.png"
+                />
             </div>
 
             <div className="flex flex-col justify-start">
