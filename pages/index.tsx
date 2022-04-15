@@ -1,18 +1,14 @@
-import Head from "next/head";
 import Image from "next/image";
-
-// import screenshotPg from "./screenshots/pg.png";
-// import screenshotAtlatic from "./screenshots/atlantic.png";
+import Head from "../components/Head";
 import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
     return (
         <div className="font-display text-neutral-900">
-            <Head>
-                <title>Unclutter - Immersive Reading Mode</title>
-                <meta name="description" content="" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <Head
+                title="Unclutter browser extension"
+                description="Remove distractions from web articles, automatically."
+            />
 
             <header className="flex xl:hidden gap-2 items-start p-2 sm:p-5">
                 <img className="w-16" src="/icon.svg" />
