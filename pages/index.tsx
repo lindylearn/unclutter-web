@@ -98,8 +98,11 @@ function VideoSection() {
 
     const [activeVideoSegement, setActiveVideoSegment] = useState(0);
     function selectSegment(newIndex) {
-        setActiveVideoSegment(newIndex);
+        const prevVideo = videoRefs[activeVideoSegement]
+            .current as HTMLVideoElement;
+        prevVideo.pause();
 
+        setActiveVideoSegment(newIndex);
         const video = videoRefs[newIndex].current as HTMLVideoElement;
         video.pause();
         video.currentTime = 0;
@@ -113,9 +116,24 @@ function VideoSection() {
         selectSegment(newIndex);
     }
 
+    // const [duration, setDuration] = useState(null);
+    // useEffect(() => {
+    //     const activeVideo = videoRefs[activeVideoSegement]
+    //         .current as HTMLVideoElement;
+
+    //     setDuration(activeVideo.duration);
+    //     console.log(activeVideo.duration);
+    //     // activeVideo.ontimeupdate = (event) => {
+    //     //     const progress = Math.round(
+    //     //         (activeVideo.currentTime / activeVideo.duration) * 100
+    //     //     );
+    //     //     setProgress(progress);
+    //     // };
+    // }, [activeVideoSegement]);
+
     return (
         <div className="mt-2 xl:mt-10 flex flex-col xl:flex-row gap-5 sm:gap-10 px-5 xl:px-10 justify">
-            <div className="w-full xl:w-7/12 relative rounded-2xl shadow-xl hover:shadow-2xl">
+            <div className="w-full xl:w-7/12 relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl">
                 {Array.from(Array(5).keys()).map((i) => (
                     <video
                         key={i}
@@ -123,9 +141,9 @@ function VideoSection() {
                         className={
                             "rounded-2xl transition-all absolute " +
                             (i === activeVideoSegement
-                                ? "z-50"
-                                : i === activeVideoSegement - 1
                                 ? "z-40"
+                                : i === activeVideoSegement - 1
+                                ? "z-30"
                                 : "hidden")
                         }
                         src={`media/clips/clip_${i}.webm`}
@@ -135,6 +153,12 @@ function VideoSection() {
                     ></video>
                 ))}
                 <img className="rounded-2xl" src="media/clips/thumbnail.webp" />
+                {/* <div
+                    className="absolute bottom-0 h-2 bg-black z-50"
+                    style={{
+                        transition: `width ${duration}s linear`,
+                    }}
+                /> */}
             </div>
 
             <div className="flex flex-col justify-start">
