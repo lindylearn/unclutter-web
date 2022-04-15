@@ -6,26 +6,6 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
-    const videoRef = useRef();
-
-    const [activeVideoSegement, setActiveVideoSegment] = useState(0);
-    function selectSegment(newIndex) {
-        if (newIndex === activeVideoSegement) {
-            videoRef.current.pause();
-            videoRef.current.currentTime = 0;
-            videoRef.current.play();
-        } else {
-            setActiveVideoSegment(newIndex);
-        }
-    }
-    function onSegmentComplete() {
-        let newIndex = activeVideoSegement + 1;
-        if (newIndex === 5) {
-            return;
-        }
-        selectSegment(newIndex);
-    }
-
     return (
         <div className="font-display text-neutral-900">
             <Head>
@@ -52,73 +32,9 @@ export default function Home() {
                 </div>
             </header>
 
-            <main className="">
-                <div className="mt-2 xl:mt-10 flex flex-col xl:flex-row gap-5 sm:gap-10 px-5 xl:px-10 justify">
-                    <div className="w-full xl:w-7/12">
-                        <video
-                            ref={videoRef}
-                            className="rounded-2xl shadow-xl transition-all hover:shadow-2xl"
-                            id="video"
-                            src={`media/clips/clip_${activeVideoSegement}.webm`}
-                            poster={`media/clips/thumbnail_${activeVideoSegement}.png`}
-                            autoPlay
-                            muted
-                            onEnded={onSegmentComplete}
-                        ></video>
-                    </div>
-
-                    <div className="flex flex-col justify-start">
-                        <header className="hidden xl:flex gap-3 items-center">
-                            <img className="w-20" src="/icon.svg" />
-                            <div className="">
-                                <h1 className="text-4xl font-bold">
-                                    <span className="">Unclutter</span>
-                                    <span className="font-semibold">
-                                        {" "}
-                                        your reading
-                                    </span>
-                                </h1>
-                                <h2 className="text-xl">
-                                    A new approach to reader mode
-                                </h2>
-                            </div>
-                        </header>
-
-                        <ul className="xl:mt-24 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
-                            <VideoSegmentCaption
-                                index={0}
-                                title="Remove distractions"
-                                activeVideoSegement={activeVideoSegement}
-                                selectSegment={selectSegment}
-                            />
-                            <VideoSegmentCaption
-                                index={1}
-                                title="Customize colors & font"
-                                activeVideoSegement={activeVideoSegement}
-                                selectSegment={selectSegment}
-                            />
-                            <VideoSegmentCaption
-                                index={2}
-                                title="Outline long pages"
-                                activeVideoSegement={activeVideoSegement}
-                                selectSegment={selectSegment}
-                            />
-                            <VideoSegmentCaption
-                                index={3}
-                                title="Automatically activate"
-                                activeVideoSegement={activeVideoSegement}
-                                selectSegment={selectSegment}
-                            />
-                            <VideoSegmentCaption
-                                index={4}
-                                title="Right in your browser"
-                                activeVideoSegement={activeVideoSegement}
-                                selectSegment={selectSegment}
-                            />
-                        </ul>
-                    </div>
-                </div>
-            </main>
+            <div className="">
+                <VideoSection />
+            </div>
 
             <div className="mt-5 sm:mt-10 xl:mt-16 flex flex-wrap md:flex-nowrap gap-5 justify-center items-center">
                 <a
@@ -173,6 +89,103 @@ export default function Home() {
                     !
                 </div>
             </footer>
+        </div>
+    );
+}
+
+function VideoSection() {
+    const videoRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
+
+    const [activeVideoSegement, setActiveVideoSegment] = useState(0);
+    function selectSegment(newIndex) {
+        setActiveVideoSegment(newIndex);
+        videoRefs[newIndex].current.pause();
+        videoRefs[newIndex].current.currentTime = 0;
+        videoRefs[newIndex].current.play();
+    }
+    function onSegmentComplete() {
+        let newIndex = activeVideoSegement + 1;
+        if (newIndex === 5) {
+            return;
+        }
+        selectSegment(newIndex);
+    }
+
+    return (
+        <div className="mt-2 xl:mt-10 flex flex-col xl:flex-row gap-5 sm:gap-10 px-5 xl:px-10 justify">
+            <div className="w-full xl:w-7/12 relative shadow-xl hover:shadow-2xl">
+                {Array.from(Array(5).keys()).map((i) => (
+                    <video
+                        key={i}
+                        ref={videoRefs[i]}
+                        className={
+                            "rounded-2xl transition-all absolute " +
+                            (i === activeVideoSegement
+                                ? "z-50"
+                                : i === activeVideoSegement - 1
+                                ? "z-40"
+                                : "hidden")
+                        }
+                        src={`media/clips/clip_${i}.webm`}
+                        poster={
+                            i === 0
+                                ? `media/clips/thumbnail_${i}.png`
+                                : undefined
+                        }
+                        autoPlay={i === 0}
+                        muted
+                        onEnded={onSegmentComplete}
+                    ></video>
+                ))}
+            </div>
+
+            <div className="flex flex-col justify-start">
+                <header className="hidden xl:flex gap-3 items-center">
+                    <img className="w-20" src="/icon.svg" />
+                    <div className="">
+                        <h1 className="text-4xl font-bold">
+                            <span className="">Unclutter</span>
+                            <span className="font-semibold"> your reading</span>
+                        </h1>
+                        <h2 className="text-xl">
+                            A new approach to reader mode
+                        </h2>
+                    </div>
+                </header>
+
+                <ul className="xl:mt-24 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
+                    <VideoSegmentCaption
+                        index={0}
+                        title="Remove distractions"
+                        activeVideoSegement={activeVideoSegement}
+                        selectSegment={selectSegment}
+                    />
+                    <VideoSegmentCaption
+                        index={1}
+                        title="Customize colors & font"
+                        activeVideoSegement={activeVideoSegement}
+                        selectSegment={selectSegment}
+                    />
+                    <VideoSegmentCaption
+                        index={2}
+                        title="Outline long pages"
+                        activeVideoSegement={activeVideoSegement}
+                        selectSegment={selectSegment}
+                    />
+                    <VideoSegmentCaption
+                        index={3}
+                        title="Automatically activate"
+                        activeVideoSegement={activeVideoSegement}
+                        selectSegment={selectSegment}
+                    />
+                    <VideoSegmentCaption
+                        index={4}
+                        title="Right in your browser"
+                        activeVideoSegement={activeVideoSegement}
+                        selectSegment={selectSegment}
+                    />
+                </ul>
+            </div>
         </div>
     );
 }
