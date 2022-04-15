@@ -18,7 +18,7 @@ export default function Home() {
                         <span className="font-semibold">
                             {" "}
                             <span className="hidden sm:inline">
-                                your reading
+                                any article
                             </span>
                         </span>
                     </h1>
@@ -128,7 +128,7 @@ function VideoSection() {
                     <div className="">
                         <h1 className="text-4xl font-bold">
                             <span className="">Unclutter</span>
-                            <span className="font-semibold"> your reading</span>
+                            <span className="font-semibold"> any article</span>
                         </h1>
                         <h2 className="text-xl">
                             A new approach to reader mode
