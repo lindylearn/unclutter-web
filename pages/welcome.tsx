@@ -6,8 +6,14 @@ import { ExamplePage } from ".";
 export default function Home() {
     const videoRefs = [useRef(), useRef()];
     useEffect(() => {
-        setTimeout(() => videoRefs[0].current?.play(), 1000);
-        setTimeout(() => videoRefs[1].current?.play(), 3000);
+        setTimeout(
+            () => (videoRefs[0].current as HTMLVideoElement)?.play(),
+            1000
+        );
+        setTimeout(
+            () => (videoRefs[1].current as HTMLVideoElement)?.play(),
+            3000
+        );
     }, []);
 
     return (
