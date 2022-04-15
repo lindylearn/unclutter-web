@@ -99,9 +99,11 @@ function VideoSection() {
     const [activeVideoSegement, setActiveVideoSegment] = useState(0);
     function selectSegment(newIndex) {
         setActiveVideoSegment(newIndex);
-        videoRefs[newIndex].current.pause();
-        videoRefs[newIndex].current.currentTime = 0;
-        videoRefs[newIndex].current.play();
+
+        const video = videoRefs[newIndex].current as HTMLVideoElement;
+        video.pause();
+        video.currentTime = 0;
+        video.play();
     }
     function onSegmentComplete() {
         let newIndex = activeVideoSegement + 1;
