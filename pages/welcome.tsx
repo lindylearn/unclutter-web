@@ -55,7 +55,7 @@ export default function Home() {
                                 muted
                             />
                             <h2 className="pt-2">
-                                Or on this button that appears on most articles
+                                Or this button that appears on most articles
                             </h2>
                         </div>
                     </div>
@@ -89,9 +89,7 @@ export default function Home() {
 
                 <div className="mt-10 relative">
                     <div className="absolute -left-5 text-lg">2.</div>
-                    <h1 className="text-lg">
-                        Here are some examples to try it on:
-                    </h1>
+                    <h1 className="text-lg">Here are some examples to try:</h1>
 
                     <div className="mt-3 flex flex-wrap justify-start gap-2 sm:gap-5">
                         <ExamplePage index={0} />
