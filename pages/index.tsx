@@ -7,7 +7,7 @@ export default function Home() {
         <div className="font-display text-neutral-900">
             <Head
                 title="Unclutter browser extension"
-                description="Remove distractions from web articles, automatically."
+                description="Automatically remove distractions from web articles. With dark mode & page outlines."
             />
 
             <header className="flex xl:hidden gap-2 items-start p-2 sm:p-5">

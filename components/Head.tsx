@@ -11,16 +11,13 @@ export default function SiteHead({ title, description }) {
             <meta property="og:description" content={description} />
             <meta name="twitter:description" content={description} />
 
-            <meta
-                property="og:image"
-                content="https://hn.lindylearn.io/icon.png"
-            />
-            <meta
+            <meta property="og:image" content="/social-share.png" />
+            {/* <meta
                 name="twitter:image"
-                content="https://hn.lindylearn.io/icon.png"
-            />
+                content="https://unclutter.lindylearn.io/icon.png"
+            /> */}
 
-            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@lindylearn" />
         </Head>
     );
