@@ -127,20 +127,12 @@ function VideoSection() {
                                 : "hidden")
                         }
                         src={`media/clips/clip_${i}.webm`}
-                        poster={
-                            i === 0
-                                ? `media/clips/thumbnail_${i}.png`
-                                : undefined
-                        }
                         autoPlay={i === 0}
                         muted
                         onEnded={onSegmentComplete}
                     ></video>
                 ))}
-                <img
-                    className="rounded-2xl"
-                    src="media/clips/thumbnail_0.png"
-                />
+                <img className="rounded-2xl" src="media/clips/thumbnail.webp" />
             </div>
 
             <div className="flex flex-col justify-start">
