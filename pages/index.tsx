@@ -306,7 +306,7 @@ function ExamplePageList() {
     );
 }
 
-function ExamplePage({ index }) {
+export function ExamplePage({ index }) {
     return (
         <a
             className={
