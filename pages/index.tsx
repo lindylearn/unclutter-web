@@ -32,48 +32,13 @@ export default function Home() {
                 </div>
             </header>
 
-            <div className="">
-                <VideoSection />
-            </div>
+            <VideoSection />
 
-            <div className="mt-5 sm:mt-10 xl:mt-16 flex flex-wrap md:flex-nowrap gap-5 justify-center items-center">
-                <a
-                    className="flex-shrink-0 w-52 bg-white rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1"
-                    href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
-                >
-                    <img
-                        className="object-contain h-16"
-                        src="/chrome-badge.png"
-                    ></img>
-                </a>
-
-                <a
-                    className="flex-shrink-0 w-36 bg-[#109ad6] rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1"
-                    href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
-                >
-                    <img
-                        className="object-contain h-12 my-1 mx-auto"
-                        src="/firefox-badge.png"
-                    ></img>
-                </a>
-
-                <a
-                    className="flex-shrink-0"
-                    href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
-                >
-                    <iframe
-                        src="https://ghbtns.com/github-btn.html?user=lindylearn&repo=unclutter&type=star&count=true&size=large"
-                        className="mt-0 mx-auto scale-100"
-                        frameBorder="0"
-                        scrolling="0"
-                        width="125"
-                        height="30"
-                        title="GitHub"
-                    ></iframe>
-                </a>
-            </div>
+            <InstallLinks />
 
             <ExamplePageList />
+
+            {/* <FAQ /> */}
 
             <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">
                 <div>
@@ -212,6 +177,47 @@ function VideoSection() {
     );
 }
 
+function InstallLinks() {
+    return (
+        <div className="mt-5 sm:mt-10 xl:mt-14 flex flex-wrap md:flex-nowrap gap-5 justify-center items-center">
+            <a
+                className="flex-shrink-0 w-52 bg-white rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1"
+                href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
+            >
+                <img
+                    className="object-contain h-16"
+                    src="/chrome-badge.png"
+                ></img>
+            </a>
+
+            <a
+                className="flex-shrink-0 w-36 bg-[#109ad6] rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1"
+                href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
+            >
+                <img
+                    className="object-contain h-12 my-1 mx-auto"
+                    src="/firefox-badge.png"
+                ></img>
+            </a>
+
+            <a
+                className="flex-shrink-0"
+                href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
+            >
+                <iframe
+                    src="https://ghbtns.com/github-btn.html?user=lindylearn&repo=unclutter&type=star&count=true&size=large"
+                    className="mt-0 mx-auto scale-100"
+                    frameBorder="0"
+                    scrolling="0"
+                    width="125"
+                    height="30"
+                    title="GitHub"
+                ></iframe>
+            </a>
+        </div>
+    );
+}
+
 function VideoSegmentCaption({
     index,
     title,
@@ -245,6 +251,21 @@ function VideoSegmentCaption({
     );
 }
 
+function FAQ() {
+    return (
+        <div className="mt-5 sm:mt-10 xl:mt-14 mb-5 xl:mx-5 flex flex-col items-center">
+            <h1 className="text-lg sm:text-xl">FAQ</h1>
+            <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-center gap-2 sm:gap-5">
+                <h2>What exactly is this?</h2>
+                <div>
+                    Unclutter is a browser extension to make web articles more
+                    readable.
+                </div>
+            </div>
+        </div>
+    );
+}
+
 const exampleUrls = [
     "http://www.paulgraham.com/ds.html",
     "https://kk.org/thetechnium/1000-true-fans/ ",
@@ -272,12 +293,12 @@ const exampleUrls = [
 function ExamplePageList() {
     // const count = window.matchMedia("max-width: 1000px") ? 12 : 21;
     return (
-        <div className="mt-5 sm:mt-10 xl:mt-14 mb-5 xl:mx-10 flex flex-col items-center">
+        <div className="mt-5 sm:mt-10 xl:mt-14 mb-5 xl:mx-5 flex flex-col items-center">
             <div className="text-lg sm:text-xl">
                 For the love of internet articles.
             </div>
             <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-center gap-2 sm:gap-5">
-                {Array.from(Array(21).keys()).map((i) => (
+                {Array.from(Array(18).keys()).map((i) => (
                     <ExamplePage key={i} index={i} />
                 ))}
             </div>
