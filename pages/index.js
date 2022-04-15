@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const videoRef = useRef();
+
   const [activeVideoSegement, setActiveVideoSegment] = useState(0);
   function selectSegment(newIndex) {
     if (newIndex === activeVideoSegement) {
@@ -22,7 +23,7 @@ export default function Home() {
     if (newIndex === 5) {
       return;
     }
-    setActiveVideoSegment(newIndex);
+    selectSegment(newIndex);
   }
 
   return (
@@ -52,7 +53,7 @@ export default function Home() {
           <div className="w-full xl:w-7/12">
             <video
               ref={videoRef}
-              className="rounded-2xl shadow-xl transition-all hover:shadow-2xl sm:hover:rotate-1"
+              className="rounded-2xl shadow-xl transition-all hover:shadow-2xl"
               id="video"
               src={`media/clips/clip_${activeVideoSegement}.webm`}
               poster={`media/clips/thumbnail_${activeVideoSegement}.png`}
@@ -170,15 +171,25 @@ function VideoSegmentCaption({
   activeVideoSegement,
   selectSegment,
 }) {
+  const [wiggle, setWiggle] = useState(false);
+  useEffect(() => {
+    if (index !== 0 && index === activeVideoSegement) {
+      setWiggle(true);
+    }
+  }, [activeVideoSegement]);
+
   return (
     <li
       className={
         "cursor-pointer " +
-        (index === activeVideoSegement
-          ? "opacity-100 animate-wiggle"
-          : "opacity-20")
+        (index === activeVideoSegement ? "opacity-100 " : "opacity-20 ") +
+        (wiggle ? "animate-wiggle " : " ")
       }
-      onClick={() => selectSegment(index)}
+      onClick={(event) => {
+        setWiggle(true);
+        selectSegment(index);
+      }}
+      onAnimationEnd={() => setWiggle(false)}
     >
       {index + 1}. {title}
     </li>
