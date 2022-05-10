@@ -6,7 +6,7 @@ import ExamplePageList from "../components/ExamplePageList";
 import GithubSection from "../components/GithubSection";
 import InstallLinks from "../components/InstallLinks";
 
-export default function Home() {
+export default function Home({ releases }) {
     return (
         <div className="font-display text-neutral-900">
             <Head
@@ -36,7 +36,7 @@ export default function Home() {
 
             <InstallLinks />
 
-            <GithubSection />
+            <GithubSection releases={releases} />
 
             <ExamplePageList />
 
@@ -58,4 +58,17 @@ export default function Home() {
             </footer>
         </div>
     );
+}
+
+export async function getStaticProps() {
+    const releases = (
+        await axios.get(
+            "https://api.github.com/repos/lindylearn/unclutter/releases"
+        )
+    ).data;
+    releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
+
+    return {
+        props: { releases },
+    };
 }

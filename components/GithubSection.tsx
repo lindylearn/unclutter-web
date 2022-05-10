@@ -1,6 +1,6 @@
-export default function GithubSection() {
+export default function GithubSection({ releases }) {
     return (
-        <div>
+        <div className="max-w-2xl mx-auto">
             <div className="text-2xl font-semibold text-center">
                 Developed open-source
             </div>
@@ -18,7 +18,43 @@ export default function GithubSection() {
                     title="GitHub"
                 ></iframe>
             </a>
-            <div>Recent Releases</div>
+            <div>
+                <div className="text-2xl font-semibold">Recent Releases:</div>
+                <ul className="text-lg">
+                    {releases.map(({ name, html_url, published_at }) => {
+                        const date = new Date(published_at);
+                        return (
+                            <li className="flex gap-5">
+                                <div className="w-28">
+                                    {monthNames[date.getMonth()]}{" "}
+                                    {date.getDate()}
+                                </div>
+                                <a
+                                    className="font-semibold text-lg"
+                                    href={html_url}
+                                >
+                                    {name}
+                                </a>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </div>
     );
 }
+
+const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
