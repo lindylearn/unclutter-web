@@ -38,10 +38,10 @@ export default function Home({ repoStars }) {
 
                 <InstallLinks repoStars={repoStars} />
 
-                {/* <GithubSection releases={releases} /> */}
+                {/* <GithubSection repoStars={repoStars} /> */}
+                <ExamplePageList />
 
                 <FAQ />
-                <ExamplePageList />
             </main>
 
             {/* <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">

@@ -1,4 +1,4 @@
-export default function GithubSection({ releases }) {
+export default function GithubSection({}) {
     return (
         <div className=" mx-auto">
             <div className="text-2xl font-semibold text-center">

@@ -72,21 +72,21 @@ export default function VideoSection() {
                 <header className="hidden xl:flex gap-3 items-center">
                     <img className="w-20" src="/icon.svg" />
                     <div className="">
-                        <h1 className="text-4xl font-bold">
+                        <h1 className="text-5xl font-bold">
                             <span className="">Unclutter</span>
-                            <span className="font-normal">
+                            {/* <span className="font-normal">
                                 {" "}
                                 browser extension
-                            </span>
+                            </span> */}
                         </h1>
-                        <h2 className="text-xl">
+                        <h2 className="text-2xl">
                             A new approach to reader mode
                         </h2>
                     </div>
                 </header>
 
                 {/* <div>Features:</div> */}
-                <ul className="xl:mt-32 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
+                <ul className="xl:mt-24 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
                     <VideoSegmentCaption
                         index={0}
                         title="Remove distractions"

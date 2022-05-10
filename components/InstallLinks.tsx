@@ -2,37 +2,43 @@ export default function InstallLinks({ repoStars }) {
     return (
         <div className="flex gap-40 justify-center">
             <div className="">
-                <h2 className="text-2xl font-semibold text-center">
+                <h2 className="text-2xl text-center">
                     Install for your browser:
                 </h2>
                 <div className="mt-5 flex flex-wrap md:flex-nowrap gap-5 justify-center items-center">
                     <a
-                        className="flex-shrink-0 w-52 bg-white rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1"
+                        className="flex gap-3 items-center bg-white p-2.5 rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1 relative"
                         href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
                         target="_blank"
                         rel="noreferrer"
                     >
                         <img
-                            className="object-contain h-16"
-                            src="/chrome-badge.png"
+                            className="inline-block w-8"
+                            src="/icons/chrome.svg"
                         ></img>
+                        <span className="font-semibold text-lg ">
+                            Add to Chrome
+                        </span>
                     </a>
 
                     <a
-                        className="flex-shrink-0 w-36 bg-[#109ad6] rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1"
+                        className="flex gap-3 items-center bg-white p-2.5 rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1 relative"
                         href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
                         target="_blank"
                         rel="noreferrer"
                     >
                         <img
-                            className="object-contain h-12 my-1 mx-auto"
-                            src="/firefox-badge.png"
+                            className="inline-block w-8"
+                            src="/icons/firefox.svg"
                         ></img>
+                        <span className="font-semibold text-lg ">
+                            Add to Firefox
+                        </span>
                     </a>
                 </div>
             </div>
             <div className="">
-                <h2 className="text-2xl font-semibold text-center">
+                <h2 className="text-2xl  text-center">
                     Follow the development:
                 </h2>
                 <div className="mt-5 flex flex-wrap md:flex-nowrap gap-5 justify-center items-center">
@@ -44,7 +50,7 @@ export default function InstallLinks({ repoStars }) {
                     >
                         <img
                             className="inline-block w-8"
-                            src="/github.svg"
+                            src="/icons/github.svg"
                         ></img>
                         <span className="font-semibold text-lg ">
                             Star on GitHub
