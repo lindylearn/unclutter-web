@@ -5,6 +5,7 @@ import VideoSection from "../components/VideoSection";
 import ExamplePageList from "../components/ExamplePageList";
 import GithubSection from "../components/GithubSection";
 import InstallLinks from "../components/InstallLinks";
+import FAQ from "../components/FAQ";
 
 export default function Home({ releases }) {
     return (
@@ -39,10 +40,10 @@ export default function Home({ releases }) {
 
                 <GithubSection releases={releases} />
 
+                <FAQ />
+
                 <ExamplePageList />
             </main>
-
-            {/* <FAQ /> */}
 
             {/* <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">
                 <div>
