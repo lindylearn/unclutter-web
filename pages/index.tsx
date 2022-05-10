@@ -7,7 +7,7 @@ import GithubSection from "../components/GithubSection";
 import InstallLinks from "../components/InstallLinks";
 import FAQ from "../components/FAQ";
 
-export default function Home({ releases }) {
+export default function Home({ repoStars }) {
     return (
         <div className="font-display text-neutral-900">
             <Head
@@ -36,13 +36,13 @@ export default function Home({ releases }) {
             <main className="flex flex-col gap-10">
                 <VideoSection />
 
-                <InstallLinks />
+                <InstallLinks repoStars={repoStars} />
 
-                <GithubSection releases={releases} />
-
-                <FAQ />
+                {/* <GithubSection releases={releases} /> */}
 
                 <ExamplePageList />
+
+                <FAQ />
             </main>
 
             {/* <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">
@@ -64,14 +64,18 @@ export default function Home({ releases }) {
 }
 
 export async function getStaticProps() {
-    const releases = (
-        await axios.get(
-            "https://api.github.com/repos/lindylearn/unclutter/releases"
-        )
-    ).data;
-    releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
+    // const releases = (
+    //     await axios.get(
+    //         "https://api.github.com/repos/lindylearn/unclutter/releases"
+    //     )
+    // ).data;
+    // releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
+
+    const repoStars = (
+        await axios.get("https://api.github.com/repos/lindylearn/unclutter")
+    ).data?.stargazers_count;
 
     return {
-        props: { releases },
+        props: { repoStars },
     };
 }

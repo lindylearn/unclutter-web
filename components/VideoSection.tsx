@@ -40,7 +40,7 @@ export default function VideoSection() {
 
     return (
         <div className="mt-2 xl:mt-10 flex flex-col xl:flex-row gap-5 sm:gap-10 px-5 xl:px-10 justify">
-            <div className="w-full xl:w-7/12 relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl">
+            <div className="w-full xl:w-7/12 relative rounded-2xl overflow-hidden shadow-xl">
                 {Array.from(Array(5).keys()).map((i) => (
                     <video
                         key={i}
@@ -86,7 +86,7 @@ export default function VideoSection() {
                 </header>
 
                 {/* <div>Features:</div> */}
-                <ul className="xl:mt-24 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
+                <ul className="xl:mt-32 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
                     <VideoSegmentCaption
                         index={0}
                         title="Remove distractions"

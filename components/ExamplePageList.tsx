@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ExamplePageList() {
     // const count = window.matchMedia("max-width: 1000px") ? 12 : 21;
     return (
-        <div className="mt-5 sm:mt-10 xl:mt-14 mb-5 xl:mx-5 flex flex-col items-center">
+        <div className="xl:mx-5 flex flex-col items-center">
             <div className="text-lg sm:text-xl">
                 For the love of internet articles.
             </div>
