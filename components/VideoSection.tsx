@@ -74,7 +74,7 @@ export default function VideoSection() {
                     <div className="">
                         <h1 className="text-4xl font-bold">
                             <span className="">Unclutter</span>
-                            <span className="font-semibold">
+                            <span className="font-normal">
                                 {" "}
                                 browser extension
                             </span>
@@ -85,6 +85,7 @@ export default function VideoSection() {
                     </div>
                 </header>
 
+                {/* <div>Features:</div> */}
                 <ul className="xl:mt-24 sm:ml-10 xl:ml-20 flex flex-col sm:gap-1 text-2xl sm:text-3xl font-semibold select-none	">
                     <VideoSegmentCaption
                         index={0}
@@ -138,7 +139,7 @@ function VideoSegmentCaption({
     return (
         <li
             className={
-                "font-semibold cursor-pointer " +
+                "font-semibold cursor-pointer relative hover:scale-105  transition-all " +
                 (index === activeVideoSegement
                     ? "opacity-100 "
                     : "opacity-40 ") +
@@ -150,6 +151,18 @@ function VideoSegmentCaption({
             }}
             onAnimationEnd={() => setWiggle(false)}
         >
+            <svg
+                className={
+                    "absolute -left-6 top-1.5 w-4 " +
+                    (index === activeVideoSegement ? "block" : "hidden")
+                }
+                viewBox="0 0 320 512"
+            >
+                <path
+                    fill="currentColor"
+                    d="M320 256C320 344.4 248.4 416 160 416C71.63 416 0 344.4 0 256C0 167.6 71.63 96 160 96C248.4 96 320 167.6 320 256z"
+                />
+            </svg>
             {index + 1}. {title}
         </li>
     );
