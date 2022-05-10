@@ -32,17 +32,19 @@ export default function Home({ releases }) {
                 </div>
             </header>
 
-            <VideoSection />
+            <main className="flex flex-col gap-10">
+                <VideoSection />
 
-            <InstallLinks />
+                <InstallLinks />
 
-            <GithubSection releases={releases} />
+                <GithubSection releases={releases} />
 
-            <ExamplePageList />
+                <ExamplePageList />
+            </main>
 
             {/* <FAQ /> */}
 
-            <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">
+            {/* <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">
                 <div>
                     From Amsterdam to the world. Only possible with your{" "}
                     <a
@@ -55,7 +57,7 @@ export default function Home({ releases }) {
                     </a>
                     !
                 </div>
-            </footer>
+            </footer> */}
         </div>
     );
 }

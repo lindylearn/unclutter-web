@@ -1,6 +1,6 @@
 export default function InstallLinks() {
     return (
-        <div className="mt-5 sm:mt-10 xl:mt-14">
+        <div className="">
             <h2 className="text-2xl font-semibold text-center">
                 Install for your browser:
             </h2>
