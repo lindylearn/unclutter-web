@@ -33,16 +33,15 @@ export default function Home({ repoStars }) {
                 </div>
             </header>
 
-            <main className="flex flex-col gap-10">
+            <main className="flex flex-col gap-10 mb-10">
                 <VideoSection />
 
                 <InstallLinks repoStars={repoStars} />
 
                 {/* <GithubSection releases={releases} /> */}
 
-                <ExamplePageList />
-
                 <FAQ />
+                <ExamplePageList />
             </main>
 
             {/* <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">

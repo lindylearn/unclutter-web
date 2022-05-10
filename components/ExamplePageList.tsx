@@ -4,7 +4,7 @@ export default function ExamplePageList() {
     // const count = window.matchMedia("max-width: 1000px") ? 12 : 21;
     return (
         <div className="xl:mx-5 flex flex-col items-center">
-            <div className="text-lg sm:text-xl">
+            <div className="text-2xl font-semibold">
                 For the love of internet articles.
             </div>
             <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-center gap-2 sm:gap-5">
