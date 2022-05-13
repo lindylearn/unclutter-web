@@ -1,7 +1,7 @@
 export default function FAQ() {
     return (
         <div className="flex flex-col items-center max-w-6xl mx-auto">
-            <h1 className="text-2xl font-semibold ">FAQ</h1>
+            <h1 className="text-2xl">FAQ</h1>
             <ul className="mt-5 flex flex-col justify-center gap-3">
                 <FAQItem
                     question="What is this project?"

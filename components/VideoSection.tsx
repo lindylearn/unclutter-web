@@ -95,25 +95,25 @@ export default function VideoSection() {
                     />
                     <VideoSegmentCaption
                         index={1}
-                        title="Customize colors & font"
+                        title="Improve readability"
                         activeVideoSegement={activeVideoSegement}
                         selectSegment={selectSegment}
                     />
                     <VideoSegmentCaption
                         index={2}
-                        title="Outline long pages"
+                        title="Outline long articles"
                         activeVideoSegement={activeVideoSegement}
                         selectSegment={selectSegment}
                     />
                     <VideoSegmentCaption
                         index={3}
-                        title="Automatically activate"
+                        title="Highlight & annotate"
                         activeVideoSegement={activeVideoSegement}
                         selectSegment={selectSegment}
                     />
                     <VideoSegmentCaption
                         index={4}
-                        title="Right in your browser"
+                        title="See social comments"
                         activeVideoSegement={activeVideoSegement}
                         selectSegment={selectSegment}
                     />
