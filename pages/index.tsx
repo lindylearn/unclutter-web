@@ -17,12 +17,12 @@ export default function Home({ repoStars, releases }) {
                 description="Automatically remove distractions from web articles. With dark mode & page outlines."
             />
 
-            <header className="flex gap-3 items-center p-2 fixed z-50">
+            {/* <header className="flex gap-3 items-center p-2 fixed z-50">
                 <img className="w-14" src="/icon.svg" />
                 <div className="">
                     <h1 className="text-3xl font-bold">Unclutter</h1>
                 </div>
-            </header>
+            </header> */}
 
             <main className="flex flex-col gap-10 mb-10 items-center">
                 <div className="mt-5 w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl hover:cursor-pointer hover:shadow-2xl">
@@ -37,9 +37,11 @@ export default function Home({ repoStars, releases }) {
 
                 {/* <VideoExample title="The best way to read articles in your browser" /> */}
                 <div className="text-2xl max-w-4xl">
-                    <b className="font-bold text-3xl">Unclutter</b> is a new
-                    kind of reader mode to customize web articles. Directly in
-                    your browser, without boring walls of text.
+                    <b className="font-bold text-3xl underline underline-offset-1">
+                        Unclutter
+                    </b>{" "}
+                    is a new kind of reader mode that customizes web articles.
+                    Directly in your browser, without boring walls of text.
                 </div>
 
                 <InstallLinks />
@@ -48,33 +50,38 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Remove distractions"
                         title="like ads, cookie banners & popups."
+                        description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what it's doing."
                         video={`media/clips/clip_1.webm`}
                     />
                     <VideoExample
                         boldTitle="Improve readability"
-                        title="by using your preferred font size and color theme across all websites."
+                        title="by applying your preferred font size and color theme across all websites."
+                        description="Articles keep their original style, but sizes get normalized to be more readable. Dark mode activates automatically. You set your own defaults."
                         video={`media/clips/clip_2.webm`}
                     />
                     <VideoExample
                         boldTitle="Quickly navigate"
-                        title="between chapters and see how much reading time is left."
+                        title="between chapters and see how much is left."
+                        description="Unclutter parses explicit and implicit headings from the page, and updates the outline and reading time as you scroll."
                         video={`media/clips/clip_3.webm`}
                     />
                     <VideoExample
-                        boldTitle="Find popular quotes"
-                        title=" discussed on Hacker News and Hypothes.is."
+                        boldTitle="Find memorable quotes"
+                        title="discussed on Hacker News."
+                        description="Public comments that mention article quotes turn up directly within the extension. This works on over 55,688 articles. No more stumbing around to find the important bits."
                         video={`media/clips/clip_4.webm`}
                     />
                     <VideoExample
-                        boldTitle="Save highlights"
-                        title="and write notes by simply selecting any text."
+                        boldTitle="Easily save highlights"
+                        title="and write notes by selecting any text."
+                        description="Your private notes are saved locally in your browser, or backed-up to the open Hypothes.is network. Everything works in one click."
                         video={`media/clips/clip_4.webm`}
                     />
                 </div>
 
-                <div className="text-center border-neutral-800 border-4 py-5 px-20 rounded-2xl bg-transparent shadow">
-                    <div className="text-2xl mb-3">
-                        Try it out for your browser:
+                <div className="text-center border-neutral-900 border-4 py-5 px-20 rounded-2xl bg-transparent shadow-lg">
+                    <div className="text-[26px] font-bold  mb-5">
+                        Try out Unclutter in your browser:
                     </div>
                     <InstallLinks />
                 </div>
@@ -84,7 +91,7 @@ export default function Home({ repoStars, releases }) {
                 </div>
 
                 <ExamplePageList />
-                <FAQ />
+                {/* <FAQ /> */}
             </main>
 
             {/* <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">

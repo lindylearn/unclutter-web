@@ -3,14 +3,15 @@ import Image from "next/image";
 export default function ExamplePageList() {
     // const count = window.matchMedia("max-width: 1000px") ? 12 : 21;
     return (
-        <div className="xl:mx-5 flex flex-col items-center">
-            <div className="text-2xl">
-                Unclutter -- For the love of quirky internet articles.
-            </div>
+        <div className="mt-5 mb-5 xl:mx-5 flex flex-col gap-7 items-center">
             <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-center gap-2 sm:gap-5">
                 {Array.from(Array(14).keys()).map((i) => (
                     <ExamplePage key={i} index={i} />
                 ))}
+            </div>
+            <div className="text-2xl">
+                <b className="font-bold text-[26px]">Unclutter</b> — For the
+                love of quirky internet articles.
             </div>
         </div>
     );
