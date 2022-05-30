@@ -72,14 +72,14 @@ export default function Home({ repoStars, releases }) {
                         video={`media/clips/outline.mov`}
                     />
                     <VideoExample
-                        boldTitle="See memorable quotes"
+                        boldTitle="Find memorable quotes"
                         title="discussed on Hacker News."
                         description="Social comments that mention quotes of over 55,688 articles turn up directly within the extension. No more stumbing around to find the important bits."
                         video={`media/clips/social.mov`}
                     />
                     <VideoExample
-                        boldTitle="Easily save highlights"
-                        title="by selecting any text."
+                        boldTitle="Save highlights"
+                        title="by simply selecting any text."
                         description="Your highlights & notes are saved locally, or can be synced with Hypothes.is and note-taking apps. Everything works in one click."
                         video={`media/clips/annotations.mov`}
                     />

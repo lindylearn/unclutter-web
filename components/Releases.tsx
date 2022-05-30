@@ -54,21 +54,21 @@ export default function Releases({ repoStars, releases }) {
     );
 }
 
-export function getDaysAgoDescription(daysAgo) {
-    if (daysAgo == 0) {
-        return "today";
-    } else if (daysAgo == 1) {
-        return "yesterday";
-    } else {
-        return `${daysAgo}d ago`;
-    }
-}
+// export function getDaysAgoDescription(daysAgo) {
+//     if (daysAgo == 0) {
+//         return "today";
+//     } else if (daysAgo == 1) {
+//         return "yesterday";
+//     } else {
+//         return `${daysAgo}d ago`;
+//     }
+// }
 
-export function getDaysAgo(dateString) {
-    const diffMillis = Math.abs(Date.now() - new Date(dateString));
-    const diffDays = Math.floor(diffMillis / (1000 * 60 * 60 * 24));
-    return diffDays;
-}
+// export function getDaysAgo(dateString) {
+//     const diffMillis = Math.abs(Date.now() - new Date(dateString));
+//     const diffDays = Math.floor(diffMillis / (1000 * 60 * 60 * 24));
+//     return diffDays;
+// }
 
 const monthNames = [
     "January",
