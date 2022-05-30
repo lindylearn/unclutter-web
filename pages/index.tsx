@@ -1,7 +1,6 @@
 import Head from "../components/Head";
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
-import VideoSection from "../components/VideoSection";
 import ExamplePageList from "../components/ExamplePageList";
 import GithubButton from "../components/GithubButton";
 import InstallLinks from "../components/InstallLinks";

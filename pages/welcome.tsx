@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { ExamplePage } from ".";
+import { ExamplePage } from "../components/ExamplePageList";
 
 export default function Home() {
     const videoRefs = [useRef(), useRef()];
