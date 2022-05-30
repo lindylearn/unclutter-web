@@ -3,12 +3,13 @@ import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import VideoSection from "../components/VideoSection";
 import ExamplePageList from "../components/ExamplePageList";
-import GithubSection from "../components/GithubSection";
+import GithubButton from "../components/GithubButton";
 import InstallLinks from "../components/InstallLinks";
 import FAQ from "../components/FAQ";
 import VideoExample from "../components/VideoExample";
+import Releases from "../components/Releases";
 
-export default function Home({ repoStars }) {
+export default function Home({ repoStars, releases }) {
     return (
         <div className="font-display text-neutral-900">
             <Head
@@ -41,7 +42,7 @@ export default function Home({ repoStars }) {
                     your browser, without boring walls of text.
                 </div>
 
-                <InstallLinks repoStars={repoStars} />
+                <InstallLinks />
 
                 <div className="mt-5 w-5/6 mx-auto flex flex-col gap-10">
                     <VideoExample
@@ -60,19 +61,28 @@ export default function Home({ repoStars }) {
                         video={`media/clips/clip_3.webm`}
                     />
                     <VideoExample
-                        boldTitle="Find memorable quotes"
+                        boldTitle="Find popular quotes"
                         title=" discussed on Hacker News and Hypothes.is."
                         video={`media/clips/clip_4.webm`}
                     />
                     <VideoExample
-                        boldTitle="Create private notes"
-                        title="by simply selecting any text."
+                        boldTitle="Save highlights"
+                        title="and write notes by simply selecting any text."
                         video={`media/clips/clip_4.webm`}
                     />
                 </div>
 
-                <InstallLinks repoStars={repoStars} />
-                {/* <GithubSection repoStars={repoStars} /> */}
+                <div className="text-center border-neutral-800 border-4 py-5 px-20 rounded-2xl bg-transparent shadow">
+                    <div className="text-2xl mb-3">
+                        Try it out for your browser:
+                    </div>
+                    <InstallLinks />
+                </div>
+
+                <div className="mt-5 w-5/6 mx-auto flex flex-col gap-10">
+                    <Releases repoStars={repoStars} releases={releases} />
+                </div>
+
                 <ExamplePageList />
                 <FAQ />
             </main>
@@ -96,18 +106,18 @@ export default function Home({ repoStars }) {
 }
 
 export async function getStaticProps() {
-    // const releases = (
-    //     await axios.get(
-    //         "https://api.github.com/repos/lindylearn/unclutter/releases"
-    //     )
-    // ).data;
-    // releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
+    const releases = (
+        await axios.get(
+            "https://api.github.com/repos/lindylearn/unclutter/releases"
+        )
+    ).data;
+    releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
 
     const repoStars = (
         await axios.get("https://api.github.com/repos/lindylearn/unclutter")
     ).data?.stargazers_count;
 
     return {
-        props: { repoStars },
+        props: { repoStars, releases },
     };
 }

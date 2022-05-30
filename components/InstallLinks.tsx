@@ -1,4 +1,4 @@
-export default function InstallLinks({ repoStars }) {
+export default function InstallLinks({}) {
     return (
         <div className="flex flex-wrap md:flex-nowrap gap-7">
             <a
