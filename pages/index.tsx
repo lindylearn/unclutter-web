@@ -6,6 +6,7 @@ import ExamplePageList from "../components/ExamplePageList";
 import GithubSection from "../components/GithubSection";
 import InstallLinks from "../components/InstallLinks";
 import FAQ from "../components/FAQ";
+import VideoExample from "../components/VideoExample";
 
 export default function Home({ repoStars }) {
     return (
@@ -15,32 +16,64 @@ export default function Home({ repoStars }) {
                 description="Automatically remove distractions from web articles. With dark mode & page outlines."
             />
 
-            <header className="flex xl:hidden gap-2 items-start p-2 sm:p-5">
-                <img className="w-16" src="/icon.svg" />
+            <header className="flex gap-3 items-center p-2 fixed z-50">
+                <img className="w-14" src="/icon.svg" />
                 <div className="">
-                    <h1 className="text-3xl font-bold">
-                        <span className="">Unclutter</span>
-                        <span className="font-semibold">
-                            {" "}
-                            <span className="hidden sm:inline">
-                                browser extension
-                            </span>
-                        </span>
-                    </h1>
-                    <h2 className="text-lg sm:text-xl">
-                        A new approach to reader mode
-                    </h2>
+                    <h1 className="text-3xl font-bold">Unclutter</h1>
                 </div>
             </header>
 
-            <main className="flex flex-col gap-10 mb-10">
-                <VideoSection />
+            <main className="flex flex-col gap-10 mb-10 items-center">
+                <div className="mt-5 w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl hover:cursor-pointer hover:shadow-2xl">
+                    <video
+                        className={"rounded-2xl"}
+                        src={`media/clips/clip_0.webm`}
+                        autoPlay={true}
+                        muted
+                    ></video>
+                    {/* <img className="rounded-2xl" src="media/clips/thumbnail.webp" /> */}
+                </div>
+
+                {/* <VideoExample title="The best way to read articles in your browser" /> */}
+                <div className="text-2xl max-w-4xl">
+                    <b className="font-bold text-3xl">Unclutter</b> is a new
+                    kind of reader mode to customize web articles. Directly in
+                    your browser, without boring walls of text.
+                </div>
 
                 <InstallLinks repoStars={repoStars} />
 
+                <div className="mt-5 w-5/6 mx-auto flex flex-col gap-10">
+                    <VideoExample
+                        boldTitle="Remove distractions"
+                        title="like ads, cookie banners & popups."
+                        video={`media/clips/clip_1.webm`}
+                    />
+                    <VideoExample
+                        boldTitle="Improve readability"
+                        title="by using your preferred font size and color theme across all websites."
+                        video={`media/clips/clip_2.webm`}
+                    />
+                    <VideoExample
+                        boldTitle="Quickly navigate"
+                        title="between chapters and see how much reading time is left."
+                        video={`media/clips/clip_3.webm`}
+                    />
+                    <VideoExample
+                        boldTitle="Find memorable quotes"
+                        title=" discussed on Hacker News and Hypothes.is."
+                        video={`media/clips/clip_4.webm`}
+                    />
+                    <VideoExample
+                        boldTitle="Create private notes"
+                        title="by simply selecting any text."
+                        video={`media/clips/clip_4.webm`}
+                    />
+                </div>
+
+                <InstallLinks repoStars={repoStars} />
                 {/* <GithubSection repoStars={repoStars} /> */}
                 <ExamplePageList />
-
                 <FAQ />
             </main>
 
