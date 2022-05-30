@@ -28,9 +28,15 @@ export default function Home({ repoStars, releases }) {
                 <div className="mt-5 w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl hover:cursor-pointer hover:shadow-2xl">
                     <video
                         className={"rounded-2xl"}
-                        src={`media/clips/clip_0.webm`}
+                        src={`media/clips/intro.webm`}
                         autoPlay={true}
                         muted
+                        onClick={(e) => {
+                            const video = e.target as HTMLVideoElement;
+                            video.pause();
+                            video.currentTime = 0;
+                            video.play();
+                        }}
                     ></video>
                     {/* <img className="rounded-2xl" src="media/clips/thumbnail.webp" /> */}
                 </div>
@@ -50,38 +56,38 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Remove distractions"
                         title="like ads, cookie banners & popups."
-                        description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what it's doing."
-                        video={`media/clips/clip_1.webm`}
+                        description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what's happening."
+                        video={`media/clips/distractions.webm`}
                     />
                     <VideoExample
                         boldTitle="Improve readability"
                         title="by applying your preferred font size and color theme across all websites."
-                        description="Articles keep their original style, but sizes get normalized to be more readable. Dark mode activates automatically. You set your own defaults."
-                        video={`media/clips/clip_2.webm`}
+                        description="Articles keep their original style, but sizes get normalized to be more readable. Dark mode activates automatically."
+                        video={`media/clips/theme.mov`}
                     />
                     <VideoExample
                         boldTitle="Quickly navigate"
                         title="between chapters and see how much is left."
                         description="Unclutter parses explicit and implicit headings from the page, and updates the outline and reading time as you scroll."
-                        video={`media/clips/clip_3.webm`}
+                        video={`media/clips/outline.mov`}
                     />
                     <VideoExample
-                        boldTitle="Find memorable quotes"
+                        boldTitle="See memorable quotes"
                         title="discussed on Hacker News."
-                        description="Public comments that mention article quotes turn up directly within the extension. This works on over 55,688 articles. No more stumbing around to find the important bits."
-                        video={`media/clips/clip_4.webm`}
+                        description="Social comments that mention quotes of over 55,688 articles turn up directly within the extension. No more stumbing around to find the important bits."
+                        video={`media/clips/social.mov`}
                     />
                     <VideoExample
                         boldTitle="Easily save highlights"
-                        title="and write notes by selecting any text."
-                        description="Your private notes are saved locally in your browser, or backed-up to the open Hypothes.is network. Everything works in one click."
-                        video={`media/clips/clip_4.webm`}
+                        title="by selecting any text."
+                        description="Your highlights & notes are saved locally, or can be synced with Hypothes.is and note-taking apps. Everything works in one click."
+                        video={`media/clips/annotations.mov`}
                     />
                 </div>
 
                 <div className="text-center border-neutral-900 border-4 my-5 py-5 px-20 rounded-2xl bg-transparent shadow-lg">
                     <div className="text-[26px] font-bold mb-3">
-                        Try out Unclutter in your browser:
+                        Try Unclutter in your browser:
                     </div>
                     <InstallLinks />
                 </div>
