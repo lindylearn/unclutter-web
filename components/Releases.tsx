@@ -15,7 +15,7 @@ export default function Releases({ repoStars, releases }) {
                                 .split("&")[0]
                                 .split(",")[0];
                             return (
-                                <li className="flex gap-5">
+                                <li key={html_url} className="flex gap-5">
                                     <div className="w-24 flex-shrink-0 text-lg">
                                         {monthNames[date.getMonth()]}{" "}
                                         {date.getDate()}
