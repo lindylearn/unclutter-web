@@ -3,10 +3,10 @@ import GithubButton from "./GithubButton";
 export default function Releases({ repoStars, releases }) {
     return (
         <div className="flex gap-10 justify-start">
-            <div className="w-2/6 relative overflow-hidden flex-shrink-0">
+            <div className="w-2/6 relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
                 <ul className="">
                     {releases
-                        .slice(0, 9)
+                        .slice(0, 8)
                         .map(({ name, html_url, published_at }) => {
                             const date = new Date(published_at);
 
@@ -41,9 +41,9 @@ export default function Releases({ repoStars, releases }) {
                     </b>
                     , with new updates every week.
                 </div>
-                <div className="ml-32 text-xl">
-                    If you find bugs, just open a ticket. And there's more than
-                    enough to do if you have ideas and want to help!
+                <div className="ml-32 text-xl max-w-2xl">
+                    If you find bugs, just open a ticket. And there are many
+                    cool feature ideas if you want to help!
                 </div>
                 <div className="ml-32 mt-2">
                     <GithubButton repoStars={repoStars} />

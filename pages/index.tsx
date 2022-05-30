@@ -40,7 +40,7 @@ export default function Home({ repoStars, releases }) {
                     <b className="font-bold text-3xl underline underline-offset-1">
                         Unclutter
                     </b>{" "}
-                    is a new kind of reader mode that customizes web articles.
+                    is a new kind of reader mode to customize web articles.
                     Directly in your browser, without boring walls of text.
                 </div>
 
@@ -79,14 +79,14 @@ export default function Home({ repoStars, releases }) {
                     />
                 </div>
 
-                <div className="text-center border-neutral-900 border-4 py-5 px-20 rounded-2xl bg-transparent shadow-lg">
-                    <div className="text-[26px] font-bold  mb-5">
+                <div className="text-center border-neutral-900 border-4 my-5 py-5 px-20 rounded-2xl bg-transparent shadow-lg">
+                    <div className="text-[26px] font-bold mb-3">
                         Try out Unclutter in your browser:
                     </div>
                     <InstallLinks />
                 </div>
 
-                <div className="mt-5 w-5/6 mx-auto flex flex-col gap-10">
+                <div className="w-5/6 mx-auto flex flex-col gap-10">
                     <Releases repoStars={repoStars} releases={releases} />
                 </div>
 
