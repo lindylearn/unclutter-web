@@ -6,7 +6,7 @@ export default function VideoExample({
     title,
     description,
     video,
-    poster,
+    poster = null,
     defaultVisible = false,
 }) {
     const videoRef = useRef();
