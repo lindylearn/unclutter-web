@@ -59,8 +59,7 @@ export default function VideoExample({
 
             <div className="flex flex-col mt-5 gap-3">
                 <div className="text-2xl max-w-3xl">
-                    <b className="font-bold text-[26px]">• {boldTitle}</b>{" "}
-                    {title}
+                    <b className="font-bold text-[26px]">{boldTitle}</b> {title}
                 </div>
 
                 <div className="font-text ml-40 text-xl max-w-2xl">

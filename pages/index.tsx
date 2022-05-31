@@ -47,8 +47,9 @@ export default function Home({ repoStars, releases }) {
                     <b className="font-bold text-3xl underline underline-offset-1">
                         Unclutter
                     </b>{" "}
-                    is a new kind of reader mode to customize web articles.
-                    Directly in your browser, without boring walls of text.
+                    is a new kind of reader mode.
+                    <br /> Directly in your browser, without boring walls of
+                    text.
                 </div>
 
                 <InstallLinks />
@@ -57,7 +58,7 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Remove distractions"
                         title="like ads, cookie banners & popups."
-                        description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what's happening."
+                        description="Unclutter uses website's mobile styling to remove non-essential page elements. Everything is animated, so you see what's happening."
                         video="media/clips/distractions.webm"
                         poster="media/clips/distractions.png"
                         defaultVisible
@@ -70,20 +71,20 @@ export default function Home({ repoStars, releases }) {
                     />
                     <VideoExample
                         boldTitle="Quickly navigate"
-                        title="between chapters."
-                        description="Unclutter parses explicit and implicit headings from the page, and updates the outline and reading time as you scroll."
+                        title="long reads."
+                        description="Unclutter parses article chapters from the page and updates the outline and reading time as you scroll."
                         video="media/clips/outline.webm"
                     />
                     <VideoExample
                         boldTitle="Find memorable quotes"
                         title="discussed on Hacker News."
-                        description="Social comments that mention quotes of over 55,688 articles turn up directly within the extension. No more stumbing around to find the important bits."
+                        description="55,688+ social comments that mention articles quotes turn up directly within the extension. No more stumbing around to find the important bits."
                         video="media/clips/social.webm"
                     />
                     <VideoExample
                         boldTitle="Save highlights"
                         title="by simply selecting text."
-                        description="Your highlights & notes are saved locally, or can be synced with Hypothes.is and note-taking apps. Everything works in one click."
+                        description="Your notes are saved locally, or can be synced with Hypothes.is and note-taking apps. Everything works with one click."
                         video="media/clips/annotations.webm"
                     />
                 </div>

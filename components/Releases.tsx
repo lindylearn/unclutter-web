@@ -63,10 +63,8 @@ export default function Releases({ repoStars, releases }) {
 
             <div className="flex flex-col mt-7 gap-3 items-start">
                 <div className="text-2xl">
-                    <b className="font-bold text-[26px]">
-                        • Everything is open-source
-                    </b>
-                    , with new updates every week.
+                    <b className="font-bold text-[26px]">Open-source</b>, with
+                    new updates every week.
                 </div>
                 <div className="font-text ml-40 text-xl max-w-2xl">
                     Just open an issue for any bug or cool idea you find. Star
