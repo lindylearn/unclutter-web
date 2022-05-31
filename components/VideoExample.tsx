@@ -30,7 +30,7 @@ export default function VideoExample({
             }
             ref={ref}
         >
-            <div className="video-container w-2/6 relative rounded-xl overflow-hidden shadow-xl flex-shrink-0 hover:cursor-pointer hover:shadow-2xl">
+            <div className="video-container w-3/6 max-w-lg relative rounded-xl overflow-hidden shadow-xl flex-shrink-0 hover:cursor-pointer hover:shadow-2xl">
                 <svg
                     className="replay-icon absolute bottom-2 right-2 w-7 text-black drop-shadow-xl opacity-0 invisible"
                     viewBox="0 0 512 512"
@@ -55,12 +55,15 @@ export default function VideoExample({
                 {/* <img className="rounded-2xl" src="media/clips/thumbnail.webp" /> */}
             </div>
 
-            <div className="flex flex-col mt-7 gap-3">
+            <div className="flex flex-col mt-5 gap-3">
                 <div className="text-2xl max-w-3xl">
-                    <b className="font-bold text-[26px]">{boldTitle}</b> {title}
+                    <b className="font-bold text-[26px]">• {boldTitle}</b>{" "}
+                    {title}
                 </div>
 
-                <div className="ml-52 text-xl max-w-xl">{description}</div>
+                <div className="font-text ml-40 text-xl max-w-2xl">
+                    {description}
+                </div>
             </div>
         </div>
     );

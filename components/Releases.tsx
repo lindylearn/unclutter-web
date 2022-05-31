@@ -64,16 +64,16 @@ export default function Releases({ repoStars, releases }) {
             <div className="flex flex-col mt-7 gap-3 items-start">
                 <div className="text-2xl">
                     <b className="font-bold text-[26px]">
-                        Everything is open-source
+                        • Everything is open-source
                     </b>
                     , with new updates every week.
                 </div>
-                <div className="ml-32 text-xl max-w-2xl">
+                <div className="font-text ml-40 text-xl max-w-2xl">
                     Just open an issue for any bug or cool idea you find. Star
                     the project on GitHub to follow the development and
                     contribute!
                 </div>
-                <div className="ml-32 mt-2">
+                <div className="ml-40 mt-2">
                     <GithubButton repoStars={repoStars} />
                 </div>
             </div>

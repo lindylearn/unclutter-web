@@ -62,14 +62,14 @@ export default function Home({ repoStars, releases }) {
                         defaultVisible
                     />
                     <VideoExample
-                        boldTitle="Improve readability"
-                        title="by applying your preferred font size and color theme across all websites."
+                        boldTitle="Customize font size"
+                        title="and color theme across all websites."
                         description="Articles keep their original style, but sizes get normalized to be more readable. Dark mode activates automatically."
                         video={`media/clips/theme.mov`}
                     />
                     <VideoExample
                         boldTitle="Quickly navigate"
-                        title="between chapters and see how much is left."
+                        title="between chapters."
                         description="Unclutter parses explicit and implicit headings from the page, and updates the outline and reading time as you scroll."
                         video={`media/clips/outline.mov`}
                     />
@@ -81,7 +81,7 @@ export default function Home({ repoStars, releases }) {
                     />
                     <VideoExample
                         boldTitle="Save highlights"
-                        title="by simply selecting any text."
+                        title="by simply selecting text."
                         description="Your highlights & notes are saved locally, or can be synced with Hypothes.is and note-taking apps. Everything works in one click."
                         video={`media/clips/annotations.mov`}
                     />
