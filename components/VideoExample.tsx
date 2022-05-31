@@ -1,7 +1,13 @@
 import { useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
-export default function VideoExample({ boldTitle, title, description, video }) {
+export default function VideoExample({
+    boldTitle,
+    title,
+    description,
+    video,
+    defaultVisible = false,
+}) {
     const videoRef = useRef();
     const { ref, inView } = useInView({
         threshold: 1,
@@ -17,7 +23,9 @@ export default function VideoExample({ boldTitle, title, description, video }) {
     return (
         <div
             className={
-                "flex gap-10 justify-start " + (inView ? "" : "opacity-10")
+                "flex gap-10 justify-start " +
+                (inView || defaultVisible ? "" : "opacity-0") +
+                (inView && !defaultVisible ? "animate-slidein" : "")
             }
             ref={ref}
         >
@@ -48,11 +56,10 @@ export default function VideoExample({ boldTitle, title, description, video }) {
 
             <div className="flex flex-col mt-7 gap-3">
                 <div className="text-2xl max-w-3xl">
-                    <b className="font-bold text-[26px]">{boldTitle}</b> {title}{" "}
-                    {inView ? 1 : 2}
+                    <b className="font-bold text-[26px]">{boldTitle}</b> {title}
                 </div>
 
-                <div className="ml-32 text-xl max-w-2xl">{description}</div>
+                <div className="ml-52 text-xl max-w-xl">{description}</div>
             </div>
         </div>
     );

@@ -57,6 +57,7 @@ export default function Home({ repoStars, releases }) {
                         title="like ads, cookie banners & popups."
                         description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what's happening."
                         video={`media/clips/distractions.webm`}
+                        defaultVisible
                     />
                     <VideoExample
                         boldTitle="Improve readability"
@@ -118,16 +119,17 @@ export default function Home({ repoStars, releases }) {
 }
 
 export async function getStaticProps() {
-    const releases = (
-        await axios.get(
-            "https://api.github.com/repos/lindylearn/unclutter/releases"
-        )
-    ).data;
-    releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
-
-    const repoStars = (
-        await axios.get("https://api.github.com/repos/lindylearn/unclutter")
-    ).data?.stargazers_count;
+    // const releases = (
+    //     await axios.get(
+    //         "https://api.github.com/repos/lindylearn/unclutter/releases"
+    //     )
+    // ).data;
+    // releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
+    // const repoStars = (
+    //     await axios.get("https://api.github.com/repos/lindylearn/unclutter")
+    // ).data?.stargazers_count;
+    const releases = [];
+    const repoStars = 73;
 
     return {
         props: { repoStars, releases },
