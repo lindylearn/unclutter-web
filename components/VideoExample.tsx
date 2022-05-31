@@ -1,9 +1,26 @@
-import { useState, useEffect, useRef } from "react";
-import InstallLinks from "./InstallLinks";
+import { useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function VideoExample({ boldTitle, title, description, video }) {
+    const videoRef = useRef();
+    const { ref, inView } = useInView({
+        threshold: 1,
+        rootMargin: "0px 0px -30% 0px",
+        triggerOnce: true,
+        onChange: (inView) => {
+            if (inView) {
+                (videoRef.current as HTMLVideoElement)?.play();
+            }
+        },
+    });
+
     return (
-        <div className="flex gap-10 justify-start">
+        <div
+            className={
+                "flex gap-10 justify-start " + (inView ? "" : "opacity-10")
+            }
+            ref={ref}
+        >
             <div className="video-container w-2/6 relative rounded-xl overflow-hidden shadow-xl flex-shrink-0 hover:cursor-pointer hover:shadow-2xl">
                 <svg
                     className="replay-icon absolute bottom-2 right-2 w-7 text-black drop-shadow-xl opacity-0 invisible"
@@ -17,7 +34,7 @@ export default function VideoExample({ boldTitle, title, description, video }) {
                 <video
                     className=""
                     src={video}
-                    autoPlay={true}
+                    ref={videoRef}
                     muted
                     onClick={(e) => {
                         const video = e.target as HTMLVideoElement;
@@ -31,7 +48,8 @@ export default function VideoExample({ boldTitle, title, description, video }) {
 
             <div className="flex flex-col mt-7 gap-3">
                 <div className="text-2xl max-w-3xl">
-                    <b className="font-bold text-[26px]">{boldTitle}</b> {title}
+                    <b className="font-bold text-[26px]">{boldTitle}</b> {title}{" "}
+                    {inView ? 1 : 2}
                 </div>
 
                 <div className="ml-32 text-xl max-w-2xl">{description}</div>
