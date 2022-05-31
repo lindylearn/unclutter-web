@@ -53,37 +53,38 @@ export default function Home({ repoStars, releases }) {
 
                 <InstallLinks />
 
-                <div className="mt-5 w-5/6 mx-auto flex flex-col gap-10">
+                <div className="mt-5 md:w-5/6 mx-5 md:mx-auto flex flex-col gap-10">
                     <VideoExample
                         boldTitle="Remove distractions"
                         title="like ads, cookie banners & popups."
                         description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what's happening."
-                        video={`media/clips/distractions.mov`}
+                        video="media/clips/distractions.webm"
+                        poster="media/clips/distractions.png"
                         defaultVisible
                     />
                     <VideoExample
                         boldTitle="Customize font size"
                         title="and color theme across all websites."
                         description="Articles keep their original style, but sizes get normalized to be more readable. Dark mode activates automatically."
-                        video={`media/clips/theme.mov`}
+                        video="media/clips/theme.webm"
                     />
                     <VideoExample
                         boldTitle="Quickly navigate"
                         title="between chapters."
                         description="Unclutter parses explicit and implicit headings from the page, and updates the outline and reading time as you scroll."
-                        video={`media/clips/outline.mov`}
+                        video="media/clips/outline.webm"
                     />
                     <VideoExample
                         boldTitle="Find memorable quotes"
                         title="discussed on Hacker News."
                         description="Social comments that mention quotes of over 55,688 articles turn up directly within the extension. No more stumbing around to find the important bits."
-                        video={`media/clips/social.mov`}
+                        video="media/clips/social.webm"
                     />
                     <VideoExample
                         boldTitle="Save highlights"
                         title="by simply selecting text."
                         description="Your highlights & notes are saved locally, or can be synced with Hypothes.is and note-taking apps. Everything works in one click."
-                        video={`media/clips/annotations.mov`}
+                        video="media/clips/annotations.webm"
                     />
                 </div>
 
