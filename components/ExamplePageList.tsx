@@ -22,7 +22,7 @@ export function ExamplePage({ index }) {
         <a
             className={
                 "w-28 sm:w-36 xl:w-48 flex rounded-lg shadow-lg hover:shadow-2xl transition-all " +
-                (index % 3 === 0 ? "hover:-rotate-1" : "hover:rotate-1")
+                (index % 3 === 0 ? "hover:-rotate-1 " : "hover:rotate-1 ")
             }
             href={exampleUrls[index]}
             target="_blank"

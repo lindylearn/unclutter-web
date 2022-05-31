@@ -24,10 +24,11 @@ export default function Home({ repoStars, releases }) {
             </header> */}
 
             <main className="flex flex-col gap-10 mb-10 items-center">
-                <div className="mt-5 w-full max-w-4xl rounded-2xl overflow-hidden shadow-xl hover:cursor-pointer hover:shadow-2xl">
+                <div className="mt-5 rounded-2xl overflow-hidden shadow-xl hover:cursor-pointer hover:shadow-2xl">
                     <video
                         className={"rounded-2xl"}
-                        src={`media/clips/intro.webm`}
+                        src="media/clips/intro.webm"
+                        poster="media/clips/intro.jpg"
                         autoPlay={true}
                         muted
                         onClick={(e) => {
@@ -36,6 +37,7 @@ export default function Home({ repoStars, releases }) {
                             video.currentTime = 0;
                             video.play();
                         }}
+                        style={{ width: 900, height: 595 }}
                     ></video>
                     {/* <img className="rounded-2xl" src="media/clips/thumbnail.webp" /> */}
                 </div>
@@ -119,17 +121,21 @@ export default function Home({ repoStars, releases }) {
 }
 
 export async function getStaticProps() {
-    const releases = (
-        await axios.get(
-            "https://api.github.com/repos/lindylearn/unclutter/releases"
-        )
-    ).data;
-    releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
-    const repoStars = (
-        await axios.get("https://api.github.com/repos/lindylearn/unclutter")
-    ).data?.stargazers_count;
-    // const releases = [];
-    // const repoStars = 73;
+    let releases = [];
+    let repoStars = 73;
+    try {
+        // GitHub API seems to be rate-limited
+        releases = (
+            await axios.get(
+                "https://api.github.com/repos/lindylearn/unclutter/releases"
+            )
+        ).data;
+        releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
+
+        repoStars = (
+            await axios.get("https://api.github.com/repos/lindylearn/unclutter")
+        ).data?.stargazers_count;
+    } catch {}
 
     return {
         props: { repoStars, releases },
