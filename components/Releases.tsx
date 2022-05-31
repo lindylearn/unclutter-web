@@ -1,13 +1,26 @@
+import { useInView } from "react-intersection-observer";
 import GithubButton from "./GithubButton";
 
 export default function Releases({ repoStars, releases }) {
+    const { ref, inView } = useInView({
+        threshold: 1,
+        rootMargin: "0px 0px -30% 0px",
+        triggerOnce: true,
+    });
+
     return (
-        <div className="flex gap-10 justify-start">
+        <div
+            className={
+                "flex gap-10 justify-start " +
+                (inView ? "animate-slidein" : "opacity-0")
+            }
+            ref={ref}
+        >
             <div className="w-2/6 relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
                 <ul className="">
                     {releases
                         .slice(0, 8)
-                        .map(({ name, html_url, published_at }) => {
+                        .map(({ name, html_url, published_at }, index) => {
                             const date = new Date(published_at);
 
                             const cleanTitle = name
@@ -15,7 +28,21 @@ export default function Releases({ repoStars, releases }) {
                                 .split("&")[0]
                                 .split(",")[0];
                             return (
-                                <li key={html_url} className="flex gap-5">
+                                <li
+                                    key={html_url}
+                                    className={
+                                        "flex gap-5 " +
+                                        (inView
+                                            ? "animate-slideinSlightly"
+                                            : "opacity-0")
+                                    }
+                                    style={{
+                                        animationDelay: `${
+                                            index * 0.05 + 0.3
+                                        }s`,
+                                        animationFillMode: "both",
+                                    }}
+                                >
                                     <div className="w-24 flex-shrink-0 text-lg">
                                         {monthNames[date.getMonth()]}{" "}
                                         {date.getDate()}

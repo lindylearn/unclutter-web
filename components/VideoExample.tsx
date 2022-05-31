@@ -24,7 +24,8 @@ export default function VideoExample({
         <div
             className={
                 "flex gap-10 justify-start " +
-                (inView || defaultVisible ? "" : "opacity-0") +
+                (!inView && defaultVisible ? "opacity-20" : "") +
+                (!inView && !defaultVisible ? "opacity-0" : "") +
                 (inView && !defaultVisible ? "animate-slidein" : "")
             }
             ref={ref}
