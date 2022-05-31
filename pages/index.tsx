@@ -47,7 +47,7 @@ export default function Home({ repoStars, releases }) {
                     <b className="font-bold text-3xl underline underline-offset-1">
                         Unclutter
                     </b>{" "}
-                    is a new kind of reader mode that customizes web articles.
+                    is a new kind of reader mode to customize web articles.
                     Directly in your browser, without boring walls of text.
                 </div>
 
@@ -58,7 +58,7 @@ export default function Home({ repoStars, releases }) {
                         boldTitle="Remove distractions"
                         title="like ads, cookie banners & popups."
                         description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what's happening."
-                        video={`media/clips/distractions.webm`}
+                        video={`media/clips/distractions.mov`}
                         defaultVisible
                     />
                     <VideoExample
