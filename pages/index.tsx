@@ -86,16 +86,16 @@ export default function Home({ repoStars, releases }) {
                         description="Your notes are saved locally, or can be synced to Hypothes.is and note-taking apps. Everything works with one click."
                         video="media/clips/annotations.webm"
                     />
-                </div>
 
-                <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 md:mx-3 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
-                    <div className="text-xl md:text-[26px] font-bold mb-3">
-                        Try Unclutter in your browser:
+                    <div className="flex justify-center">
+                        <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 md:mx-3 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
+                            <div className="text-xl md:text-[26px] font-bold mb-3">
+                                Try Unclutter in your browser:
+                            </div>
+                            <InstallLinks />
+                        </div>
                     </div>
-                    <InstallLinks />
-                </div>
 
-                <div className="md:mx-5 lg:mx-auto">
                     <Releases repoStars={repoStars} releases={releases} />
                 </div>
 

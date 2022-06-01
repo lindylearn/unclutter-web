@@ -14,7 +14,7 @@ export default function Releases({ repoStars, releases }) {
             the project on GitHub to follow the development and
             contribute!"
         >
-            <div className="hidden md:block w-full relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
+            <div className="hidden md:block w-full relative flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
                 <ul className="">
                     {releases
                         .slice(0, 8)
