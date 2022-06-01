@@ -17,7 +17,7 @@ export default function Releases({ repoStars, releases }) {
             <div className="hidden md:block w-full relative flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
                 <ul className="">
                     {releases
-                        .slice(0, 10)
+                        .slice(0, 9)
                         .map(({ name, html_url, published_at }, index) => {
                             const date = new Date(published_at);
 

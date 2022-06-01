@@ -28,7 +28,7 @@ export default function ExampleLayout({
                 "flex flex-col md:flex-row gap-3 md:gap-5 lg:gap-10 justify-start items-start " +
                 (!inView && defaultVisible ? "opacity-20" : "") +
                 (!inView && !defaultVisible ? "opacity-0" : "") +
-                (inView && !defaultVisible ? "xl:animate-slidein" : "")
+                (inView && !defaultVisible ? "animate-slidein" : "")
             }
             ref={ref}
         >

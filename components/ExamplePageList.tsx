@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function ExamplePageList() {
     // compute number of example pages to show, to approximately fill two rows
@@ -26,6 +27,11 @@ export default function ExamplePageList() {
         setPagesPerRow(pagesPerRow);
     }, []);
 
+    const { ref, inView } = useInView({
+        threshold: 1.0,
+        triggerOnce: true,
+    });
+
     return (
         <div className="mt-5 mb-5 xl:mx-5 flex flex-col gap-7">
             <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-center gap-2 sm:gap-5">
@@ -33,7 +39,14 @@ export default function ExamplePageList() {
                     <ExamplePage key={i} index={i} />
                 ))}
             </div>
-            <div className="text-xl md:text-2xl">
+            <div
+                className={
+                    "text-xl md:text-2xl opacity-0 " +
+                    (inView ? "animate-slidein" : "")
+                }
+                style={{ animationFillMode: "both" }}
+                ref={ref}
+            >
                 <b className="font-bold md:text-[26px]">Unclutter</b>{" "}
                 <br className="md:hidden" />— For the love of internet articles.
             </div>
