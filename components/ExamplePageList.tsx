@@ -41,7 +41,7 @@ export default function ExamplePageList() {
             </div>
             <div
                 className={
-                    "text-xl md:text-2xl opacity-0 " +
+                    "text-center text-xl md:text-2xl opacity-0 " +
                     (inView ? "animate-slidein" : "")
                 }
                 style={{ animationFillMode: "both" }}

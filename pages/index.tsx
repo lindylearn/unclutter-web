@@ -41,8 +41,8 @@ export default function Home({ repoStars, releases }) {
                             style={{ aspectRatio: "900 / 595" }}
                         ></video>
                     </div>
-                    <div className="max-w-4xl mt-5">
-                        <div className="mb-3 text-xl md:text-2xl">
+                    <div className="max-w-4xl mt-7">
+                        <div className="mb-5 text-xl md:text-2xl">
                             <b className="font-bold text-2xl md:text-3xl underline underline-offset-1">
                                 Unclutter
                             </b>{" "}
