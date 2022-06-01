@@ -12,7 +12,7 @@ export default function VideoExample({
     const videoRef = useRef();
     const { ref, inView } = useInView({
         threshold: 0.5,
-        rootMargin: "0px 0px -20% 0px",
+        rootMargin: "0px 0px -30% 0px",
         triggerOnce: true,
         onChange: (inView) => {
             if (inView) {
@@ -24,7 +24,7 @@ export default function VideoExample({
     return (
         <div
             className={
-                "flex flex-col md:flex-row md:gap-10 justify-start " +
+                "flex flex-col md:flex-row gap-3 md:gap-10 justify-start " +
                 (!inView && defaultVisible ? "opacity-20" : "") +
                 (!inView && !defaultVisible ? "opacity-0" : "") +
                 (inView && !defaultVisible ? "xl:animate-slidein" : "")
@@ -58,12 +58,13 @@ export default function VideoExample({
                 {/* <img className="rounded-2xl" src="media/clips/thumbnail.webp" /> */}
             </div>
 
-            <div className="flex flex-col mt-5 gap-3">
-                <div className="text-2xl max-w-3xl">
-                    <b className="font-bold text-[26px]">{boldTitle}</b> {title}
+            <div className="flex flex-col md:mt-5 gap-1 md:gap-3 items-start">
+                <div className="text-xl md:text-2xl max-w-3xl">
+                    <b className="font-bold md:text-[26px]">{boldTitle}</b>{" "}
+                    {title}
                 </div>
 
-                <div className="font-text ml-20 md:ml-40 text-xl max-w-2xl">
+                <div className="font-text ml-10 md:ml-40 text-lg md:text-xl max-w-2xl leading-snug">
                     {description}
                 </div>
             </div>

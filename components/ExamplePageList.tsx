@@ -16,9 +16,9 @@ export default function ExamplePageList() {
                     <ExamplePage key={i} index={i} />
                 ))}
             </div>
-            <div className="text-2xl">
-                <b className="font-bold text-[26px]">Unclutter</b> — For the
-                love of quirky internet articles.
+            <div className="text-xl md:text-2xl">
+                <b className="font-bold md:text-[26px]">Unclutter</b>{" "}
+                <br className="md:hidden" />— For the love of internet articles.
             </div>
         </div>
     );

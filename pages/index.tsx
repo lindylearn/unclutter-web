@@ -53,7 +53,7 @@ export default function Home({ repoStars, releases }) {
 
                 <InstallLinks />
 
-                <div className="mt-5 md:w-5/6 mx-5 md:mx-auto flex flex-col gap-10">
+                <div className="md:w-5/6 md:mx-auto flex flex-col gap-5 md:gap-10">
                     <VideoExample
                         boldTitle="Remove distractions"
                         title="like ads, cookie banners & popups."
@@ -88,8 +88,8 @@ export default function Home({ repoStars, releases }) {
                     />
                 </div>
 
-                <div className="text-center border-neutral-900 border-4 my-5 mx-3 py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
-                    <div className="text-[26px] font-bold mb-3">
+                <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 md:mx-3 py-2 smd:py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
+                    <div className="text-xl md:text-[26px] font-bold mb-3">
                         Try Unclutter in your browser:
                     </div>
                     <InstallLinks />

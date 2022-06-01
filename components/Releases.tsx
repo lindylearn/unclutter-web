@@ -2,21 +2,22 @@ import { useInView } from "react-intersection-observer";
 import GithubButton from "./GithubButton";
 
 export default function Releases({ repoStars, releases }) {
-    const { ref, inView } = useInView({
+    let { ref, inView } = useInView({
         threshold: 1,
         rootMargin: "0px 0px -30% 0px",
         triggerOnce: true,
     });
+    inView = true;
 
     return (
         <div
             className={
-                "flex flex-col md:flex-row gap-10 justify-start " +
+                "flex flex-col md:flex-row gap-3 md:gap-10 justify-start " +
                 (inView ? "animate-slidein" : "opacity-0")
             }
             ref={ref}
         >
-            <div className="md:w-2/6 relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
+            <div className="hidden md:block w-full md:w-3/6 md:max-w-lg relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
                 <ul className="">
                     {releases
                         .slice(0, 8)
@@ -43,12 +44,12 @@ export default function Releases({ repoStars, releases }) {
                                         animationFillMode: "both",
                                     }}
                                 >
-                                    <div className="w-24 flex-shrink-0 text-lg">
+                                    <div className="w-16 md:w-24 flex-shrink-0 md:text-lg">
                                         {monthNames[date.getMonth()]}{" "}
                                         {date.getDate()}
                                     </div>
                                     <a
-                                        className="text-xl transition-all whitespace-nowrap overflow-hidden overflow-ellipsis hover:underline"
+                                        className="text-lg md:text-xl transition-all whitespace-nowrap overflow-hidden overflow-ellipsis hover:underline"
                                         href={html_url}
                                         target="_blank"
                                         rel="noreferrer"
@@ -61,17 +62,17 @@ export default function Releases({ repoStars, releases }) {
                 </ul>
             </div>
 
-            <div className="flex flex-col mt-7 gap-3 items-start">
-                <div className="text-2xl">
-                    <b className="font-bold text-[26px]">Open-source</b>, with
-                    new updates every week.
+            <div className="flex flex-col md:mt-5 gap-1 md:gap-3 items-start">
+                <div className="text-xl md:text-2xl max-w-3xl">
+                    <b className="font-bold md:text-[26px]">Open-source</b>,
+                    with new updates every week.
                 </div>
-                <div className="font-text ml-20 md:ml-40 text-xl max-w-2xl">
+                <div className="font-text ml-10 md:ml-40 text-lg md:text-xl max-w-2xl leading-snug">
                     Just open an issue for any bug or cool idea you find. Star
                     the project on GitHub to follow the development and
                     contribute!
                 </div>
-                <div className="ml-20 md:ml-40 mt-2">
+                <div className="ml-10 md:ml-40 mt-1 md:mt-2">
                     <GithubButton repoStars={repoStars} />
                 </div>
             </div>
