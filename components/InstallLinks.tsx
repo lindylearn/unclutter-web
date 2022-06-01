@@ -1,27 +1,30 @@
 export default function InstallLinks({}) {
     return (
-        <div className="flex flex-wrap md:flex-nowrap gap-7">
+        <div className="flex flex-wrap md:flex-nowrap gap-3 md:gap-7 justify-center font-semibold md:text-lg">
             <a
-                className="flex gap-3 items-center bg-white p-2.5 rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1 relative"
+                className="flex gap-2 md:gap-3 items-center bg-white p-2 md:p-2.5 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
                 href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
                 target="_blank"
                 rel="noreferrer"
             >
-                <img className="inline-block w-8" src="/icons/chrome.svg"></img>
-                <span className="font-semibold text-lg ">Add to Chrome</span>
+                <img
+                    className="inline-block w-7 md:w-8"
+                    src="/icons/chrome.svg"
+                ></img>
+                <span className="">Add to Chrome</span>
             </a>
 
             <a
-                className="flex gap-3 items-center bg-white p-2.5 rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1 relative"
+                className="flex gap-2 md:gap-3 items-center bg-white p-2.5 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
                 href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
                 target="_blank"
                 rel="noreferrer"
             >
                 <img
-                    className="inline-block w-8"
+                    className="inline-block w-7 md:w-8"
                     src="/icons/firefox.svg"
                 ></img>
-                <span className="font-semibold text-lg ">Add to Firefox</span>
+                <span className="">Add to Firefox</span>
             </a>
 
             <a

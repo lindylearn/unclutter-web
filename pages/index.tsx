@@ -23,8 +23,8 @@ export default function Home({ repoStars, releases }) {
                 </div>
             </header> */}
 
-            <main className="flex flex-col gap-10 my-3 items-center">
-                <div className="max-w-4xl rounded-xl overflow-hidden shadow-xl mx-5 hover:cursor-pointer hover:shadow-2xl">
+            <main className="m-3 flex flex-col gap-5 md:gap-10 items-center">
+                <div className="max-w-4xl rounded-xl overflow-hidden shadow-xl hover:cursor-pointer hover:shadow-2xl">
                     <video
                         className="rounded-xl object-contain"
                         src="media/clips/intro.webm"
@@ -42,13 +42,13 @@ export default function Home({ repoStars, releases }) {
                 </div>
 
                 {/* <VideoExample title="The best way to read articles in your browser" /> */}
-                <div className="text-2xl max-w-4xl">
-                    <b className="font-bold text-3xl underline underline-offset-1">
+                <div className="text-xl md:text-2xl max-w-4xl">
+                    <b className="font-bold text-2xl md:text-3xl underline underline-offset-1">
                         Unclutter
                     </b>{" "}
                     is a new kind of reader mode.
-                    <br /> Directly in your browser, without boring walls of
-                    text.
+                    <br className="hidden md:block" /> Directly in your browser,
+                    without boring walls of text.
                 </div>
 
                 <InstallLinks />
@@ -88,14 +88,14 @@ export default function Home({ repoStars, releases }) {
                     />
                 </div>
 
-                <div className="text-center border-neutral-900 border-4 my-5 py-5 px-20 rounded-2xl bg-transparent shadow-lg">
+                <div className="text-center border-neutral-900 border-4 my-5 mx-3 py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
                     <div className="text-[26px] font-bold mb-3">
                         Try Unclutter in your browser:
                     </div>
                     <InstallLinks />
                 </div>
 
-                <div className="w-5/6 mx-auto flex flex-col gap-10">
+                <div className="md:w-5/6 mx-auto flex flex-col gap-10">
                     <Releases repoStars={repoStars} releases={releases} />
                 </div>
 
@@ -107,7 +107,7 @@ export default function Home({ repoStars, releases }) {
                 <div>
                     From Amsterdam to the world. Only possible with your{" "}
                     <a
-                        className="inline-block font-semibold hover:rotate-1"
+                        className="inline-block font-semibold desktop:hover:rotate-1"
                         href="https://twitter.com/lindylearn"
                         target="_blank"
                         rel="noreferrer"

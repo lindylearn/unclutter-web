@@ -26,6 +26,9 @@ module.exports = {
                 slideinSlightly:
                     "slideinSlightly 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
             },
+            screens: {
+                desktop: { raw: "(hover: hover)" },
+            },
         },
         fontFamily: {
             display: ["Poppins", "sans-serif"],

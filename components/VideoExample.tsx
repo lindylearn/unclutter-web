@@ -31,7 +31,7 @@ export default function VideoExample({
             }
             ref={ref}
         >
-            <div className="video-container w-full md:w-3/6 md:max-w-lg relative rounded-xl overflow-hidden shadow-xl flex-shrink-0 hover:cursor-pointer hover:shadow-2xl">
+            <div className="video-container w-full md:w-3/6 md:max-w-lg relative rounded-xl overflow-hidden shadow-xl flex-shrink-0 desktop:hover:cursor-pointer desktop:hover:shadow-2xl">
                 <svg
                     className="replay-icon absolute bottom-2 right-2 w-7 text-black drop-shadow-xl opacity-0 invisible"
                     viewBox="0 0 512 512"
@@ -63,7 +63,7 @@ export default function VideoExample({
                     <b className="font-bold text-[26px]">{boldTitle}</b> {title}
                 </div>
 
-                <div className="font-text ml-40 text-xl max-w-2xl">
+                <div className="font-text ml-20 md:ml-40 text-xl max-w-2xl">
                     {description}
                 </div>
             </div>

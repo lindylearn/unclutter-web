@@ -104,7 +104,7 @@ export default function Home() {
                         See the extension settings for more. <br />
                         Please report any bugs you find{" "}
                         <a
-                            className="inline-block font-semibold hover:rotate-1 transition-all"
+                            className="inline-block font-semibold desktop:hover:rotate-1 transition-all"
                             href="https://github.com/lindylearn/unclutter/issues"
                             target="_blank"
                             rel="noreferrer"

@@ -11,12 +11,12 @@ export default function Releases({ repoStars, releases }) {
     return (
         <div
             className={
-                "flex gap-10 justify-start " +
+                "flex flex-col md:flex-row gap-10 justify-start " +
                 (inView ? "animate-slidein" : "opacity-0")
             }
             ref={ref}
         >
-            <div className="w-2/6 relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
+            <div className="md:w-2/6 relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
                 <ul className="">
                     {releases
                         .slice(0, 8)
@@ -66,12 +66,12 @@ export default function Releases({ repoStars, releases }) {
                     <b className="font-bold text-[26px]">Open-source</b>, with
                     new updates every week.
                 </div>
-                <div className="font-text ml-40 text-xl max-w-2xl">
+                <div className="font-text ml-20 md:ml-40 text-xl max-w-2xl">
                     Just open an issue for any bug or cool idea you find. Star
                     the project on GitHub to follow the development and
                     contribute!
                 </div>
-                <div className="ml-40 mt-2">
+                <div className="ml-20 md:ml-40 mt-2">
                     <GithubButton repoStars={repoStars} />
                 </div>
             </div>

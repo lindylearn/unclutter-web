@@ -139,7 +139,7 @@ function VideoSegmentCaption({
     return (
         <li
             className={
-                "font-semibold cursor-pointer relative hover:scale-105  transition-all " +
+                "font-semibold cursor-pointer relative desktop:hover:scale-105  transition-all " +
                 (index === activeVideoSegement
                     ? "opacity-100 "
                     : "opacity-40 ") +

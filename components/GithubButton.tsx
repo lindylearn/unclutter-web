@@ -1,7 +1,7 @@
 export default function GithubButton({ repoStars }) {
     return (
         <a
-            className="flex gap-3 items-center bg-white py-2 px-2.5 rounded-lg shadow transition-all hover:shadow-lg hover:rotate-1 relative"
+            className="flex gap-3 items-center bg-white py-2 px-2.5 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
             href="https://github.com/lindylearn/unclutter"
             target="_blank"
             rel="noreferrer"

@@ -28,8 +28,10 @@ export function ExamplePage({ index }) {
     return (
         <a
             className={
-                "w-28 sm:w-36 xl:w-48 flex rounded-lg shadow-lg hover:shadow-2xl transition-all " +
-                (index % 3 === 0 ? "hover:-rotate-1 " : "hover:rotate-1 ")
+                "w-28 sm:w-36 xl:w-48 flex rounded-lg shadow-lg desktop:hover:shadow-2xl transition-all " +
+                (index % 3 === 0
+                    ? "desktop:hover:-rotate-1 "
+                    : "desktop:hover:rotate-1 ")
             }
             href={exampleUrls[index]}
             target="_blank"
