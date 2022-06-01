@@ -64,7 +64,7 @@ export default function VideoExample({
                     {title}
                 </div>
 
-                <div className="font-text ml-10 md:ml-40 text-lg md:text-xl max-w-2xl leading-snug">
+                <div className="font-text md:ml-40 text-lg md:text-xl max-w-2xl leading-snug">
                     {description}
                 </div>
             </div>

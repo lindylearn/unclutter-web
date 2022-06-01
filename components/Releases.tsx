@@ -7,7 +7,6 @@ export default function Releases({ repoStars, releases }) {
         rootMargin: "0px 0px -30% 0px",
         triggerOnce: true,
     });
-    inView = true;
 
     return (
         <div
@@ -67,12 +66,12 @@ export default function Releases({ repoStars, releases }) {
                     <b className="font-bold md:text-[26px]">Open-source</b>,
                     with new updates every week.
                 </div>
-                <div className="font-text ml-10 md:ml-40 text-lg md:text-xl max-w-2xl leading-snug">
+                <div className="font-text md:ml-40 text-lg md:text-xl max-w-2xl leading-snug">
                     Just open an issue for any bug or cool idea you find. Star
                     the project on GitHub to follow the development and
                     contribute!
                 </div>
-                <div className="ml-10 md:ml-40 mt-1 md:mt-2">
+                <div className="md:ml-40 mt-1 md:mt-2 mx-auto md:mx-0">
                     <GithubButton repoStars={repoStars} />
                 </div>
             </div>
