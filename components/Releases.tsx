@@ -1,22 +1,20 @@
+import { useContext } from "react";
 import { useInView } from "react-intersection-observer";
+import ExampleLayout, { ExampleLayoutContext } from "./ExampleLayout";
 import GithubButton from "./GithubButton";
 
 export default function Releases({ repoStars, releases }) {
-    let { ref, inView } = useInView({
-        threshold: 1,
-        rootMargin: "0px 0px -30% 0px",
-        triggerOnce: true,
-    });
+    const inView = useContext(ExampleLayoutContext);
 
     return (
-        <div
-            className={
-                "flex flex-col md:flex-row gap-3 md:gap-10 justify-start " +
-                (inView ? "animate-slidein" : "opacity-0")
-            }
-            ref={ref}
+        <ExampleLayout
+            boldTitle="Open-source"
+            title="with new updates every week."
+            description="Just open an issue for any bug or cool idea you find. Star
+            the project on GitHub to follow the development and
+            contribute!"
         >
-            <div className="hidden md:block w-full md:w-3/6 md:max-w-lg relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
+            <div className="hidden md:block w-full relative overflow-hidden flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
                 <ul className="">
                     {releases
                         .slice(0, 8)
@@ -60,23 +58,12 @@ export default function Releases({ repoStars, releases }) {
                         })}
                 </ul>
             </div>
-
-            <div className="flex flex-col md:mt-5 gap-1 md:gap-3 items-start">
-                <div className="text-xl md:text-2xl max-w-3xl">
-                    <b className="font-bold md:text-[26px]">Open-source</b>,
-                    with new updates every week.
-                </div>
-                <div className="font-text md:ml-40 text-lg md:text-xl max-w-2xl leading-snug">
-                    Just open an issue for any bug or cool idea you find. Star
-                    the project on GitHub to follow the development and
-                    contribute!
-                </div>
-                <div className="md:ml-40 mt-1 md:mt-2 mx-auto md:mx-0">
-                    <GithubButton repoStars={repoStars} />
-                </div>
-            </div>
-        </div>
+        </ExampleLayout>
     );
+}
+
+{
+    /* <GithubButton repoStars={repoStars} /> */
 }
 
 // export function getDaysAgoDescription(daysAgo) {

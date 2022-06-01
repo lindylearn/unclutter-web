@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import ExampleLayout from "./ExampleLayout";
 
 export default function VideoExample({
     boldTitle,
@@ -10,28 +11,16 @@ export default function VideoExample({
     defaultVisible = false,
 }) {
     const videoRef = useRef();
-    const { ref, inView } = useInView({
-        threshold: 0.5,
-        rootMargin: "0px 0px -30% 0px",
-        triggerOnce: true,
-        onChange: (inView) => {
-            if (inView) {
-                (videoRef.current as HTMLVideoElement)?.play();
-            }
-        },
-    });
 
     return (
-        <div
-            className={
-                "flex flex-col md:flex-row gap-3 md:gap-10 justify-start " +
-                (!inView && defaultVisible ? "opacity-20" : "") +
-                (!inView && !defaultVisible ? "opacity-0" : "") +
-                (inView && !defaultVisible ? "xl:animate-slidein" : "")
-            }
-            ref={ref}
+        <ExampleLayout
+            boldTitle={boldTitle}
+            title={title}
+            description={description}
+            defaultVisible={defaultVisible}
+            onInView={() => (videoRef.current as HTMLVideoElement)?.play()}
         >
-            <div className="video-container w-full md:w-3/6 md:max-w-lg relative rounded-xl overflow-hidden shadow-xl flex-shrink-0 desktop:hover:cursor-pointer desktop:hover:shadow-2xl">
+            <div className="video-container">
                 <svg
                     className="replay-icon absolute bottom-2 right-2 w-7 text-black drop-shadow-xl opacity-0 invisible"
                     viewBox="0 0 512 512"
@@ -55,19 +44,7 @@ export default function VideoExample({
                     }}
                     style={{ aspectRatio: "1806 / 1138" }}
                 ></video>
-                {/* <img className="rounded-2xl" src="media/clips/thumbnail.webp" /> */}
             </div>
-
-            <div className="flex flex-col md:mt-5 gap-1 md:gap-3 items-start">
-                <div className="text-xl md:text-2xl max-w-3xl">
-                    <b className="font-bold md:text-[26px]">{boldTitle}</b>{" "}
-                    {title}
-                </div>
-
-                <div className="font-text md:ml-40 text-lg md:text-xl max-w-2xl leading-snug">
-                    {description}
-                </div>
-            </div>
-        </div>
+        </ExampleLayout>
     );
 }

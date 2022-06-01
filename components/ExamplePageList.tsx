@@ -24,7 +24,7 @@ export default function ExamplePageList() {
 
         const pagesPerRow = Math.floor(availableSpace / (pageWidth + pageGap));
         setPagesPerRow(pagesPerRow);
-    });
+    }, []);
 
     return (
         <div className="mt-5 mb-5 xl:mx-5 flex flex-col gap-7">

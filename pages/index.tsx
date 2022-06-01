@@ -53,11 +53,11 @@ export default function Home({ repoStars, releases }) {
 
                 <InstallLinks />
 
-                <div className="md:w-5/6 md:mx-auto flex flex-col gap-5 md:gap-10">
+                <div className="md:mx-5 flex flex-col gap-5 md:gap-10 justify-center">
                     <VideoExample
                         boldTitle="Remove distractions"
                         title="like ads, cookie banners & popups."
-                        description="Unclutter uses website's mobile styling to remove non-essential page elements. Everything is animated, so you see what's happening."
+                        description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what's happening."
                         video="media/clips/distractions.webm"
                         poster="media/clips/distractions.png"
                         defaultVisible
@@ -83,19 +83,19 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Save highlights"
                         title="by simply selecting text."
-                        description="Your notes are saved locally, or can be synced with Hypothes.is and note-taking apps. Everything works with one click."
+                        description="Your notes are saved locally, or can be synced to Hypothes.is and note-taking apps. Everything works with one click."
                         video="media/clips/annotations.webm"
                     />
                 </div>
 
-                <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 md:mx-3 py-2 smd:py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
+                <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 md:mx-3 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
                     <div className="text-xl md:text-[26px] font-bold mb-3">
                         Try Unclutter in your browser:
                     </div>
                     <InstallLinks />
                 </div>
 
-                <div className="md:w-5/6 mx-auto flex flex-col gap-10">
+                <div className="md:mx-5 lg:mx-auto">
                     <Releases repoStars={repoStars} releases={releases} />
                 </div>
 
