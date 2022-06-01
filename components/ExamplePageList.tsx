@@ -1,11 +1,18 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function ExamplePageList() {
-    // const count = window.matchMedia("max-width: 1000px") ? 12 : 21;
+    const [pagesPerRow, setPagesPerRow] = useState(0);
+    useEffect(() => {
+        const availableSpace = window.innerWidth - 20 * 2;
+        const pagesPerRow = Math.floor(availableSpace / (192 + 20));
+        setPagesPerRow(pagesPerRow);
+    });
+
     return (
         <div className="mt-5 mb-5 xl:mx-5 flex flex-col gap-7 items-center">
             <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-center gap-2 sm:gap-5">
-                {Array.from(Array(14).keys()).map((i) => (
+                {Array.from(Array(pagesPerRow * 2).keys()).map((i) => (
                     <ExamplePage key={i} index={i} />
                 ))}
             </div>

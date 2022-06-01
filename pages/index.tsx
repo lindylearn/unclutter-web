@@ -12,8 +12,8 @@ export default function Home({ repoStars, releases }) {
     return (
         <div className="font-display text-neutral-900">
             <Head
-                title="Unclutter browser extension"
-                description="Automatically remove distractions from web articles. With dark mode & page outlines."
+                title="Unclutter - Immersive Reading Mode"
+                description="A new kind of reader mode to remove distractions, find popular quotes, outline pages & more."
             />
 
             {/* <header className="flex gap-3 items-center p-2 fixed z-50">
@@ -23,10 +23,10 @@ export default function Home({ repoStars, releases }) {
                 </div>
             </header> */}
 
-            <main className="flex flex-col gap-10 mb-10 items-center">
-                <div className="mt-5 rounded-2xl overflow-hidden shadow-xl hover:cursor-pointer hover:shadow-2xl">
+            <main className="flex flex-col gap-10 my-3 items-center">
+                <div className="max-w-4xl rounded-xl overflow-hidden shadow-xl mx-5 hover:cursor-pointer hover:shadow-2xl">
                     <video
-                        className={"rounded-2xl"}
+                        className="rounded-xl object-contain"
                         src="media/clips/intro.webm"
                         poster="media/clips/intro.jpg"
                         autoPlay={true}
@@ -37,9 +37,8 @@ export default function Home({ repoStars, releases }) {
                             video.currentTime = 0;
                             video.play();
                         }}
-                        style={{ width: 900, height: 595 }}
+                        style={{ aspectRatio: "900 / 595" }}
                     ></video>
-                    {/* <img className="rounded-2xl" src="media/clips/thumbnail.webp" /> */}
                 </div>
 
                 {/* <VideoExample title="The best way to read articles in your browser" /> */}

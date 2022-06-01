@@ -11,8 +11,8 @@ export default function VideoExample({
 }) {
     const videoRef = useRef();
     const { ref, inView } = useInView({
-        threshold: 1,
-        rootMargin: "0px 0px -30% 0px",
+        threshold: 0.5,
+        rootMargin: "0px 0px -20% 0px",
         triggerOnce: true,
         onChange: (inView) => {
             if (inView) {
@@ -27,7 +27,7 @@ export default function VideoExample({
                 "flex flex-col md:flex-row md:gap-10 justify-start " +
                 (!inView && defaultVisible ? "opacity-20" : "") +
                 (!inView && !defaultVisible ? "opacity-0" : "") +
-                (inView && !defaultVisible ? "animate-slidein" : "")
+                (inView && !defaultVisible ? "xl:animate-slidein" : "")
             }
             ref={ref}
         >
@@ -53,6 +53,7 @@ export default function VideoExample({
                         video.currentTime = 0;
                         video.play();
                     }}
+                    style={{ aspectRatio: "1806 / 1138" }}
                 ></video>
                 {/* <img className="rounded-2xl" src="media/clips/thumbnail.webp" /> */}
             </div>
