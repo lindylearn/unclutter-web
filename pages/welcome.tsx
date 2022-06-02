@@ -5,22 +5,18 @@ import { ExamplePage } from "../components/ExamplePageList";
 import { GithubFloatingIcon } from "../components/GithubButton";
 
 export default function Home({ repoStars }) {
-    const videoRefs = [useRef(), useRef()];
+    const videoRefs = [useRef()];
     useEffect(() => {
         setTimeout(
             () => (videoRefs[0].current as HTMLVideoElement)?.play(),
             1000
-        );
-        setTimeout(
-            () => (videoRefs[1].current as HTMLVideoElement)?.play(),
-            3000
         );
     }, []);
 
     return (
         <div className="font-display text-neutral-800">
             <Head>
-                <title>Thank you for installing Unclutter!</title>
+                <title>Welcome to Unclutter!</title>
                 <meta name="description" content="" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -34,10 +30,10 @@ export default function Home({ repoStars }) {
 
                 <div className="flex gap-10">
                     <div className="">
-                        <h1 className="text-lg">
+                        <div className="text-lg">
                             Click the extension icon to activate the reader
                             mode:
-                        </h1>
+                        </div>
                         <video
                             ref={videoRefs[0]}
                             className="mt-3 w-80"
@@ -47,10 +43,15 @@ export default function Home({ repoStars }) {
                     </div>
                 </div>
 
-                <div className="">
-                    <h1 className="text-lg">Here are some example articles:</h1>
+                <div
+                // className="animate-slidein"
+                // style={{ animationDelay: "4s", animationFillMode: "both" }}
+                >
+                    <div className="text-lg">
+                        Here are some example articles:
+                    </div>
 
-                    <div className="mt-3 w-[1000px] flex justify-start gap-2 sm:gap-5">
+                    <div className="mt-3 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
                         <ExamplePage index={0} />
                         <ExamplePage index={7} />
                         <ExamplePage index={3} />
@@ -59,8 +60,14 @@ export default function Home({ repoStars }) {
                     </div>
                 </div>
 
-                <div className="text-lg flex flex-col gap-1">
-                    <h1 className="">
+                <div
+                    className="text-lg flex flex-col gap-1"
+                    // style={{
+                    //     animationDelay: "5s",
+                    //     animationFillMode: "both",
+                    // }}
+                >
+                    <div className="">
                         See the{" "}
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
@@ -69,8 +76,8 @@ export default function Home({ repoStars }) {
                             extension settings
                         </a>{" "}
                         for more.
-                    </h1>
-                    <h1>
+                    </div>
+                    <div>
                         This project is open-source! Please post any bugs you
                         find{" "}
                         <a
@@ -82,7 +89,7 @@ export default function Home({ repoStars }) {
                             on GitHub
                         </a>
                         !
-                    </h1>
+                    </div>
                 </div>
             </main>
 
