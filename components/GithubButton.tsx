@@ -11,7 +11,7 @@ export default function GithubButton({ repoStars }) {
                 Star on GitHub
             </span>
             <div className="absolute -right-11 md:-right-12">
-                <div className="bg-white px-2 py-1 rounded shadow md:text-lg">
+                <div className="bg-white px-2 py-1 rounded shadow md:text-lg font-bold">
                     {repoStars}
                 </div>
                 <div className="left-arrow"></div>
@@ -23,7 +23,7 @@ export default function GithubButton({ repoStars }) {
 export function GithubFloatingIcon({ repoStars }) {
     return (
         <a
-            className="fixed right-0 top-0 p-3 transition-all desktop:hover:rotate-2"
+            className="hidden md:block fixed right-0 top-0 p-3 transition-all desktop:hover:rotate-2"
             href="https://github.com/lindylearn/unclutter"
             target="_blank"
             rel="noreferrer"
