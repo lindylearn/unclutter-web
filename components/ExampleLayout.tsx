@@ -6,7 +6,7 @@ export default function ExampleLayout({
     title,
     description,
     children,
-    descriptionChildren,
+    descriptionChildren = null,
     defaultVisible = false,
     onInView = () => {},
 }) {
