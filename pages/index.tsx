@@ -24,8 +24,11 @@ export default function Home({ repoStars, releases }) {
             </header> */}
 
             <main className="m-3 flex flex-col gap-5 md:gap-10 items-center">
-                <div className="max-w-4xl">
-                    <div className="rounded-xl overflow-hidden shadow-xl hover:cursor-pointer hover:shadow-2xl">
+                <div className="w-full max-w-4xl">
+                    <div
+                        className="rounded-xl overflow-hidden bg-white shadow-xl hover:cursor-pointer hover:shadow-2xl"
+                        style={{ aspectRatio: "900 / 595" }}
+                    >
                         <video
                             className="rounded-xl object-contain"
                             src="media/clips/intro.webm"
@@ -38,7 +41,6 @@ export default function Home({ repoStars, releases }) {
                                 video.currentTime = 0;
                                 video.play();
                             }}
-                            style={{ aspectRatio: "900 / 595" }}
                         ></video>
                     </div>
                     <div className="max-w-4xl mt-7">
