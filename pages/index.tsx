@@ -71,7 +71,7 @@ export default function Home({ repoStars, releases }) {
                     <InstallLinks />
                 </div>
 
-                <GithubFloatingIcon repoStars={repoStars} />
+                {/* <GithubFloatingIcon repoStars={repoStars} /> */}
 
                 <div className="mt-5 md:mx-5 flex flex-col gap-5 md:gap-10 justify-center">
                     <VideoExample

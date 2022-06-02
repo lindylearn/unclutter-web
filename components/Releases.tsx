@@ -36,7 +36,7 @@ export default function Releases({ repoStars, releases }) {
                                         }
                                         style={{
                                             animationDelay: `${
-                                                (index / 2) * 0.1 + 0.3
+                                                (index / 2) * 0.05 + 0.3
                                             }s`,
                                             animationFillMode: "both",
                                         }}
