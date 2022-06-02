@@ -39,16 +39,18 @@ export default function ExamplePageList() {
                     <ExamplePage key={i} index={i} />
                 ))}
             </div>
-            <div
-                className={
-                    "text-center text-xl md:text-2xl opacity-0 " +
-                    (inView ? "animate-slidein" : "")
-                }
-                style={{ animationFillMode: "both" }}
-                ref={ref}
-            >
-                <b className="font-bold md:text-[26px]">Unclutter</b>{" "}
-                <br className="md:hidden" />— For the love of internet articles.
+            <div className="flex justify-center" ref={ref}>
+                <div
+                    className={
+                        "text-xl md:text-2xl opacity-0 " +
+                        (inView ? "animate-slidein" : "")
+                    }
+                    style={{ animationFillMode: "both" }}
+                >
+                    <b className="font-bold md:text-[26px]">Unclutter</b>{" "}
+                    <br className="md:hidden" />— For the love of internet
+                    articles.
+                </div>
             </div>
         </div>
     );
