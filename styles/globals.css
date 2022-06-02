@@ -34,6 +34,10 @@ a {
   border-right: 8px solid white;
 }
 
+.video-container > .replay-icon {
+  opacity: 0;
+  transition: all 0.2s linear;
+}
 .video-container:hover > .replay-icon {
   opacity: 1;
   visibility: visible;

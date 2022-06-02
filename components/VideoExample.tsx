@@ -9,6 +9,7 @@ export default function VideoExample({
     video,
     poster = null,
     defaultVisible = false,
+    whiteReplayLogo = false,
 }) {
     const videoRef = useRef();
 
@@ -23,7 +24,10 @@ export default function VideoExample({
             {(inView) => (
                 <div className="video-container">
                     <svg
-                        className="replay-icon absolute bottom-2 right-2 w-7 text-black drop-shadow-xl opacity-0 invisible"
+                        className={
+                            "replay-icon absolute bottom-2 right-2 w-7 drop-shadow-xl opacity-0 invisible " +
+                            (whiteReplayLogo ? "text-neutral-100" : "")
+                        }
                         viewBox="0 0 512 512"
                     >
                         <path
