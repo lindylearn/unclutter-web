@@ -6,11 +6,12 @@ import GithubButton from "./GithubButton";
 export default function Releases({ repoStars, releases }) {
     return (
         <ExampleLayout
-            boldTitle="Open-source"
+            boldTitle="Open-source,"
             title="with new updates every week."
             description="Just open an issue for any bug or cool idea you find. Star
             the project on GitHub to follow the development and
             contribute!"
+            descriptionChildren={<GithubButton repoStars={repoStars} />}
         >
             {(inView) => (
                 <div className="hidden md:block w-full relative flex-shrink-0 bg-white rounded-xl shadow-xl py-3 px-4">
@@ -60,10 +61,6 @@ export default function Releases({ repoStars, releases }) {
             )}
         </ExampleLayout>
     );
-}
-
-{
-    /* <GithubButton repoStars={repoStars} /> */
 }
 
 // export function getDaysAgoDescription(daysAgo) {

@@ -2,7 +2,7 @@ import Head from "../components/Head";
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import ExamplePageList from "../components/ExamplePageList";
-import GithubButton from "../components/GithubButton";
+import GithubButton, { GithubFloatingIcon } from "../components/GithubButton";
 import InstallLinks from "../components/InstallLinks";
 import FAQ from "../components/FAQ";
 import VideoExample from "../components/VideoExample";
@@ -56,6 +56,8 @@ export default function Home({ repoStars, releases }) {
                         <InstallLinks />
                     </div>
                 </div>
+
+                <GithubFloatingIcon repoStars={repoStars} />
 
                 <div className="mt-5 md:mx-5 flex flex-col gap-5 md:gap-10 justify-center">
                     <VideoExample

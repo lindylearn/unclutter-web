@@ -6,6 +6,7 @@ export default function ExampleLayout({
     title,
     description,
     children,
+    descriptionChildren,
     defaultVisible = false,
     onInView = () => {},
 }) {
@@ -34,15 +35,17 @@ export default function ExampleLayout({
                 {children(inView)}
             </div>
 
-            <div className="max-w-full  flex flex-col md:mt-5 gap-1 md:gap-3 items-start">
+            <div className="w-full flex flex-col md:mt-5 gap-1 md:gap-3 items-start">
                 <div className="text-xl md:text-2xl max-w-2xl">
                     <b className="font-bold md:text-[26px]">{boldTitle}</b>{" "}
                     {title}
                 </div>
 
-                <div className="font-text text-lg md:text-xl max-w-xl leading-snug">
+                <div className="font-text text-lg md:text-xl max-w-xl leading-snug mb-1">
                     {description}
                 </div>
+
+                {descriptionChildren}
             </div>
         </div>
     );
