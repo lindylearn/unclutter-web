@@ -24,21 +24,17 @@ export default function Home({ repoStars, releases }) {
                 description="A new kind of reader mode to remove distractions, find popular quotes, outline pages & more."
             />
 
-            {/* <header className="flex gap-3 items-center p-2 fixed z-50">
-                <img className="w-14" src="/icon.svg" />
-                <div className="">
-                    <h1 className="text-3xl font-bold">Unclutter</h1>
-                </div>
-            </header> */}
-
             <main className="m-5 xl:mt-10 flex flex-col gap-5 md:gap-10 items-center">
-                <div className="w-full max-w-4xl text-xl md:text-2xl">
-                    <b className="font-bold text-2xl md:text-3xl underline underline-offset-1">
-                        Unclutter
-                    </b>{" "}
-                    is a new kind of reader mode.
-                    <br className="hidden md:block" /> Directly in your browser,
-                    without boring walls of text.
+                <div className="w-full max-w-4xl flex gap-3">
+                    {/* <img className="w-16" src="/icon.svg" /> */}
+                    <div className="text-xl md:text-2xl">
+                        <b className="font-bold text-2xl md:text-3xl underline underline-offset-1">
+                            Unclutter
+                        </b>{" "}
+                        is a new kind of reader mode.
+                        <br className="hidden md:block" /> Directly in your
+                        browser, without boring walls of text.
+                    </div>
                 </div>
 
                 <div className="w-full max-w-4xl">
@@ -126,23 +122,7 @@ export default function Home({ repoStars, releases }) {
                 </div>
 
                 <ExamplePageList />
-                {/* <FAQ /> */}
             </main>
-
-            {/* <footer className="mt-3 p-3 flex gap-1 justify-center sm:text-lg">
-                <div>
-                    From Amsterdam to the world. Only possible with your{" "}
-                    <a
-                        className="inline-block font-semibold desktop:hover:rotate-1"
-                        href="https://twitter.com/lindylearn"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        support
-                    </a>
-                    !
-                </div>
-            </footer> */}
         </div>
     );
 }
