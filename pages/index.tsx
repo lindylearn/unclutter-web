@@ -9,6 +9,14 @@ import VideoExample from "../components/VideoExample";
 import Releases from "../components/Releases";
 
 export default function Home({ repoStars, releases }) {
+    const mainVideoRef = useRef();
+    useEffect(() => {
+        setTimeout(() => {
+            const video = mainVideoRef.current as HTMLVideoElement;
+            video?.play();
+        }, 1000);
+    }, []);
+
     return (
         <div className="font-display text-neutral-900">
             <Head
@@ -23,7 +31,16 @@ export default function Home({ repoStars, releases }) {
                 </div>
             </header> */}
 
-            <main className="m-3 flex flex-col gap-5 md:gap-10 items-center">
+            <main className="m-5 xl:mt-10 flex flex-col gap-5 md:gap-10 items-center">
+                <div className="w-full max-w-4xl text-xl md:text-2xl">
+                    <b className="font-bold text-2xl md:text-3xl underline underline-offset-1">
+                        Unclutter
+                    </b>{" "}
+                    is a new kind of reader mode.
+                    <br className="hidden md:block" /> Directly in your browser,
+                    without boring walls of text.
+                </div>
+
                 <div className="w-full max-w-4xl">
                     <div
                         className="video-container relative rounded-xl overflow-hidden bg-white shadow-xl hover:cursor-pointer hover:shadow-2xl"
@@ -33,7 +50,6 @@ export default function Home({ repoStars, releases }) {
                             className="rounded-xl object-contain"
                             src="media/clips/intro.webm"
                             poster="media/clips/intro.jpg"
-                            autoPlay={true}
                             muted
                             onClick={(e) => {
                                 const video = e.target as HTMLVideoElement;
@@ -41,6 +57,7 @@ export default function Home({ repoStars, releases }) {
                                 video.currentTime = 0;
                                 video.play();
                             }}
+                            ref={mainVideoRef}
                         ></video>
                         <svg
                             className="replay-icon absolute bottom-2 right-2 w-7 text-black drop-shadow-xl opacity-0 invisible"
@@ -52,18 +69,10 @@ export default function Home({ repoStars, releases }) {
                             />
                         </svg>
                     </div>
-                    <div className="max-w-4xl mt-7">
-                        <div className="mb-5 text-xl md:text-2xl">
-                            <b className="font-bold text-2xl md:text-3xl underline underline-offset-1">
-                                Unclutter
-                            </b>{" "}
-                            is a new kind of reader mode.
-                            <br className="hidden md:block" /> Directly in your
-                            browser, without boring walls of text.
-                        </div>
+                </div>
 
-                        <InstallLinks />
-                    </div>
+                <div className="w-full max-w-4xl">
+                    <InstallLinks />
                 </div>
 
                 <GithubFloatingIcon repoStars={repoStars} />
