@@ -24,7 +24,7 @@ export default function Home({ repoStars, releases }) {
                 description="A new kind of reader mode to remove distractions, find popular quotes, outline pages & more."
             />
 
-            <main className="m-5 xl:mt-10 flex flex-col gap-5 md:gap-10 items-center">
+            <main className="m-5 xl:mt-7 flex flex-col gap-5 md:gap-7 items-center">
                 <div className="w-full max-w-4xl flex gap-3">
                     <img className="w-[4.5rem]" src="/icon.svg" />
                     <div className="text-xl md:text-2xl">
@@ -39,11 +39,11 @@ export default function Home({ repoStars, releases }) {
 
                 <div className="w-full max-w-4xl">
                     <div
-                        className="video-container relative rounded-xl overflow-hidden bg-white shadow-xl hover:cursor-pointer hover:shadow-2xl"
+                        className="video-container relative rounded-lg overflow-hidden bg-white shadow-xl hover:cursor-pointer hover:shadow-2xl"
                         style={{ aspectRatio: "900 / 595" }}
                     >
                         <video
-                            className="rounded-xl object-contain"
+                            className="rounded-lg object-contain"
                             src="media/clips/intro.webm"
                             poster="media/clips/intro.jpg"
                             muted
@@ -106,7 +106,7 @@ export default function Home({ repoStars, releases }) {
                                     original style
                                 </InlineLink>
                                 , but sizes get normalized to be more readable.{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/dark-mode.md">
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/theme.md">
                                     Dark mode
                                 </InlineLink>{" "}
                                 activates automatically.
@@ -125,7 +125,7 @@ export default function Home({ repoStars, releases }) {
                                     article chapters
                                 </InlineLink>{" "}
                                 from the page and updates the outline and{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/reading-time.md">
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/outline.md#reading-time">
                                     reading time
                                 </InlineLink>{" "}
                                 as you scroll.
@@ -183,7 +183,7 @@ export default function Home({ repoStars, releases }) {
                     />
 
                     <div className="flex justify-center">
-                        <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
+                        <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-xl">
                             <div className="text-xl md:text-[26px] font-bold mb-3">
                                 Try Unclutter in your browser:
                             </div>
