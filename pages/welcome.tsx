@@ -44,8 +44,8 @@ export default function Home({ repoStars }) {
                 </div>
 
                 <div
-                // className="animate-slidein"
-                // style={{ animationDelay: "4s", animationFillMode: "both" }}
+                    className="animate-slidein"
+                    style={{ animationDelay: "4s", animationFillMode: "both" }}
                 >
                     <div className="text-lg">
                         Here are some example articles:
@@ -61,11 +61,11 @@ export default function Home({ repoStars }) {
                 </div>
 
                 <div
-                    className="text-lg flex flex-col gap-1"
-                    // style={{
-                    //     animationDelay: "5s",
-                    //     animationFillMode: "both",
-                    // }}
+                    className="text-lg flex flex-col gap-1 animate-slidein"
+                    style={{
+                        animationDelay: "6s",
+                        animationFillMode: "both",
+                    }}
                 >
                     <div className="">
                         See the{" "}
@@ -73,7 +73,15 @@ export default function Home({ repoStars }) {
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             onClick={openExtensionSettings}
                         > */}
-                        extension settings {/* </a>{" "} */}
+                        extension settings {/* </a>{" "} */} or{" "}
+                        <a
+                            className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
+                            href="https://github.com/lindylearn/unclutter/tree/main/docs"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            documentation
+                        </a>{" "}
                         for more.
                     </div>
                     <div>
