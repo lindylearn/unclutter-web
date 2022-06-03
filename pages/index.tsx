@@ -79,17 +79,17 @@ export default function Home({ repoStars, releases }) {
                         title="like ads, cookie banners & popups."
                         description={
                             <>
-                                Unclutter uses a website's{" "}
+                                Unclutter uses a website&apos;s{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
                                     mobile style
                                 </InlineLink>{" "}
                                 to hide non-essential page elements.
                                 <br />
-                                It's{" "}
+                                It&apos;s{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/animation.md">
                                     animated
                                 </InlineLink>
-                                , so you see exactly what's happening.
+                                , so you see exactly what&apos;s happening.
                             </>
                         }
                         video="media/clips/distractions.webm"
@@ -146,7 +146,7 @@ export default function Home({ repoStars, releases }) {
                         }
                         description={
                             <>
-                                55,688+{" "}
+                                85,643+{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
                                     social comments
                                 </InlineLink>{" "}

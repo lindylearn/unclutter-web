@@ -11,11 +11,11 @@ export default function Releases({ repoStars, releases }) {
             title="with new updates every week."
             description={
                 <>
-                    Open an issue for anything that's wrong, see the{" "}
+                    Open an issue for anything that&apos;s wrong, read about{" "}
                     <InlineLink href="https://github.com/lindylearn/unclutter/tree/main/docs">
-                        documentation
+                        how the extension works
                     </InlineLink>
-                    , follow the development, or contribute!
+                    , or contribute!
                 </>
             }
             descriptionChildren={<GithubButton repoStars={repoStars} />}
