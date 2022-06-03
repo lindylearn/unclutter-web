@@ -69,12 +69,11 @@ export default function Home({ repoStars }) {
                 >
                     <div className="">
                         See the{" "}
-                        <a
+                        {/* <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             onClick={openExtensionSettings}
-                        >
-                            extension settings
-                        </a>{" "}
+                        > */}
+                        extension settings {/* </a>{" "} */}
                         for more.
                     </div>
                     <div>
