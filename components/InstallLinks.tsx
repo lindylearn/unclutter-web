@@ -1,6 +1,6 @@
 export default function InstallLinks({}) {
     return (
-        <div className="flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center font-bold md:text-lg">
+        <div className="flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center md:text-lg">
             <a
                 className="flex gap-2 md:gap-3 items-center bg-white px-2.5 py-2 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
                 href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
