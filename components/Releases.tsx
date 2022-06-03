@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useInView } from "react-intersection-observer";
+import { InlineLink } from "../pages";
 import ExampleLayout from "./ExampleLayout";
 import GithubButton from "./GithubButton";
 
@@ -8,9 +9,15 @@ export default function Releases({ repoStars, releases }) {
         <ExampleLayout
             boldTitle="Open-source,"
             title="with new updates every week."
-            description="Just open an issue for any bug or cool idea you find. Star
-            the project on GitHub to follow the development and
-            contribute!"
+            description={
+                <>
+                    Open an issue for anything that's wrong, see the{" "}
+                    <InlineLink href="https://github.com/lindylearn/unclutter/tree/main/docs">
+                        documentation
+                    </InlineLink>
+                    , follow the development, or contribute!
+                </>
+            }
             descriptionChildren={<GithubButton repoStars={repoStars} />}
         >
             {(inView) => (

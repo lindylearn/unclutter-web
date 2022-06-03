@@ -14,7 +14,7 @@ export default function Home({ repoStars, releases }) {
         setTimeout(() => {
             const video = mainVideoRef.current as HTMLVideoElement;
             video?.play();
-        }, 1000);
+        }, 1200);
     }, []);
 
     return (
@@ -26,7 +26,7 @@ export default function Home({ repoStars, releases }) {
 
             <main className="m-5 xl:mt-10 flex flex-col gap-5 md:gap-10 items-center">
                 <div className="w-full max-w-4xl flex gap-3">
-                    {/* <img className="w-16" src="/icon.svg" /> */}
+                    <img className="w-[4.5rem]" src="/icon.svg" />
                     <div className="text-xl md:text-2xl">
                         <b className="font-bold text-2xl md:text-3xl underline underline-offset-1">
                             Unclutter
@@ -77,7 +77,21 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Remove distractions"
                         title="like ads, cookie banners & popups."
-                        description="Unclutter uses a website's mobile style to remove non-essential page elements. Everything is animated, so you see exactly what's happening."
+                        description={
+                            <>
+                                Unclutter uses a website's{" "}
+                                <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
+                                    mobile style
+                                </InlineLink>{" "}
+                                to hide non-essential page elements.
+                                <br />
+                                It's{" "}
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/animation.md">
+                                    animated
+                                </InlineLink>
+                                , so you see exactly what's happening.
+                            </>
+                        }
                         video="media/clips/distractions.webm"
                         poster="media/clips/distractions.png"
                         defaultVisible
@@ -85,32 +99,91 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Customize font size"
                         title="and color theme across all websites."
-                        description="Articles keep their original style, but sizes get normalized to be more readable. Dark mode activates automatically."
+                        description={
+                            <>
+                                Articles keep their{" "}
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/comparison.md">
+                                    original style
+                                </InlineLink>
+                                , but sizes get normalized to be more readable.{" "}
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/dark-mode.md">
+                                    Dark mode
+                                </InlineLink>{" "}
+                                activates automatically.
+                            </>
+                        }
                         video="media/clips/theme.webm"
                         whiteReplayLogo
                     />
                     <VideoExample
-                        boldTitle="Quickly navigate"
+                        boldTitle="Outline & navigate"
                         title="long reads."
-                        description="Unclutter parses article chapters from the page and updates the outline and reading time as you scroll."
+                        description={
+                            <>
+                                Unclutter parses{" "}
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/outline.md">
+                                    article chapters
+                                </InlineLink>{" "}
+                                from the page and updates the outline and{" "}
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/reading-time.md">
+                                    reading time
+                                </InlineLink>{" "}
+                                as you scroll.
+                            </>
+                        }
                         video="media/clips/outline.webm"
                     />
                     <VideoExample
-                        boldTitle="Find memorable quotes"
-                        title="discussed on Hacker News."
-                        description="55,688+ social comments that mention articles quotes turn up directly within the extension. No more stumbing around to find the important bits."
+                        boldTitle="Find quotes"
+                        title={
+                            <>
+                                discussed on{" "}
+                                <InlineLink href="https://news.ycombinator.com">
+                                    Hacker News
+                                </InlineLink>
+                                .
+                            </>
+                        }
+                        description={
+                            <>
+                                55,688+{" "}
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
+                                    social comments
+                                </InlineLink>{" "}
+                                that mention article quotes turn up directly
+                                within the extension.
+                                <br /> No more stumbing around to find the
+                                important bits.
+                            </>
+                        }
                         video="media/clips/social.webm"
                     />
                     <VideoExample
                         boldTitle="Save highlights"
-                        title="by simply selecting text."
-                        description="Your notes are saved locally, or can be synced to Hypothes.is and note-taking apps. Everything works with one click."
+                        title="by simply selecting them."
+                        description={
+                            <>
+                                Your highlights & notes are{" "}
+                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/annotations.md">
+                                    saved locally
+                                </InlineLink>
+                                , or can be synced to{" "}
+                                <InlineLink href="https://web.hypothes.is">
+                                    Hypothes.is
+                                </InlineLink>{" "}
+                                and{" "}
+                                <InlineLink href="https://web.hypothes.is/tools-plug-ins-and-integrations/#:~:text=For%20note%2Dtaking%20apps">
+                                    note-taking apps
+                                </InlineLink>
+                                .<br /> Everything works in one click.
+                            </>
+                        }
                         video="media/clips/annotations.webm"
                         whiteReplayLogo
                     />
 
                     <div className="flex justify-center">
-                        <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 md:mx-3 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
+                        <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-lg">
                             <div className="text-xl md:text-[26px] font-bold mb-3">
                                 Try Unclutter in your browser:
                             </div>
@@ -124,6 +197,19 @@ export default function Home({ repoStars, releases }) {
                 <ExamplePageList />
             </main>
         </div>
+    );
+}
+
+export function InlineLink({ href, children }) {
+    return (
+        <a
+            href={href}
+            className="inline-block underline underline-offset-1 decoration-2 hover:rotate-1 transition-transform"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            {children}
+        </a>
     );
 }
 
