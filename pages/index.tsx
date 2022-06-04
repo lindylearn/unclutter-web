@@ -71,7 +71,7 @@ export default function Home({ repoStars, releases }) {
                 </div>
 
                 <div className="w-full max-w-4xl">
-                    <InstallLinks />
+                    <InstallLinks repoStars={repoStars} showGithub />
                 </div>
 
                 {/* <GithubFloatingIcon repoStars={repoStars} /> */}

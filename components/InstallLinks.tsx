@@ -1,6 +1,8 @@
-export default function InstallLinks({}) {
+import GithubButton from "./GithubButton";
+
+export default function InstallLinks({ repoStars = 72, showGithub = false }) {
     return (
-        <div className="flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center md:text-lg font-bold">
+        <div className="flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center md:text-lg ">
             <a
                 className="flex gap-2 md:gap-3 items-center bg-white px-2.5 py-2 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
                 href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
@@ -27,21 +29,25 @@ export default function InstallLinks({}) {
                 <span className="">Add to Firefox</span>
             </a>
 
-            <a
-                className="flex flex-col gap-0.5 items-center pt-2"
-                href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
-                target="_blank"
-                rel="noreferrer"
-            >
-                <div className="flex gap-1">
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                </div>
-                <span className="font-normal">8 reviews</span>
-            </a>
+            {showGithub ? (
+                <GithubButton repoStars={repoStars} />
+            ) : (
+                <a
+                    className="flex flex-col gap-0.5 items-center pt-2"
+                    href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <div className="flex gap-1">
+                        <StarIcon />
+                        <StarIcon />
+                        <StarIcon />
+                        <StarIcon />
+                        <StarIcon />
+                    </div>
+                    <span className="font-normal">8 reviews</span>
+                </a>
+            )}
         </div>
     );
 }
