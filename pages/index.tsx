@@ -83,13 +83,9 @@ export default function Home({ repoStars, releases }) {
                                 <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
                                     mobile style
                                 </InlineLink>{" "}
-                                to hide non-essential page elements.
-                                <br />
-                                It&apos;s{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/animation.md">
-                                    animated
-                                </InlineLink>
-                                , so you see exactly what&apos;s happening.
+                                to hide non-essential page elements. It&apos;s{" "}
+                                animated, so you see exactly what&apos;s
+                                happening.
                             </>
                         }
                         video="media/clips/distractions.webm"
@@ -120,15 +116,12 @@ export default function Home({ repoStars, releases }) {
                         title="long reads."
                         description={
                             <>
-                                Unclutter parses{" "}
+                                Unclutter parses article{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/outline.md">
-                                    article chapters
+                                    chapters
                                 </InlineLink>{" "}
-                                from the page and updates the outline and{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/outline.md#reading-time">
-                                    reading time
-                                </InlineLink>{" "}
-                                as you scroll.
+                                from the page and updates the outline and
+                                reading time as you scroll.
                             </>
                         }
                         video="media/clips/outline.webm"
@@ -148,12 +141,11 @@ export default function Home({ repoStars, releases }) {
                             <>
                                 85,643+{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
-                                    social comments
+                                    comments
                                 </InlineLink>{" "}
                                 that mention article quotes turn up directly
-                                within the extension.
-                                <br /> No more stumbing around to find the
-                                important bits.
+                                within the extension. No more stumbing around to
+                                find the important bits.
                             </>
                         }
                         video="media/clips/social.webm"
@@ -175,7 +167,7 @@ export default function Home({ repoStars, releases }) {
                                 <InlineLink href="https://web.hypothes.is/tools-plug-ins-and-integrations/#:~:text=For%20note%2Dtaking%20apps">
                                     note-taking apps
                                 </InlineLink>
-                                .<br /> Everything works in one click.
+                                . Everything works with one click.
                             </>
                         }
                         video="media/clips/annotations.webm"
