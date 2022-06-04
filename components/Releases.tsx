@@ -11,9 +11,9 @@ export default function Releases({ repoStars, releases }) {
             title="with new updates every week."
             description={
                 <>
-                    Open an issue for anything that&apos;s wrong, read about{" "}
+                    Open an issue for anything that&apos;s wrong, read the{" "}
                     <InlineLink href="https://github.com/lindylearn/unclutter/tree/main/docs">
-                        how the extension works
+                        documentation
                     </InlineLink>
                     , or contribute!
                 </>
