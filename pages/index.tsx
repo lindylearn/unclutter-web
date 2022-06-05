@@ -86,9 +86,9 @@ export default function Home({ repoStars, releases }) {
                                 <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
                                     mobile style
                                 </InlineLink>{" "}
-                                to hide non-essential page elements. It&apos;s{" "}
-                                animated, so you see exactly what&apos;s
-                                happening.
+                                to remove non-essential page elements from
+                                articles. It&apos;s animated, so you see exactly
+                                what&apos;s happening.
                             </>
                         }
                         video="media/clips/distractions.webm"
