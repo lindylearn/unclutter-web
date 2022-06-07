@@ -18,7 +18,7 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
 
             <a
                 className="flex gap-2 md:gap-3 items-center bg-white px-2.5 py-2 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
-                href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/"
+                href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn"
                 target="_blank"
                 rel="noreferrer"
             >
@@ -34,7 +34,7 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
             ) : (
                 <a
                     className="flex flex-col gap-0.5 items-center pt-2"
-                    href="https://chrome.google.com/webstore/detail/unclutter-immersive-readi/ibckhpijbdmdobhhhodkceffdngnglpk"
+                    href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
                     target="_blank"
                     rel="noreferrer"
                 >
