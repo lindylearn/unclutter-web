@@ -45,7 +45,7 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
                         <StarIcon />
                         <StarIcon />
                     </div>
-                    <span className="font-normal">8 reviews</span>
+                    <span className="font-normal">11 reviews</span>
                 </a>
             )}
         </div>
