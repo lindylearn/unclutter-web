@@ -78,17 +78,16 @@ export default function Home({ repoStars, releases }) {
 
                 <div className="mt-5 md:mx-5 flex flex-col gap-5 md:gap-10 justify-center">
                     <VideoExample
-                        boldTitle="Remove distractions"
-                        title="like ads, cookie banners & popups."
+                        boldTitle="Remove ads,"
+                        title="cookie banners & popups."
                         description={
                             <>
-                                Unclutter uses a website&apos;s{" "}
+                                Unclutter uses a website's{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
-                                    mobile style
+                                    responsive CSS
                                 </InlineLink>{" "}
-                                to remove non-essential page elements from
-                                articles. It&apos;s animated, so you see exactly
-                                what&apos;s happening.
+                                to remove distractions. All changes are
+                                animated, so you see what's happening.
                             </>
                         }
                         video="media/clips/distractions.webm"
@@ -96,19 +95,17 @@ export default function Home({ repoStars, releases }) {
                         defaultVisible
                     />
                     <VideoExample
-                        boldTitle="Customize font size"
-                        title="and color theme across all websites."
+                        boldTitle="Customize text"
+                        title="across of all websites."
                         description={
                             <>
-                                Articles keep their{" "}
+                                Unlike all other reader modes, Unclutter keeps
+                                the{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/comparison.md">
                                     original style
-                                </InlineLink>
-                                , but sizes get normalized to be more readable.{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/theme.md">
-                                    Dark mode
                                 </InlineLink>{" "}
-                                activates automatically.
+                                of websites intact. Plus you can use your
+                                favorite font size and color theme everywhere!
                             </>
                         }
                         video="media/clips/theme.webm"
@@ -158,11 +155,7 @@ export default function Home({ repoStars, releases }) {
                         title="by simply selecting them."
                         description={
                             <>
-                                Your highlights & notes are{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/annotations.md">
-                                    saved locally
-                                </InlineLink>
-                                , or can be synced to{" "}
+                                Your notes are saved locally or can be synced to{" "}
                                 <InlineLink href="https://web.hypothes.is">
                                     Hypothes.is
                                 </InlineLink>{" "}
