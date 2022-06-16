@@ -24,13 +24,13 @@ export default function Home({ repoStars, releases }) {
                 description="A new kind of reader mode to remove distractions, find popular quotes, outline pages & more."
             />
 
-            <main className="m-3 xl:mt-7 flex flex-col gap-5 md:gap-7 items-center">
+            <main className="m-3 xl:mt-10 flex flex-col gap-5 md:gap-10 items-center">
                 <div className="w-full max-w-4xl flex gap-3">
                     <img
                         className="hidden md:block w-[4.5rem]"
                         src="/icon.svg"
                     />
-                    <div className="text-lg md:text-2xl">
+                    <div className="text-lg md:text-[26px]">
                         <b className="font-bold text-2xl md:text-3xl underline underline-offset-1">
                             Unclutter
                         </b>{" "}
