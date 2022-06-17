@@ -82,12 +82,12 @@ export default function Home({ repoStars, releases }) {
                         title="cookie banners & popups."
                         description={
                             <>
-                                Unclutter uses a website's{" "}
+                                Unclutter uses a website&apos;s{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
                                     responsive CSS
                                 </InlineLink>{" "}
                                 to remove distractions. All changes are
-                                animated, so you see what's happening.
+                                animated, so you see what&apos;s happening.
                             </>
                         }
                         video="media/clips/distractions.webm"
