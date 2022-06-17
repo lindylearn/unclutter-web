@@ -5,13 +5,11 @@ export default async function handler(req, res) {
         method: "POST",
         body: JSON.stringify({
             title: `Broken website styling: ${data.domain}`,
-            body: `A user reported an issue on https://${data.domain} from within the extension.
+            body: `A user reported an issue on ${data.url} from within the extension.
 
-            URL: ${data.url}
-            
-            Unclutter version: \`${data.unclutterVersion}\`
-            Browser: \`${data.browserType}\`
-            User Agent: \`${data.userAgent}\``,
+Unclutter version: \`${data.unclutterVersion}\`
+Browser type: \`${data.browserType}\`
+User Agent: \`${data.userAgent}\``,
             labels: ["broken-website"],
         }),
         headers: {
