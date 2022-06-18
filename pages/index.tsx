@@ -82,7 +82,7 @@ export default function Home({ repoStars, releases }) {
                         title="cookie banners & popups."
                         description={
                             <>
-                                Unclutter uses a website&apos;s{" "}
+                                Unclutter uses a website&apos;s own
                                 <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
                                     responsive CSS
                                 </InlineLink>{" "}
@@ -99,12 +99,12 @@ export default function Home({ repoStars, releases }) {
                         title="across of all websites."
                         description={
                             <>
-                                Unlike other reader modes, Unclutter keeps the{" "}
+                                Yet unlike other reader modes, Unclutter keeps
+                                the{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/comparison.md">
                                     original style
                                 </InlineLink>{" "}
-                                of websites intact, while making them more
-                                readable.
+                                of websites intact.
                             </>
                         }
                         video="media/clips/theme.webm"
@@ -140,7 +140,7 @@ export default function Home({ repoStars, releases }) {
                             <>
                                 85,643+{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
-                                    comments
+                                    public comments
                                 </InlineLink>{" "}
                                 that mention article quotes turn up directly
                                 within the extension. No more stumbing around to
