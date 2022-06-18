@@ -86,8 +86,8 @@ export default function Home({ repoStars, releases }) {
                                 <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
                                     responsive CSS
                                 </InlineLink>{" "}
-                                to remove distractions. All changes are
-                                animated, so you see what&apos;s happening.
+                                to remove non-essential page elements. All
+                                changes are animated.
                             </>
                         }
                         video="media/clips/distractions.webm"
@@ -99,13 +99,12 @@ export default function Home({ repoStars, releases }) {
                         title="across of all websites."
                         description={
                             <>
-                                Unlike all other reader modes, Unclutter keeps
-                                the{" "}
+                                Unlike other reader modes, Unclutter keeps the{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/comparison.md">
                                     original style
                                 </InlineLink>{" "}
-                                of websites intact. Plus you can use your
-                                favorite font size and color theme everywhere!
+                                of websites intact, while making them more
+                                readable.
                             </>
                         }
                         video="media/clips/theme.webm"
