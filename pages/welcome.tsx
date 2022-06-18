@@ -31,8 +31,7 @@ export default function Home({ repoStars }) {
                 <div className="flex gap-10">
                     <div className="">
                         <div className="text-lg">
-                            Click the extension icon to activate the reader
-                            mode:
+                            Click the extension icon to unclutter articles:
                         </div>
                         <video
                             ref={videoRefs[0]}
@@ -48,7 +47,7 @@ export default function Home({ repoStars }) {
                     style={{ animationDelay: "4s", animationFillMode: "both" }}
                 >
                     <div className="text-lg">
-                        Here are some example articles:
+                        Here are some examples to try:
                     </div>
 
                     <div className="mt-3 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
@@ -69,11 +68,13 @@ export default function Home({ repoStars }) {
                 >
                     <div className="">
                         See the{" "}
-                        {/* <a
+                        <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             onClick={openExtensionSettings}
-                        > */}
-                        extension settings {/* </a>{" "} */} or{" "}
+                        >
+                            extension settings
+                        </a>{" "}
+                        or{" "}
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             href="https://github.com/lindylearn/unclutter/tree/main/docs"
