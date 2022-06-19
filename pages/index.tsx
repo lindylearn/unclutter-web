@@ -24,7 +24,7 @@ export default function Home({ repoStars, releases }) {
                 description="A new kind of reader mode to remove distractions, find popular quotes, outline pages & more."
             />
 
-            <main className="m-3 xl:mt-10 flex flex-col gap-5 md:gap-10 items-center">
+            <main className="m-3 xl:mt-10 flex flex-col gap-5 md:gap-10 items-center max-w-full overflow-hidden">
                 <div className="w-full max-w-4xl flex gap-3">
                     <img
                         className="hidden md:block w-[4.5rem]"
@@ -170,7 +170,10 @@ export default function Home({ repoStars, releases }) {
                     />
 
                     <div className="flex justify-center">
-                        <div className="text-center border-neutral-900 border-4 -mx-2 md:my-5 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-xl">
+                        <div
+                            className="text-center border-neutral-900 border-4 
+                         md:my-5 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-xl"
+                        >
                             <div className="text-xl md:text-[26px] font-bold mb-3">
                                 Try Unclutter in your browser:
                             </div>
