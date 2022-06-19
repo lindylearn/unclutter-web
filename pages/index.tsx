@@ -18,7 +18,7 @@ export default function Home({ repoStars, releases }) {
     }, []);
 
     return (
-        <div className="font-display text-neutral-900 w-screen">
+        <div className="font-display text-neutral-900">
             <Head
                 title="Unclutter - Immersive Reading Mode"
                 description="A new kind of reader mode to remove distractions, find popular quotes, outline pages & more."
