@@ -76,15 +76,15 @@ export default function Home({ repoStars, releases }) {
 
                 {/* <GithubFloatingIcon repoStars={repoStars} /> */}
 
-                <div className="mt-5 md:mx-5 flex flex-col gap-5 md:gap-10 justify-center">
+                <div className="mt-5 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center">
                     <VideoExample
                         boldTitle="Remove ads,"
                         title="cookie banners & popups."
                         description={
                             <>
-                                Unclutter uses a website&apos;s own
+                                Unclutter analyses a website&apos;s{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
-                                    responsive CSS
+                                    CSS
                                 </InlineLink>{" "}
                                 to remove non-essential page elements. All
                                 changes are animated.
@@ -99,34 +99,33 @@ export default function Home({ repoStars, releases }) {
                         title="across of all websites."
                         description={
                             <>
-                                Yet unlike other reader modes, Unclutter keeps
-                                the{" "}
+                                Yet unlike with other reader modes, websites
+                                keep their{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/comparison.md">
                                     original style
-                                </InlineLink>{" "}
-                                of websites intact.
+                                </InlineLink>
+                                .
                             </>
                         }
                         video="media/clips/theme.webm"
                         whiteReplayLogo
                     />
                     <VideoExample
-                        boldTitle="Outline & navigate"
+                        boldTitle="Navigate"
                         title="long reads."
                         description={
                             <>
-                                Unclutter parses article{" "}
+                                Unclutter generates{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/outline.md">
                                     chapters
                                 </InlineLink>{" "}
-                                from the page and updates the outline and
-                                reading time as you scroll.
+                                from the page and updates them as you scroll.
                             </>
                         }
                         video="media/clips/outline.webm"
                     />
                     <VideoExample
-                        boldTitle="Find quotes"
+                        boldTitle="See important quotes"
                         title={
                             <>
                                 discussed on{" "}
@@ -143,8 +142,7 @@ export default function Home({ repoStars, releases }) {
                                     public comments
                                 </InlineLink>{" "}
                                 that mention article quotes turn up directly
-                                within the extension. No more stumbing around to
-                                find the important bits.
+                                within the extension.
                             </>
                         }
                         video="media/clips/social.webm"
@@ -162,7 +160,7 @@ export default function Home({ repoStars, releases }) {
                                 <InlineLink href="https://web.hypothes.is/tools-plug-ins-and-integrations/#:~:text=For%20note%2Dtaking%20apps">
                                     note-taking apps
                                 </InlineLink>
-                                . Everything works with one click.
+                                .
                             </>
                         }
                         video="media/clips/annotations.webm"
@@ -190,11 +188,14 @@ export default function Home({ repoStars, releases }) {
     );
 }
 
-export function InlineLink({ href, children }) {
+export function InlineLink({ href, children, className = "" }) {
     return (
         <a
             href={href}
-            className="inline-block underline underline-offset-1 decoration-2 hover:rotate-1 transition-transform"
+            className={
+                "underline underline-offset-1 decoration-2 hover:rotate-1 transition-transform " +
+                className
+            }
             target="_blank"
             rel="noopener noreferrer"
         >
