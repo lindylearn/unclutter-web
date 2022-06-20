@@ -6,9 +6,9 @@ export default function ExamplePageList() {
     // compute number of example pages to show, to approximately fill two rows
     const [pagesPerRow, setPagesPerRow] = useState(0);
     useEffect(() => {
-        let xMargin = 0;
+        let xMargin = 12;
         if (window.innerWidth >= 1280) {
-            xMargin = 20;
+            xMargin = 12 + 20;
         }
 
         let pageWidth = 112;
@@ -34,7 +34,7 @@ export default function ExamplePageList() {
 
     return (
         <div className="mt-5 mb-5 xl:mx-5 flex flex-col gap-7">
-            <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-center gap-2 sm:gap-5">
+            <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-evenly md:justify-start gap-2 sm:gap-5">
                 {Array.from(Array(pagesPerRow * 2).keys()).map((i) => (
                     <ExamplePage key={i} index={i} />
                 ))}
@@ -48,8 +48,10 @@ export default function ExamplePageList() {
                     style={{ animationFillMode: "both" }}
                 >
                     <b className="font-bold md:text-[26px]">Unclutter</b>{" "}
-                    <br className="md:hidden" />— For the love of internet
-                    articles.
+                    <br className="md:hidden" />
+                    <span className="">
+                        — For the love of internet articles.
+                    </span>
                 </div>
             </div>
         </div>

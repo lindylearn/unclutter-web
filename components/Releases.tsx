@@ -12,7 +12,10 @@ export default function Releases({ repoStars, releases }) {
             description={
                 <>
                     Open an issue for anything that&apos;s wrong, read the{" "}
-                    <InlineLink href="https://github.com/lindylearn/unclutter/tree/main/docs">
+                    <InlineLink
+                        href="https://github.com/lindylearn/unclutter/tree/main/docs"
+                        className="mt-3"
+                    >
                         documentation
                     </InlineLink>
                     , or contribute!

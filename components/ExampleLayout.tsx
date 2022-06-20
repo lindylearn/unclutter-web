@@ -41,7 +41,7 @@ export default function ExampleLayout({
                     {title}
                 </div>
 
-                <div className="font-text text-lg md:text-xl max-w-xl leading-snug mb-1">
+                <div className="font-text text-base md:text-xl max-w-xl leading-snug mb-1">
                     {description}
                 </div>
 
