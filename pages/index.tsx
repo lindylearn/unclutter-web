@@ -24,7 +24,7 @@ export default function Home({ repoStars, releases }) {
                 description="A new kind of reader mode to remove distractions, find popular quotes, outline pages & more."
             />
 
-            <main className="m-3 xl:mt-10 flex flex-col gap-5 md:gap-10 items-center max-w-full overflow-hidden">
+            <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center max-w-full overflow-hidden">
                 <div className="w-full max-w-4xl flex gap-3">
                     <img
                         className="hidden md:block w-[4.5rem]"
@@ -125,7 +125,7 @@ export default function Home({ repoStars, releases }) {
                         video="media/clips/outline.webm"
                     />
                     <VideoExample
-                        boldTitle="See important quotes"
+                        boldTitle="See quotes"
                         title={
                             <>
                                 discussed on{" "}
@@ -149,7 +149,7 @@ export default function Home({ repoStars, releases }) {
                     />
                     <VideoExample
                         boldTitle="Save highlights"
-                        title="by simply selecting them."
+                        title="by selecting them."
                         description={
                             <>
                                 Your notes are saved locally or can be synced to{" "}
