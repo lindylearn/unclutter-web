@@ -1,10 +1,13 @@
 import fs from "fs/promises";
 import prettier from "prettier";
 import simpleGit from "simple-git";
+const execSync = require("child_process").execSync;
 
 export default async function handler(req, res) {
     const data = req.body;
     const { domain, selectors } = data;
+
+    execSync(`apt-get install git`);
 
     console.log("Cloning Unclutter fork to create blocklist PR...");
     try {
