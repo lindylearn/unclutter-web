@@ -13,6 +13,7 @@ export default async function handler(req, res) {
             "./unclutter"
         );
     } catch (err) {
+        console.error(err);
         // take folder if already exists
     }
     const git = simpleGit({ baseDir: `./unclutter` }); // use cloned repo from now on
