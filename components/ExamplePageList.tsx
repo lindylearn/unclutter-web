@@ -34,7 +34,7 @@ export default function ExamplePageList() {
 
     return (
         <div className="mt-5 mb-5 xl:mx-5 flex flex-col gap-7">
-            <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-evenly md:justify-start gap-2 sm:gap-5">
+            <div className="mt-2 sm:mt-5 xl:mt-7 flex flex-wrap justify-evenly md:justify-center gap-2 sm:gap-5">
                 {Array.from(Array(pagesPerRow * 2).keys()).map((i) => (
                     <ExamplePage key={i} index={i} />
                 ))}
