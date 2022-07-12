@@ -18,7 +18,7 @@ export default function Home() {
                 <iframe
                     src="https://tally.so/embed/nPdXOx?alignLeft=1&hideTitle=0&transparentBackground=1"
                     width="100%"
-                    height="1700px"
+                    height="2500px"
                     frameBorder="0"
                     marginHeight={0}
                     marginWidth={0}
