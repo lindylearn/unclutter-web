@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function GithubButton({ repoStars }) {
     return (
         <a
-            className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-2 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
+            className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
             href="https://github.com/lindylearn/unclutter"
             target="_blank"
             rel="noreferrer"
