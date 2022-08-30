@@ -108,7 +108,7 @@ export default function Home({ repoStars }) {
 
 function openExtensionSettings() {
     // listened for in extension boot.js
-    window.postMessage({ type: "openUnclutterOptionsPage" }, "*");
+    window.postMessage({ event: "openOptionsPage" }, "*");
 }
 
 export async function getStaticProps() {
