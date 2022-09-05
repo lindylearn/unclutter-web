@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Home() {
     return (
@@ -17,7 +16,7 @@ export default function Home() {
 
             <main className="mt-10 mx-auto max-w-xl flex flex-col items-start text-lg">
                 <iframe
-                    src="https://tally.so/embed/wAkeym?alignLeft=1&hideTitle=0&transparentBackground=1"
+                    src="https://tally.so/embed/npb6xB?alignLeft=1&hideTitle=0&transparentBackground=1"
                     width="100%"
                     height="1050px"
                     frameBorder="0"
