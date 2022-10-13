@@ -17,6 +17,8 @@ User Agent: \`${data.userAgent}\``,
             }),
             headers: {
                 Authorization: `token ${process.env.GITHUB_BOT_TOKEN}`,
+                Accept: "application/json",
+                "Content-Type": "application/json",
             },
         }
     );
