@@ -18,8 +18,7 @@ export default async function handler(req, res) {
                 title: `Quick report`,
                 body: `${data.message}
 
-Unclutter version: \`${data.unclutterVersion}\`
-Browser type: \`${data.browserType}\`,
+Browser type: \`${data.browserType}\``,
                 labels: [],
             }),
             headers: {
