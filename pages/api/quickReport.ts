@@ -17,11 +17,12 @@ User Agent: \`${data.userAgent}\``,
             }),
             headers: {
                 Authorization: `token ${process.env.GITHUB_BOT_TOKEN}`,
-                Accept: "application/json",
+                Accept: "application/vnd.github+json",
                 "Content-Type": "application/json",
             },
         }
     );
+    console.log(response);
     const json = await response.json();
 
     res.status(200).send(json.url);
