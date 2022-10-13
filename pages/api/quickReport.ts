@@ -31,5 +31,5 @@ Browser type: \`${data.browserType}\``,
     );
     const json = await response.json();
 
-    res.status(200).send(json.url);
+    res.status(200).send(json.html_url);
 }
