@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function Home() {
     return (
-        <div className="font-display text-neutral-800">
+        <div className="font-display text-stone-900">
             <Head>
                 <title>Unclutter Feedback</title>
                 <meta name="description" content="" />

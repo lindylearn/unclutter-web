@@ -14,7 +14,7 @@ export default function Home({ repoStars }) {
     }, []);
 
     return (
-        <div className="font-display text-neutral-800">
+        <div className="font-display text-stone-900">
             <Head>
                 <title>Welcome to Unclutter!</title>
                 <meta name="description" content="" />

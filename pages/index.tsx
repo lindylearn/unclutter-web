@@ -17,7 +17,7 @@ export default function Home({ repoStars, releases }) {
     }, []);
 
     return (
-        <div className="font-display text-neutral-900">
+        <div className="font-display text-stone-900">
             <Head
                 title="Unclutter — Modern Reader Mode"
                 description="Unclutter is a modern reader mode and article library for your browser."
