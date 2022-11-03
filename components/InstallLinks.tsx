@@ -5,7 +5,7 @@ import GithubButton from "./GithubButton";
 export default function InstallLinks({ repoStars = 72, showGithub = false }) {
     const { ref, inView } = useInView({
         threshold: 1.0,
-        rootMargin: "0px 0px -20% 0px",
+        rootMargin: "0px 0px -5% 0px",
         triggerOnce: true,
     });
 
