@@ -86,7 +86,7 @@ export default function Home({ repoStars, releases }) {
                                 </p>
                                 <p>
                                     So The Atlantic still looks like The
-                                    Atlantic, small blogs stay quirky, and you
+                                    Atlantic, small blogs stay unique, and you
                                     can still click interactive graphs.
                                 </p>
                             </>
@@ -116,8 +116,9 @@ export default function Home({ repoStars, releases }) {
 
                                 <p>
                                     With the Unclutter browser extension your
-                                    favorite reading settings are one click
-                                    away. No need to open a seperate app.
+                                    favorite reading settings are only one click
+                                    away. No need to open a seperate website or
+                                    to find your phone.
                                 </p>
                             </>
                         }
@@ -143,16 +144,20 @@ export default function Home({ repoStars, releases }) {
                         title="popular quotes"
                         icon={<></>}
                         description={
-                            <p>
-                                What do other people think about the article
-                                you&apos;re reading? You can find out — more
-                                than 85,643{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
-                                    quote comments
-                                </InlineLink>{" "}
-                                from Hacker News or Hypothes.is turn up directly
-                                inside Unclutter.
-                            </p>
+                            <>
+                                <p>
+                                    What do other people think about the article
+                                    you&apos;re just reading?
+                                </p>
+                                <p>
+                                    You can find out — more than 85,643{" "}
+                                    <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
+                                        quote comments
+                                    </InlineLink>{" "}
+                                    from Hacker News and Hypothes.is turn up
+                                    directly inside Unclutter.
+                                </p>
+                            </>
                         }
                         video="media/clips/social.webm"
                     />
@@ -163,9 +168,14 @@ export default function Home({ repoStars, releases }) {
                         description={
                             <>
                                 <p>
-                                    Saving and searching across your highlights
+                                    Saving highlights you want to remember
                                     shouldn&apos;t take multiple clicks or
                                     elaborate synchronization setups.
+                                </p>
+                                <p>
+                                    Just select the text you want to save, then
+                                    search across it later. Directly in your
+                                    browser.
                                 </p>
                             </>
                         }
