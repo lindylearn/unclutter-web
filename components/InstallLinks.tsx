@@ -1,33 +1,76 @@
 import clsx from "clsx";
-import GithubButton from "./GithubButton";
+import { useInView } from "react-intersection-observer";
 
-export default function InstallLinks({ repoStars = 72, showGithub = false }) {
+export default function InstallLinks({ repoStars = 72, initial = false }) {
+    const { ref, inView } = useInView({
+        threshold: 1.0,
+        rootMargin: `0px 0px ${initial ? "-5%" : "-20%"} 0px`,
+        triggerOnce: true,
+    });
+
     return (
         <div
             className={clsx(
                 "flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center"
             )}
+            ref={ref}
         >
             <InstallButton
                 title="Add to Chrome"
                 iconPath="/icons/chrome.svg"
                 href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
+                inView={inView}
+                animationIndex={0}
             />
             <InstallButton
                 title="Add to Firefox"
                 iconPath="/icons/firefox.svg"
                 href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn"
+                inView={inView}
+                animationIndex={1}
             />
 
-            {showGithub && <GithubButton repoStars={repoStars} />}
+            {initial && (
+                <GithubButton
+                    repoStars={repoStars}
+                    inView={inView}
+                    animationIndex={2}
+                />
+            )}
         </div>
     );
 }
 
-export function InstallButton({ title, iconPath, href }) {
+export function InstallButton({
+    title,
+    iconPath,
+    href,
+    animationIndex,
+    inView,
+    children,
+}: {
+    title: string;
+    iconPath: string;
+    href: string;
+    animationIndex?: number;
+    inView?: boolean;
+    children?: React.ReactNode;
+}) {
     return (
         <a
-            className="w-max text-lg md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
+            className={clsx(
+                "w-max text-lg md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all relative",
+                `desktop:hover:shadow-lg desktop:hover:${
+                    animationIndex % 2 === 0 ? "" : "-"
+                }rotate-1`,
+                animationIndex !== undefined &&
+                    (inView ? "animate-slidein" : "opacity-0"),
+                children && "mr-14"
+            )}
+            style={{
+                animationDelay: animationIndex && `${animationIndex * 50}ms`,
+                animationFillMode: "backwards",
+            }}
             href={href}
             target="_blank"
             rel="noreferrer"
@@ -37,7 +80,35 @@ export function InstallButton({ title, iconPath, href }) {
                 src={iconPath}
             ></img>
             <div className="">{title}</div>
+            {children}
         </a>
+    );
+}
+
+export function GithubButton({
+    repoStars,
+    animationIndex,
+    inView,
+}: {
+    repoStars: number;
+    animationIndex?: number;
+    inView?: boolean;
+}) {
+    return (
+        <InstallButton
+            title="Star on GitHub"
+            iconPath="/icons/github.svg"
+            href="https://github.com/lindylearn/unclutter"
+            inView={inView}
+            animationIndex={animationIndex}
+        >
+            <div className="absolute -right-11 md:-right-14">
+                <div className="bg-white px-1.5 py-0.5 rounded-md shadow-md text-sm md:text-lg">
+                    {repoStars}
+                </div>
+                <div className="left-arrow"></div>
+            </div>
+        </InstallButton>
     );
 }
 

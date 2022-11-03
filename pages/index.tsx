@@ -3,9 +3,11 @@ import clsx from "clsx";
 import { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import ExamplePageList from "../components/ExamplePageList";
-import GithubButton from "../components/GithubButton";
 import Head from "../components/Head";
-import InstallLinks, { InstallButton } from "../components/InstallLinks";
+import InstallLinks, {
+    GithubButton,
+    InstallButton,
+} from "../components/InstallLinks";
 import ReviewsSection from "../components/Reviews";
 import VideoExample from "../components/VideoExample";
 
@@ -43,8 +45,11 @@ export default function Home({ repoStars, releases }) {
 
                 <div className="w-full max-w-5xl">
                     <div
-                        className="intro-video video-container relative rounded-lg overflow-hidden bg-white shadow-xl"
-                        style={{ aspectRatio: "900 / 595" }}
+                        className="intro-video video-container relative rounded-lg overflow-hidden bg-white shadow-xl animate-slidein"
+                        style={{
+                            aspectRatio: "900 / 595",
+                            animationFillMode: "both",
+                        }}
                     >
                         <video
                             className="rounded-lg object-contain"
@@ -56,7 +61,9 @@ export default function Home({ repoStars, releases }) {
                     </div>
                 </div>
 
-                <FirstInstallSection repoStars={repoStars} />
+                <div className="max-w-5xl w-full">
+                    <InstallLinks repoStars={repoStars} initial />
+                </div>
 
                 <div className="mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-7xl">
                     <VideoExample
@@ -196,26 +203,6 @@ export default function Home({ repoStars, releases }) {
     );
 }
 
-function FirstInstallSection({ repoStars }) {
-    const { ref, inView } = useInView({
-        threshold: 1.0,
-        rootMargin: "0px 0px -5% 0px",
-        triggerOnce: true,
-    });
-
-    return (
-        <div
-            className={clsx(
-                "w-full max-w-5xl",
-                inView ? "animate-slidein" : "opacity-0"
-            )}
-            ref={ref}
-        >
-            <InstallLinks repoStars={repoStars} showGithub />
-        </div>
-    );
-}
-
 function SecondInstallSection({}) {
     const { ref, inView } = useInView({
         threshold: 1.0,
@@ -262,16 +249,24 @@ function ContributeSection({ repoStars }) {
             </h2>
 
             <div className="flex gap-7">
-                <GithubButton repoStars={repoStars} />
+                <GithubButton
+                    repoStars={repoStars}
+                    inView={inView}
+                    animationIndex={0}
+                />
                 <InstallButton
                     title="Vote on Roadmap"
                     iconPath="https://uploads-ssl.webflow.com/62016deaf2189207a9b1784c/626c3c16ccede5b63e96d142_canny.svg"
                     href="https://unclutter.canny.io/"
+                    inView={inView}
+                    animationIndex={1}
                 />
                 {/* <InstallButton
                     title="Open docs"
                     iconPath="https://uploads-ssl.webflow.com/62016deaf2189207a9b1784c/626c3c16ccede5b63e96d142_canny.svg"
                     href="https://github.com/lindylearn/unclutter/tree/main/docs"
+                    inView={inView}
+                    animationIndex={2}
                 /> */}
             </div>
         </div>
