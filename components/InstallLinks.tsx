@@ -66,7 +66,7 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
     );
 }
 
-function StarIcon() {
+export function StarIcon() {
     return (
         <svg className="w-5 h-5" viewBox="0 0 576 512">
             <path

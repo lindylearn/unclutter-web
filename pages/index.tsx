@@ -4,6 +4,7 @@ import ExamplePageList from "../components/ExamplePageList";
 import GithubButton from "../components/GithubButton";
 import Head from "../components/Head";
 import InstallLinks from "../components/InstallLinks";
+import ReviewsSection from "../components/Reviews";
 import VideoExample from "../components/VideoExample";
 
 export default function Home({ repoStars, releases }) {
@@ -170,10 +171,13 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
 
-                    <div className="flex flex-col items-center my-10">
-                        <div className="text-2xl md:text-3xl font-bold mb-5">
+                    <ReviewsSection />
+
+                    <div className="flex flex-col items-center my-10 gap-5">
+                        <div className="text-2xl md:text-3xl font-bold">
                             Try it out in your browser:
                         </div>
+
                         <InstallLinks />
                     </div>
 
