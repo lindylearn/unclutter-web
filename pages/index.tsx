@@ -256,18 +256,16 @@ function ContributeSection({ repoStars }) {
                 />
                 <InstallButton
                     title="Vote on Roadmap"
-                    iconPath="https://uploads-ssl.webflow.com/62016deaf2189207a9b1784c/626c3c16ccede5b63e96d142_canny.svg"
                     href="https://unclutter.canny.io/"
                     inView={inView}
                     animationIndex={1}
                 />
-                {/* <InstallButton
+                <InstallButton
                     title="Open docs"
-                    iconPath="https://uploads-ssl.webflow.com/62016deaf2189207a9b1784c/626c3c16ccede5b63e96d142_canny.svg"
                     href="https://github.com/lindylearn/unclutter/tree/main/docs"
                     inView={inView}
                     animationIndex={2}
-                /> */}
+                />
             </div>
         </div>
     );

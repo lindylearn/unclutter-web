@@ -29,7 +29,7 @@ export default function ExamplePageList() {
     }, []);
 
     const { ref, inView } = useInView({
-        threshold: 1.0,
+        threshold: 0.3,
         triggerOnce: true,
     });
 

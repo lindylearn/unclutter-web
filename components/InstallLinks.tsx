@@ -50,7 +50,7 @@ export function InstallButton({
     children,
 }: {
     title: string;
-    iconPath: string;
+    iconPath?: string;
     href: string;
     animationIndex?: number;
     inView?: boolean;
@@ -75,10 +75,13 @@ export function InstallButton({
             target="_blank"
             rel="noreferrer"
         >
-            <img
-                className="inline-block w-6 h-6 md:w-8 md:h-8"
-                src={iconPath}
-            ></img>
+            {iconPath && (
+                <img
+                    className="inline-block w-6 h-6 md:w-8 md:h-8"
+                    src={iconPath}
+                ></img>
+            )}
+
             <div className="">{title}</div>
             {children}
         </a>
