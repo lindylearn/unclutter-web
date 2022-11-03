@@ -1,6 +1,6 @@
 import { InlineLink } from "../pages";
 import ExampleLayout from "./ExampleLayout";
-import GithubButton from "./GithubButton";
+import { GithubButton } from "./InstallLinks";
 
 export default function Releases({ repoStars, releases }) {
     return (
