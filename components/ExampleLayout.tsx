@@ -45,7 +45,12 @@ export default function ExampleLayout({
                     </h2>
                 </div>
 
-                <div className="font-text text-base md:text-xl max-w-xl leading-snug mb-1 flex flex-col gap-3">
+                <div
+                    className={clsx(
+                        "font-text text-base md:text-xl max-w-xl leading-snug mb-1 flex flex-col gap-3",
+                        inView ? "animate-slidein" : "opacity-0"
+                    )}
+                >
                     {description}
                 </div>
 

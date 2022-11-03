@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import { useInView } from "react-intersection-observer";
 import { StarIcon } from "./InstallLinks";
 
 export default function ReviewsSection() {
@@ -16,6 +18,7 @@ export default function ReviewsSection() {
                     </>
                 }
                 href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn/reviews/1843663/"
+                index={0}
             />
             <Review
                 text={
@@ -29,6 +32,7 @@ export default function ReviewsSection() {
                     </>
                 }
                 href="https://chrome.google.com/webstore/detail/unclutter-new-tab/bghgkooimeljolohebojceacblokenjn?hl=en-GB&authuser=0"
+                index={1}
             />
             <Review
                 text={
@@ -43,18 +47,33 @@ export default function ReviewsSection() {
                     </>
                 }
                 href="https://chrome.google.com/webstore/detail/unclutter-%E2%80%94-modern-reader/ibckhpijbdmdobhhhodkceffdngnglpk?hl=en-GB&authuser=0"
+                index={2}
             />
         </div>
     );
 }
 
-function Review({ text, href }) {
+function Review({ text, href, index }) {
+    const { ref, inView } = useInView({
+        threshold: 1.0,
+        rootMargin: "0px 0px -20% 0px",
+        triggerOnce: true,
+    });
+
     return (
         <a
+            className={clsx(
+                "flex flex-col gap-3 justify-between",
+                inView ? "animate-slidein" : "opacity-0"
+            )}
+            style={{
+                animationDelay: `${index * 50}ms`,
+                animationFillMode: "both",
+            }}
             href={href}
             target="_blank"
             rel="noreferrer"
-            className="flex flex-col gap-3 justify-between"
+            ref={ref}
         >
             <div className="font-text text-base md:text-xl max-w-xl leading-snug">
                 &quot;{text}&quot;

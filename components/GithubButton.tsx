@@ -9,7 +9,9 @@ export default function GithubButton({ repoStars }) {
             rel="noreferrer"
         >
             <img className="inline-block w-6 md:w-8" src="/icons/github.svg" />
-            <span className="md:text-lg flex-grow-0">Star on GitHub</span>
+            <span className="text-lg md:text-xl flex-grow-0">
+                Star on GitHub
+            </span>
             <div className="absolute -right-11 md:-right-14">
                 <div className="bg-white px-1.5 py-0.5 rounded-md shadow-md text-sm md:text-lg">
                     {repoStars}

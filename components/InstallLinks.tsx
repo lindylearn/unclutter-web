@@ -1,21 +1,12 @@
 import clsx from "clsx";
-import { useInView } from "react-intersection-observer";
 import GithubButton from "./GithubButton";
 
 export default function InstallLinks({ repoStars = 72, showGithub = false }) {
-    const { ref, inView } = useInView({
-        threshold: 1.0,
-        rootMargin: "0px 0px -5% 0px",
-        triggerOnce: true,
-    });
-
     return (
         <div
             className={clsx(
-                "flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center",
-                inView ? "animate-slidein" : "opacity-0"
+                "flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center"
             )}
-            ref={ref}
         >
             <InstallButton
                 title="Add to Chrome"
@@ -28,27 +19,7 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
                 href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn"
             />
 
-            {showGithub && (
-                <>
-                    <GithubButton repoStars={repoStars} />
-
-                    {/* <a
-                        className="flex flex-col gap-0.5 items-center pt-2"
-                        href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <div className="flex gap-1">
-                            <StarIcon />
-                            <StarIcon />
-                            <StarIcon />
-                            <StarIcon />
-                            <StarIcon />
-                        </div>
-                        <span className="font-normal">18 reviews</span>
-                    </a> */}
-                </>
-            )}
+            {showGithub && <GithubButton repoStars={repoStars} />}
         </div>
     );
 }
@@ -56,7 +27,7 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
 export function InstallButton({ title, iconPath, href }) {
     return (
         <a
-            className="md:text-lg flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
+            className="w-max text-lg md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
             href={href}
             target="_blank"
             rel="noreferrer"

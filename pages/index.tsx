@@ -1,5 +1,7 @@
 import axios from "axios";
+import clsx from "clsx";
 import { useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 import ExamplePageList from "../components/ExamplePageList";
 import GithubButton from "../components/GithubButton";
 import Head from "../components/Head";
@@ -23,7 +25,7 @@ export default function Home({ repoStars, releases }) {
                 description="Unclutter is a modern reader mode and article library for your browser."
             />
 
-            <main className="m-3 md:mt-7 flex flex-col gap-5 md:gap-7 items-center max-w-full overflow-hidden">
+            <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center max-w-full overflow-hidden">
                 <header className="w-full max-w-5xl flex gap-3">
                     <img
                         className="hidden md:block w-[4.5rem]"
@@ -54,11 +56,7 @@ export default function Home({ repoStars, releases }) {
                     </div>
                 </div>
 
-                <div className="w-full max-w-5xl">
-                    <InstallLinks repoStars={repoStars} showGithub />
-                </div>
-
-                {/* <GithubFloatingIcon repoStars={repoStars} /> */}
+                <FirstInstallSection repoStars={repoStars} />
 
                 <div className="mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-7xl">
                     <VideoExample
@@ -183,43 +181,99 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
 
+                    <div />
                     <ReviewsSection />
-
-                    <div className="flex flex-col items-center gap-5 my-5">
-                        <h2 className="text-lg md:text-[26px]">
-                            <b className="font-bold text-2xl md:text-3xl">
-                                Try it out
-                            </b>{" "}
-                            in your browser:
-                        </h2>
-
-                        <InstallLinks />
-                    </div>
-
-                    <div className="flex flex-col items-center gap-5">
-                        <h2 className="text-lg md:text-[26px]">
-                            <b className="font-bold text-2xl md:text-3xl">
-                                Contribute
-                            </b>{" "}
-                            to the open-source project:
-                        </h2>
-
-                        <div className="flex gap-7">
-                            <InstallButton
-                                title="Vote on Roadmap"
-                                iconPath="https://uploads-ssl.webflow.com/62016deaf2189207a9b1784c/626c3c16ccede5b63e96d142_canny.svg"
-                                href="https://unclutter.canny.io/"
-                            />
-
-                            <GithubButton repoStars={repoStars} />
-                        </div>
-                    </div>
-
-                    {/* <Releases repoStars={repoStars} releases={releases} /> */}
+                    <div />
+                    <SecondInstallSection />
+                    <div />
+                    <ContributeSection repoStars={repoStars} />
+                    <div />
                 </div>
 
                 <ExamplePageList />
             </main>
+        </div>
+    );
+}
+
+function FirstInstallSection({ repoStars }) {
+    const { ref, inView } = useInView({
+        threshold: 1.0,
+        rootMargin: "0px 0px -5% 0px",
+        triggerOnce: true,
+    });
+
+    return (
+        <div
+            className={clsx(
+                "w-full max-w-5xl",
+                inView ? "animate-slidein" : "opacity-0"
+            )}
+            ref={ref}
+        >
+            <InstallLinks repoStars={repoStars} showGithub />
+        </div>
+    );
+}
+
+function SecondInstallSection({}) {
+    const { ref, inView } = useInView({
+        threshold: 1.0,
+        rootMargin: "0px 0px -20% 0px",
+        triggerOnce: true,
+    });
+
+    return (
+        <div
+            className={clsx(
+                "flex flex-col items-center gap-5",
+                inView ? "animate-slidein" : "opacity-0"
+            )}
+            ref={ref}
+        >
+            <h2 className="text-lg md:text-[26px]">
+                <b className="font-bold text-2xl md:text-3xl">Try it out</b> in
+                your browser:
+            </h2>
+
+            <InstallLinks />
+        </div>
+    );
+}
+
+function ContributeSection({ repoStars }) {
+    const { ref, inView } = useInView({
+        threshold: 1.0,
+        rootMargin: "0px 0px -20% 0px",
+        triggerOnce: true,
+    });
+
+    return (
+        <div
+            className={clsx(
+                "flex flex-col items-center gap-5",
+                inView ? "animate-slidein" : "opacity-0"
+            )}
+            ref={ref}
+        >
+            <h2 className="text-lg md:text-[26px]">
+                <b className="font-bold text-2xl md:text-3xl">Contribute</b> to
+                the open-source project:
+            </h2>
+
+            <div className="flex gap-7">
+                <GithubButton repoStars={repoStars} />
+                <InstallButton
+                    title="Vote on Roadmap"
+                    iconPath="https://uploads-ssl.webflow.com/62016deaf2189207a9b1784c/626c3c16ccede5b63e96d142_canny.svg"
+                    href="https://unclutter.canny.io/"
+                />
+                {/* <InstallButton
+                    title="Open docs"
+                    iconPath="https://uploads-ssl.webflow.com/62016deaf2189207a9b1784c/626c3c16ccede5b63e96d142_canny.svg"
+                    href="https://github.com/lindylearn/unclutter/tree/main/docs"
+                /> */}
+            </div>
         </div>
     );
 }

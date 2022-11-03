@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -33,22 +34,24 @@ export default function ExamplePageList() {
     });
 
     return (
-        <div className="mt-5 mb-5 xl:mx-5 flex flex-col gap-7">
-            {/* <div className="flex justify-center" ref={ref}>
+        <div className="mb-5 xl:mx-5 flex flex-col gap-7" ref={ref}>
+            <div
+                className={clsx(
+                    "flex justify-center",
+                    inView ? "animate-slidein" : "opacity-0"
+                )}
+            >
                 <div
-                    className={
-                        "text-xl md:text-2xl opacity-0 " +
-                        (inView ? "animate-slidein" : "")
-                    }
+                    className={"text-lg md:text-[26px]"}
                     style={{ animationFillMode: "both" }}
                 >
-                    <b className="font-bold md:text-[26px]">Unclutter</b>{" "}
+                    <b className="font-bold text-2xl md:text-3xl">Unclutter</b>{" "}
                     <br className="md:hidden" />
                     <span className="">
                         — For the love of internet articles.
                     </span>
                 </div>
-            </div> */}
+            </div>
 
             <div className="mt-2 flex flex-wrap justify-evenly md:justify-center gap-2 sm:gap-5">
                 {Array.from(Array(pagesPerRow * 2).keys()).map((i) => (
