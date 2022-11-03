@@ -21,7 +21,7 @@ export default function ReviewsSection() {
                 text={
                     <>
                         <b className="font-display text-bold">
-                            This is a MUST have extension if you're an avid
+                            This is a MUST have extension if you&apos;re an avid
                             reader.
                         </b>{" "}
                         Literally one of the best things that has come out this
@@ -37,7 +37,7 @@ export default function ReviewsSection() {
                         [reader modes], but{" "}
                         <b className="font-display text-bold">
                             I have only been using UNCLUTTER for an hour and
-                            already think it's the one I am sticking with.
+                            already think it&apos;s the one I am sticking with.
                         </b>{" "}
                         [...]
                     </>
@@ -57,7 +57,7 @@ function Review({ text, href }) {
             className="flex flex-col gap-3 justify-between"
         >
             <div className="font-text text-base md:text-xl max-w-xl leading-snug">
-                "{text}"
+                &quot;{text}&quot;
             </div>
             <div className="flex gap-1">
                 <StarIcon />

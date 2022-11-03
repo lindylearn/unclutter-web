@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import ExamplePageList from "../components/ExamplePageList";
 import GithubButton from "../components/GithubButton";
 import Head from "../components/Head";
-import InstallLinks from "../components/InstallLinks";
+import InstallLinks, { InstallButton } from "../components/InstallLinks";
 import ReviewsSection from "../components/Reviews";
 import VideoExample from "../components/VideoExample";
 
@@ -141,11 +141,12 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Find"
                         title="popular quotes"
+                        icon={<></>}
                         description={
                             <p>
                                 What do other people think about the article
-                                you're reading? You can find out — more than
-                                85,643{" "}
+                                you&apos;re reading? You can find out — more
+                                than 85,643{" "}
                                 <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
                                     quote comments
                                 </InlineLink>{" "}
@@ -158,12 +159,13 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Save highlights"
                         title="by simply selecting text."
+                        icon={<></>}
                         description={
                             <>
                                 <p>
                                     Saving and searching across your highlights
-                                    shouldn't take multiple clicks or elaborate
-                                    synchronization setups.
+                                    shouldn&apos;t take multiple clicks or
+                                    elaborate synchronization setups.
                                 </p>
                             </>
                         }
@@ -173,19 +175,34 @@ export default function Home({ repoStars, releases }) {
 
                     <ReviewsSection />
 
-                    <div className="flex flex-col items-center my-10 gap-5">
-                        <div className="text-2xl md:text-3xl font-bold">
-                            Try it out in your browser:
-                        </div>
+                    <div className="flex flex-col items-center gap-5 my-5">
+                        <h2 className="text-lg md:text-[26px]">
+                            <b className="font-bold text-2xl md:text-3xl">
+                                Try it out
+                            </b>{" "}
+                            in your browser:
+                        </h2>
 
                         <InstallLinks />
                     </div>
 
-                    <div className="flex flex-col items-center mb-10">
-                        <div className="text-2xl md:text-3xl font-bold mb-5">
-                            Contribute to the open-source project:
+                    <div className="flex flex-col items-center gap-5">
+                        <h2 className="text-lg md:text-[26px]">
+                            <b className="font-bold text-2xl md:text-3xl">
+                                Contribute
+                            </b>{" "}
+                            to the open-source project:
+                        </h2>
+
+                        <div className="flex gap-7">
+                            <InstallButton
+                                title="Vote on Roadmap"
+                                iconPath="https://uploads-ssl.webflow.com/62016deaf2189207a9b1784c/626c3c16ccede5b63e96d142_canny.svg"
+                                href="https://unclutter.canny.io/"
+                            />
+
+                            <GithubButton repoStars={repoStars} />
                         </div>
-                        <GithubButton repoStars={repoStars} />
                     </div>
 
                     {/* <Releases repoStars={repoStars} releases={releases} /> */}

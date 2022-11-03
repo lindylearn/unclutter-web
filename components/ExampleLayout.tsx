@@ -35,9 +35,9 @@ export default function ExampleLayout({
             </div>
 
             <div className="flex flex-col md:mt-3 gap-1 md:gap-5 items-start basis-3/6">
-                <div className="text-lg md:text-[26px] flex gap-3 items-center">
+                <div className="flex gap-3 items-center">
                     {/* {icon} */}
-                    <h2>
+                    <h2 className="text-lg md:text-[26px]">
                         <b className="font-bold text-2xl md:text-3xl">
                             {boldTitle}
                         </b>{" "}

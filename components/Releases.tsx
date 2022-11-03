@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { useInView } from "react-intersection-observer";
 import { InlineLink } from "../pages";
 import ExampleLayout from "./ExampleLayout";
 import GithubButton from "./GithubButton";
@@ -9,6 +7,7 @@ export default function Releases({ repoStars, releases }) {
         <ExampleLayout
             boldTitle="Open-source,"
             title="with new updates every week."
+            icon={<></>}
             description={
                 <>
                     Open an issue for anything that&apos;s wrong, read the{" "}

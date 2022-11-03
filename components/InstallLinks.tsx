@@ -12,57 +12,61 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
     return (
         <div
             className={clsx(
-                "flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center md:text-lg",
+                "flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center",
                 inView ? "animate-slidein" : "opacity-0"
             )}
             ref={ref}
         >
-            <a
-                className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
+            <InstallButton
+                title="Add to Chrome"
+                iconPath="/icons/chrome.svg"
                 href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
-                target="_blank"
-                rel="noreferrer"
-            >
-                <img
-                    className="inline-block w-6 md:w-8"
-                    src="/icons/chrome.svg"
-                ></img>
-                <span className="">Add to Chrome</span>
-            </a>
-
-            <a
-                className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
+            />
+            <InstallButton
+                title="Add to Firefox"
+                iconPath="/icons/firefox.svg"
                 href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn"
-                target="_blank"
-                rel="noreferrer"
-            >
-                <img
-                    className="inline-block w-6 md:w-8"
-                    src="/icons/firefox.svg"
-                ></img>
-                <span className="">Add to Firefox</span>
-            </a>
+            />
 
-            {showGithub ? (
-                <GithubButton repoStars={repoStars} />
-            ) : (
-                <a
-                    className="flex flex-col gap-0.5 items-center pt-2"
-                    href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <div className="flex gap-1">
-                        <StarIcon />
-                        <StarIcon />
-                        <StarIcon />
-                        <StarIcon />
-                        <StarIcon />
-                    </div>
-                    <span className="font-normal">18 reviews</span>
-                </a>
+            {showGithub && (
+                <>
+                    <GithubButton repoStars={repoStars} />
+
+                    {/* <a
+                        className="flex flex-col gap-0.5 items-center pt-2"
+                        href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <div className="flex gap-1">
+                            <StarIcon />
+                            <StarIcon />
+                            <StarIcon />
+                            <StarIcon />
+                            <StarIcon />
+                        </div>
+                        <span className="font-normal">18 reviews</span>
+                    </a> */}
+                </>
             )}
         </div>
+    );
+}
+
+export function InstallButton({ title, iconPath, href }) {
+    return (
+        <a
+            className="md:text-lg flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+        >
+            <img
+                className="inline-block w-6 h-6 md:w-8 md:h-8"
+                src={iconPath}
+            ></img>
+            <div className="">{title}</div>
+        </a>
     );
 }
 
