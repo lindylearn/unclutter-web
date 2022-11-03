@@ -4,6 +4,8 @@ import ExampleLayout from "./ExampleLayout";
 export default function VideoExample({
     boldTitle,
     title,
+    icon,
+    description,
     video,
     poster = null,
     defaultVisible = false,
@@ -15,6 +17,8 @@ export default function VideoExample({
         <ExampleLayout
             boldTitle={boldTitle}
             title={title}
+            icon={icon}
+            description={description}
             defaultVisible={defaultVisible}
             onInView={() => (videoRef.current as HTMLVideoElement)?.play()}
         >

@@ -3,6 +3,8 @@ import { useInView } from "react-intersection-observer";
 export default function ExampleLayout({
     boldTitle,
     title,
+    icon,
+    description,
     children,
     descriptionChildren = null,
     defaultVisible = false,
@@ -22,21 +24,30 @@ export default function ExampleLayout({
     return (
         <div
             className={
-                "flex flex-col md:flex-row gap-3 md:gap-5 lg:gap-10 justify-start items-start " +
+                "grid gap-3 md:gap-5 lg:gap-10 grid-cols-2 " +
                 (!inView && defaultVisible ? "opacity-10" : "") +
                 (!inView && !defaultVisible ? "opacity-0" : "") +
                 (inView && !defaultVisible ? "animate-slidein" : "")
             }
             ref={ref}
         >
-            <div className="w-full md:max-w-sm lg:max-w-lg flex-shrink-0 relative rounded-lg overflow-hidden shadow-lg">
+            <div className="relative rounded-lg overflow-hidden shadow-lg">
                 {children}
             </div>
 
-            <div className="w-full flex flex-col md:mt-5 gap-1 md:gap-3 items-start">
-                <div className="text-xl md:text-2xl max-w-2xl">
-                    <b className="font-bold md:text-[26px]">{boldTitle}</b>{" "}
-                    {title}
+            <div className="flex flex-col md:mt-3 gap-1 md:gap-5 items-start basis-3/6">
+                <div className="text-lg md:text-[26px] flex gap-3 items-center">
+                    {/* {icon} */}
+                    <h2>
+                        <b className="font-bold text-2xl md:text-3xl">
+                            {boldTitle}
+                        </b>{" "}
+                        {title}
+                    </h2>
+                </div>
+
+                <div className="font-text text-base md:text-xl max-w-xl leading-snug mb-1 flex flex-col gap-3">
+                    {description}
                 </div>
 
                 {descriptionChildren}
