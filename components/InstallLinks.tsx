@@ -2,9 +2,9 @@ import GithubButton from "./GithubButton";
 
 export default function InstallLinks({ repoStars = 72, showGithub = false }) {
     return (
-        <div className="flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center md:text-lg ">
+        <div className="flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center md:text-lg">
             <a
-                className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
+                className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
                 href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
                 target="_blank"
                 rel="noreferrer"
@@ -17,7 +17,7 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
             </a>
 
             <a
-                className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
+                className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
                 href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn"
                 target="_blank"
                 rel="noreferrer"

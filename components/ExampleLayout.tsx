@@ -1,5 +1,4 @@
 import { useInView } from "react-intersection-observer";
-import { createContext } from "react";
 
 export default function ExampleLayout({
     boldTitle,
@@ -31,7 +30,7 @@ export default function ExampleLayout({
             }
             ref={ref}
         >
-            <div className="w-full md:max-w-sm lg:max-w-lg flex-shrink-0 relative rounded-xl overflow-hidden shadow-xl desktop:hover:cursor-pointer desktop:hover:shadow-2xl">
+            <div className="w-full md:max-w-sm lg:max-w-lg flex-shrink-0 relative rounded-lg overflow-hidden shadow-lg">
                 {children(inView)}
             </div>
 

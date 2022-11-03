@@ -12,11 +12,11 @@ module.exports = {
                     "60%": { transform: "rotate(-1deg)" },
                 },
                 slidein: {
-                    "0%": { transform: "translate(400px)", opacity: "0" },
+                    "0%": { transform: "translateY(150px)", opacity: "0" },
                     "100%": { transform: "translate(0)", opacity: "1" },
                 },
                 slideinSlightly: {
-                    "0%": { transform: "translate(100px)", opacity: "0" },
+                    "0%": { transform: "translateY(100px)", opacity: "0" },
                     "100%": { transform: "translate(0)", opacity: "1" },
                 },
                 fadein: {
