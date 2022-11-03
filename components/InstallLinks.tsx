@@ -1,8 +1,22 @@
+import clsx from "clsx";
+import { useInView } from "react-intersection-observer";
 import GithubButton from "./GithubButton";
 
 export default function InstallLinks({ repoStars = 72, showGithub = false }) {
+    const { ref, inView } = useInView({
+        threshold: 1.0,
+        rootMargin: "0px 0px -20% 0px",
+        triggerOnce: true,
+    });
+
     return (
-        <div className="flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center md:text-lg">
+        <div
+            className={clsx(
+                "flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center md:text-lg",
+                inView ? "animate-slidein" : "opacity-0"
+            )}
+            ref={ref}
+        >
             <a
                 className="flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all desktop:hover:shadow-lg desktop:hover:rotate-1 relative"
                 href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
@@ -45,7 +59,7 @@ export default function InstallLinks({ repoStars = 72, showGithub = false }) {
                         <StarIcon />
                         <StarIcon />
                     </div>
-                    <span className="font-normal">17 reviews</span>
+                    <span className="font-normal">18 reviews</span>
                 </a>
             )}
         </div>

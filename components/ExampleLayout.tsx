@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useInView } from "react-intersection-observer";
 
 export default function ExampleLayout({
@@ -11,7 +12,7 @@ export default function ExampleLayout({
     onInView = () => {},
 }) {
     const { ref, inView } = useInView({
-        threshold: 0.5,
+        threshold: defaultVisible ? 0.1 : 0.4,
         rootMargin: "0px 0px -30% 0px",
         triggerOnce: true,
         onChange: (inView) => {
@@ -23,12 +24,10 @@ export default function ExampleLayout({
 
     return (
         <div
-            className={
-                "grid gap-3 md:gap-5 lg:gap-10 grid-cols-2 " +
-                (!inView && defaultVisible ? "opacity-10" : "") +
-                (!inView && !defaultVisible ? "opacity-0" : "") +
-                (inView && !defaultVisible ? "animate-slidein" : "")
-            }
+            className={clsx(
+                "grid gap-3 md:gap-5 lg:gap-10 grid-cols-2",
+                inView ? "animate-slidein" : "opacity-0"
+            )}
             ref={ref}
         >
             <div className="relative rounded-lg overflow-hidden shadow-lg">

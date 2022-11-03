@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useRef } from "react";
 import ExamplePageList from "../components/ExamplePageList";
+import GithubButton from "../components/GithubButton";
 import Head from "../components/Head";
 import InstallLinks from "../components/InstallLinks";
-import Releases from "../components/Releases";
 import VideoExample from "../components/VideoExample";
 
 export default function Home({ repoStars, releases }) {
@@ -59,7 +59,7 @@ export default function Home({ repoStars, releases }) {
 
                 {/* <GithubFloatingIcon repoStars={repoStars} /> */}
 
-                <div className="mt-20 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-7xl">
+                <div className="mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-7xl">
                     <VideoExample
                         boldTitle="Remove ads,"
                         title="cookie banners & popups."
@@ -170,19 +170,21 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
 
-                    <div className="flex justify-center">
-                        <div
-                            className="text-center border-neutral-900 border-4 
-                         md:my-5 py-2 md:py-5 md:px-20 rounded-2xl bg-transparent shadow-xl"
-                        >
-                            <div className="text-xl md:text-[26px] font-bold mb-3">
-                                Try Unclutter in your browser:
-                            </div>
-                            <InstallLinks />
+                    <div className="flex flex-col items-center my-10">
+                        <div className="text-2xl md:text-3xl font-bold mb-5">
+                            Try it out in your browser:
                         </div>
+                        <InstallLinks />
                     </div>
 
-                    <Releases repoStars={repoStars} releases={releases} />
+                    <div className="flex flex-col items-center mb-10">
+                        <div className="text-2xl md:text-3xl font-bold mb-5">
+                            Contribute to the open-source project:
+                        </div>
+                        <GithubButton repoStars={repoStars} />
+                    </div>
+
+                    {/* <Releases repoStars={repoStars} releases={releases} /> */}
                 </div>
 
                 <ExamplePageList />
