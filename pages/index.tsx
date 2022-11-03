@@ -18,12 +18,12 @@ export default function Home({ repoStars, releases }) {
     return (
         <div className="font-display text-neutral-900">
             <Head
-                title="Unclutter - Immersive Reading Mode"
-                description="A new kind of reader mode to remove distractions, find popular quotes, outline pages & more."
+                title="Unclutter — Modern Reader Mode"
+                description="Unclutter is a modern reader mode and article library for your browser."
             />
 
-            <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center max-w-full overflow-hidden">
-                <div className="w-full max-w-4xl flex gap-3">
+            <main className="m-3 md:mt-7 flex flex-col gap-5 md:gap-7 items-center max-w-full overflow-hidden">
+                <div className="w-full max-w-5xl flex gap-3">
                     <img
                         className="hidden md:block w-[4.5rem]"
                         src="/icon.svg"
@@ -59,20 +59,10 @@ export default function Home({ repoStars, releases }) {
 
                 {/* <GithubFloatingIcon repoStars={repoStars} /> */}
 
-                <div className="mt-5 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center">
+                <div className="mt-20 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center">
                     <VideoExample
                         boldTitle="Remove ads,"
                         title="cookie banners & popups."
-                        description={
-                            <>
-                                Unclutter analyses a website&apos;s{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
-                                    CSS
-                                </InlineLink>{" "}
-                                to remove non-essential page elements. All
-                                changes are animated.
-                            </>
-                        }
                         video="media/clips/distractions.webm"
                         poster="media/clips/distractions.png"
                         defaultVisible
@@ -80,31 +70,12 @@ export default function Home({ repoStars, releases }) {
                     <VideoExample
                         boldTitle="Customize text"
                         title="across of all websites."
-                        description={
-                            <>
-                                Yet unlike with other reader modes, websites
-                                keep their{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/comparison.md">
-                                    original style
-                                </InlineLink>
-                                .
-                            </>
-                        }
                         video="media/clips/theme.webm"
                         whiteReplayLogo
                     />
                     <VideoExample
                         boldTitle="Navigate"
                         title="long reads."
-                        description={
-                            <>
-                                Unclutter generates{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/outline.md">
-                                    chapters
-                                </InlineLink>{" "}
-                                from the page and updates them as you scroll.
-                            </>
-                        }
                         video="media/clips/outline.webm"
                     />
                     <VideoExample
@@ -118,34 +89,11 @@ export default function Home({ repoStars, releases }) {
                                 .
                             </>
                         }
-                        description={
-                            <>
-                                85,643+{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
-                                    public comments
-                                </InlineLink>{" "}
-                                that mention article quotes turn up directly
-                                within the extension.
-                            </>
-                        }
                         video="media/clips/social.webm"
                     />
                     <VideoExample
                         boldTitle="Save highlights"
                         title="by selecting them."
-                        description={
-                            <>
-                                Your notes are saved locally or can be synced to{" "}
-                                <InlineLink href="https://web.hypothes.is">
-                                    Hypothes.is
-                                </InlineLink>{" "}
-                                and{" "}
-                                <InlineLink href="https://web.hypothes.is/tools-plug-ins-and-integrations/#:~:text=For%20note%2Dtaking%20apps">
-                                    note-taking apps
-                                </InlineLink>
-                                .
-                            </>
-                        }
                         video="media/clips/annotations.webm"
                         whiteReplayLogo
                     />
