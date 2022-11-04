@@ -35,10 +35,10 @@ export default function ExamplePageList() {
     });
 
     return (
-        <div className="mb-5 xl:mx-5 flex flex-col gap-7">
+        <div className="mb-5 xl:mx-5 flex flex-col gap-3 md:gap-5">
             <div
                 className={clsx(
-                    "flex justify-center",
+                    "flex md:justify-center",
                     inView ? "animate-slidein" : "opacity-0"
                 )}
                 ref={ref}
@@ -57,7 +57,7 @@ export default function ExamplePageList() {
 
             <div
                 className={clsx(
-                    "mt-2 flex flex-wrap justify-evenly md:justify-center gap-2 sm:gap-5",
+                    "md:mt-2 flex flex-wrap justify-evenly md:justify-center gap-2 sm:gap-5",
                     inView ? "animate-slidein" : "opacity-0"
                 )}
             >

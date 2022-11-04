@@ -25,7 +25,7 @@ export default function ExampleLayout({
     return (
         <div
             className={clsx(
-                "grid gap-3 md:gap-5 lg:gap-10 grid-cols-2",
+                "grid gap-3 md:gap-5 lg:gap-10 md:grid-cols-2",
                 inView ? "animate-slidein" : "opacity-0"
             )}
             ref={ref}

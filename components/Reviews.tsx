@@ -4,7 +4,7 @@ import { StarIcon } from "./InstallLinks";
 
 export default function ReviewsSection() {
     return (
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-5">
             <Review
                 text={
                     <>
@@ -63,7 +63,7 @@ function Review({ text, href, index }) {
     return (
         <a
             className={clsx(
-                "flex flex-col gap-3 justify-between",
+                "flex flex-col gap-2 md:gap-3 justify-between",
                 inView ? "animate-slidein" : "opacity-0"
             )}
             style={{

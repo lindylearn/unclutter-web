@@ -27,8 +27,8 @@ export default function Home({ repoStars, releases }) {
                 description="Unclutter is a modern reader mode and article library for your browser."
             />
 
-            <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center max-w-full overflow-hidden">
-                <header className="w-full max-w-5xl flex gap-3">
+            <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center">
+                <header className="w-full md:max-w-5xl flex gap-3">
                     <img
                         className="hidden md:block w-[4.5rem]"
                         src="/icon.svg"
@@ -43,7 +43,7 @@ export default function Home({ repoStars, releases }) {
                     </h1>
                 </header>
 
-                <div className="w-full max-w-5xl">
+                <div className="w-full md:max-w-5xl">
                     <div
                         className="intro-video video-container relative rounded-lg overflow-hidden bg-white shadow-xl animate-slidein"
                         style={{
@@ -65,7 +65,7 @@ export default function Home({ repoStars, releases }) {
                     <InstallLinks repoStars={repoStars} initial />
                 </div>
 
-                <div className="mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-7xl">
+                <div className="mt-3 md:mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-full md:max-w-7xl">
                     <VideoExample
                         boldTitle="Remove ads,"
                         title="cookie banners & popups."
@@ -188,13 +188,13 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
 
-                    <div />
+                    <div className="" />
                     <ReviewsSection />
-                    <div />
+                    <div className="hidden md:block" />
                     <SecondInstallSection />
-                    <div />
+                    <div className="hidden md:block" />
                     <ContributeSection repoStars={repoStars} />
-                    <div />
+                    <div className="" />
                 </div>
 
                 <ExamplePageList />
@@ -213,14 +213,14 @@ function SecondInstallSection({}) {
     return (
         <div
             className={clsx(
-                "flex flex-col items-center gap-5",
+                "flex flex-col md:items-center gap-3 md:gap-5",
                 inView ? "animate-slidein" : "opacity-0"
             )}
             ref={ref}
         >
             <h2 className="text-lg md:text-[26px]">
                 <b className="font-bold text-2xl md:text-3xl">Try it out</b> in
-                your browser:
+                your <span className="md:hidden">desktop</span> browser:
             </h2>
 
             <InstallLinks />
@@ -238,7 +238,7 @@ function ContributeSection({ repoStars }) {
     return (
         <div
             className={clsx(
-                "flex flex-col items-center gap-5",
+                "flex flex-col items-center gap-3 md:gap-5",
                 inView ? "animate-slidein" : "opacity-0"
             )}
             ref={ref}
@@ -248,7 +248,7 @@ function ContributeSection({ repoStars }) {
                 the open-source project:
             </h2>
 
-            <div className="flex gap-7">
+            <div className="flex gap-3 md:gap-7 flex-wrap">
                 <GithubButton
                     repoStars={repoStars}
                     inView={inView}

@@ -11,7 +11,7 @@ export default function InstallLinks({ repoStars = 72, initial = false }) {
     return (
         <div
             className={clsx(
-                "flex flex-wrap md:flex-nowrap gap-2 md:gap-7 justify-center md:justify-start items-center"
+                "flex flex-wrap md:flex-nowrap gap-3 md:gap-7 justify-start items-center"
             )}
             ref={ref}
         >
