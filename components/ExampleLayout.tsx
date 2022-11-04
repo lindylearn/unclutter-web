@@ -33,11 +33,11 @@ export default function ExampleLayout({
             )}
             ref={ref}
         >
-            <div className="relative rounded-lg overflow-hidden shadow-lg">
+            <div className="relative md:rounded-lg overflow-hidden shadow-lg -mx-3 md:mx-0">
                 {children}
             </div>
 
-            <div className="flex flex-col md:mt-3 gap-1 md:gap-5 items-start basis-3/6">
+            <div className="flex flex-col md:mt-3 gap-3 md:gap-5 items-start">
                 <div className="flex gap-3 items-center">
                     {/* {icon} */}
                     <h2 className="text-lg md:text-[26px]">

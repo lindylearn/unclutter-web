@@ -46,14 +46,14 @@ export default function Home({ repoStars, releases }) {
 
                 <div className="w-full md:max-w-5xl">
                     <div
-                        className="intro-video video-container relative rounded-lg overflow-hidden bg-white shadow-xl animate-slidein"
+                        className="intro-video video-container relative rounded md:rounded-lg overflow-hidden bg-white shadow-xl animate-slidein"
                         style={{
                             aspectRatio: "900 / 595",
                             animationFillMode: "both",
                         }}
                     >
                         <video
-                            className="rounded-lg object-contain"
+                            className="md:rounded-lg object-contain"
                             src="media/clips/intro.webm"
                             poster="media/clips/intro.jpg"
                             muted
