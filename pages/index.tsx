@@ -132,13 +132,34 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
                     <VideoExample
-                        boldTitle="Save highlights"
-                        title="by simply selecting them"
+                        boldTitle="Save articles"
+                        title="to read later"
                         icon={<></>}
                         description={
                             <>
                                 <p>
-                                    Saving highlights you want to remember
+                                    Articles you open automatically get saved in
+                                    your library.
+                                </p>
+                                <p>
+                                    Add them to your reading queue, find
+                                    information when you need it, or track what
+                                    you've read in the last weeks. Nobody has
+                                    time for everything.
+                                </p>
+                            </>
+                        }
+                        video="media/clips/library.webm"
+                        whiteReplayLogo
+                    />
+                    <VideoExample
+                        boldTitle="Save highlights"
+                        title="by selecting them"
+                        icon={<></>}
+                        description={
+                            <>
+                                <p>
+                                    Saving quotes you want to remember
                                     shouldn&apos;t take multiple clicks or
                                     elaborate synchronization setups.
                                 </p>
@@ -152,37 +173,17 @@ export default function Home({ repoStars, releases }) {
                         video="media/clips/annotations.webm"
                         whiteReplayLogo
                     />
-                    {/* <VideoExample
-                        boldTitle="Navigate"
-                        title="long reads"
-                        description={
-                            <>
-                                Unclutter generates{" "}
-                                <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/outline.md">
-                                    chapters
-                                </InlineLink>{" "}
-                                from the page and updates them as you scroll.
-                            </>
-                        }
-                        video="media/clips/outline.webm"
-                    /> */}
                     <VideoExample
-                        boldTitle="Find"
-                        title="popular quotes"
+                        boldTitle="Social comments, "
+                        title="outline chapters, automatic activation, ..."
                         icon={<></>}
                         description={
                             <>
+                                <p>Continuing this list would get boring.</p>
                                 <p>
-                                    What do other people think about the article
-                                    you&apos;re just reading?
-                                </p>
-                                <p>
-                                    You can find out — more than 85,643{" "}
-                                    <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/docs/social-highlights.md">
-                                        quote comments
-                                    </InlineLink>{" "}
-                                    from Hacker News and Hypothes.is turn up
-                                    directly inside Unclutter.
+                                    Want to see what other people think about
+                                    articles or quickly navigate long pages?
+                                    Simply try out Unclutter for yourself.
                                 </p>
                             </>
                         }

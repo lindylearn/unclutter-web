@@ -47,11 +47,9 @@ export default function ExamplePageList() {
                     className={"text-lg md:text-[26px]"}
                     style={{ animationFillMode: "both" }}
                 >
-                    <b className="font-bold text-2xl md:text-3xl">Unclutter</b>{" "}
-                    <br className="md:hidden" />
-                    <span className="">
-                        — For the love of internet articles.
-                    </span>
+                    {/* <b className="font-bold text-2xl md:text-3xl">Unclutter</b>{" "}
+                    <br className="md:hidden" /> */}
+                    <span className="">For the love of internet articles.</span>
                 </div>
             </div>
 

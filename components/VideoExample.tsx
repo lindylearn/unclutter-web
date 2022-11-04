@@ -24,7 +24,7 @@ export default function VideoExample({
         >
             <div className="video-container">
                 <video
-                    className=""
+                    className="object-cover object-left-top"
                     src={video}
                     poster={poster}
                     ref={videoRef}
