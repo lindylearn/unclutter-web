@@ -95,7 +95,7 @@ export default function Home({ repoStars, releases }) {
                                 </p>
                                 <p>
                                     So The Guardian still looks like The
-                                    Guardian, small blogs stay quirky, and you
+                                    Guardian, small blogs stay weird, and you
                                     can still click interactive graphs.
                                 </p>
                             </>
@@ -124,10 +124,9 @@ export default function Home({ repoStars, releases }) {
                                 </p>
 
                                 <p>
-                                    With the Unclutter browser extension your
-                                    favorite settings are one click away. No
-                                    need to open some seperate website or to
-                                    find your phone.
+                                    With the Unclutter extension your favorite
+                                    settings are one click away. No need to open
+                                    a seperate website or to find your phone.
                                 </p>
                             </>
                         }
@@ -147,7 +146,7 @@ export default function Home({ repoStars, releases }) {
                                 <p>
                                     Add them to your reading queue, find
                                     information when you need it, or at least
-                                    know that no knowledge is lost. This also
+                                    know that no knowledge is lost. Also
                                     includes a nice activity graph!
                                 </p>
                             </>
