@@ -29,17 +29,19 @@ export default function ExamplePageList() {
     }, []);
 
     const { ref, inView } = useInView({
-        threshold: 0.3,
+        threshold: 1.0,
+        rootMargin: "0px 0px -20% 0px",
         triggerOnce: true,
     });
 
     return (
-        <div className="mb-5 xl:mx-5 flex flex-col gap-7" ref={ref}>
+        <div className="mb-5 xl:mx-5 flex flex-col gap-7">
             <div
                 className={clsx(
                     "flex justify-center",
                     inView ? "animate-slidein" : "opacity-0"
                 )}
+                ref={ref}
             >
                 <div
                     className={"text-lg md:text-[26px]"}
@@ -53,7 +55,12 @@ export default function ExamplePageList() {
                 </div>
             </div>
 
-            <div className="mt-2 flex flex-wrap justify-evenly md:justify-center gap-2 sm:gap-5">
+            <div
+                className={clsx(
+                    "mt-2 flex flex-wrap justify-evenly md:justify-center gap-2 sm:gap-5",
+                    inView ? "animate-slidein" : "opacity-0"
+                )}
+            >
                 {Array.from(Array(pagesPerRow * 2).keys()).map((i) => (
                     <ExamplePage key={i} index={i} />
                 ))}
