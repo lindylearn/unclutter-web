@@ -185,7 +185,7 @@ export default function Home({ repoStars, releases }) {
                                 <p>Continuing this list would get boring.</p>
                                 <p>
                                     Just try out the extension to find all the
-                                    features. It's free and open-source!
+                                    features. It&apos;s free and open-source!
                                 </p>
                             </>
                         }
