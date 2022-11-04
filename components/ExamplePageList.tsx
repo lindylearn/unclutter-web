@@ -30,7 +30,7 @@ export default function ExamplePageList() {
 
     const { ref, inView } = useInView({
         threshold: 1.0,
-        rootMargin: "0px 0px -20% 0px",
+        rootMargin: "0px 0px -30% 0px",
         triggerOnce: true,
     });
 
@@ -57,27 +57,32 @@ export default function ExamplePageList() {
 
             <div
                 className={clsx(
-                    "md:mt-2 flex flex-wrap justify-evenly md:justify-center gap-2 sm:gap-5",
-                    inView ? "animate-slidein" : "opacity-0"
+                    "md:mt-2 flex flex-wrap justify-evenly md:justify-center gap-2 sm:gap-5"
                 )}
             >
                 {Array.from(Array(pagesPerRow * 2).keys()).map((i) => (
-                    <ExamplePage key={i} index={i} />
+                    <ExamplePage key={i} index={i} inView={inView} />
                 ))}
             </div>
         </div>
     );
 }
 
-export function ExamplePage({ index }) {
+export function ExamplePage({ index, inView }) {
+    const animationIndex = Math.round(Math.random() * 3);
     return (
         <a
-            className={
-                "w-28 sm:w-36 xl:w-48 flex rounded-lg shadow-lg desktop:hover:shadow-2xl transition-all " +
-                (index % 3 === 0
-                    ? "desktop:hover:-rotate-1 "
-                    : "desktop:hover:rotate-1 ")
-            }
+            className={clsx(
+                "w-28 sm:w-36 xl:w-48 flex rounded-lg shadow-lg desktop:hover:shadow-2xl transition-all",
+                inView ? "animate-slidein" : "opacity-0",
+                index % 3 === 0
+                    ? "desktop:hover:-rotate-1"
+                    : "desktop:hover:rotate-1"
+            )}
+            style={{
+                animationDelay: `${animationIndex * 50}ms`,
+                animationFillMode: "backwards",
+            }}
             href={exampleUrls[index]}
             target="_blank"
             rel="noreferrer"

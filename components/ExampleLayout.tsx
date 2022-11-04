@@ -16,7 +16,7 @@ export default function ExampleLayout({
 
     const { ref, inView } = useInView({
         threshold: defaultVisible ? 0.1 : 0.4,
-        rootMargin: `0px 0px ${isMobile ? "-40%" : "-20%"} 0px`,
+        rootMargin: `0px 0px ${isMobile ? "-40%" : "-30%"} 0px`,
         triggerOnce: true,
         onChange: (inView) => {
             if (inView) {
