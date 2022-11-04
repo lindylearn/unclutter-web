@@ -68,7 +68,7 @@ export default function ExamplePageList() {
     );
 }
 
-export function ExamplePage({ index, inView }) {
+export function ExamplePage({ index, inView = false }) {
     const animationIndex = Math.round(Math.random() * 3);
     return (
         <a
