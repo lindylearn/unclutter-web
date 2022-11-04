@@ -17,8 +17,10 @@ export default function Home({ repoStars, releases }) {
         setTimeout(() => {
             const video = mainVideoRef.current as HTMLVideoElement;
             video?.play();
-        }, 1200);
+        }, 2000);
     }, []);
+
+    // return <></>;
 
     return (
         <div className="font-display text-stone-900">
@@ -44,12 +46,13 @@ export default function Home({ repoStars, releases }) {
                     </h1>
                 </header>
 
-                <div className="w-full md:max-w-5xl">
+                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg">
                     <div
-                        className="intro-video video-container relative rounded md:rounded-lg overflow-hidden bg-white shadow-xl animate-slidein"
+                        className="intro-video video-container relative overflow-hidden bg-white  animate-slidein"
                         style={{
-                            aspectRatio: "900 / 595",
+                            aspectRatio: "2412 / 1616",
                             animationFillMode: "both",
+                            margin: "-1px -1px -2px -1px",
                         }}
                     >
                         <video
