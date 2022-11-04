@@ -69,7 +69,7 @@ export default function Home({ repoStars, releases }) {
                 <div className="mt-3 md:mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-full md:max-w-7xl">
                     <VideoExample
                         boldTitle="Remove ads,"
-                        title="cookie banners & popups."
+                        title="cookie banners & popups"
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +83,8 @@ export default function Home({ repoStars, releases }) {
                             <>
                                 <p>
                                     Unlike all other reader modes or
-                                    read-it-later apps, Unclutter modifies a
-                                    website&apos;s{" "}
+                                    read-it-later apps, Unclutter dynamically
+                                    modifies a website&apos;s{" "}
                                     <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
                                         CSS styles
                                     </InlineLink>{" "}
@@ -92,7 +92,7 @@ export default function Home({ repoStars, releases }) {
                                 </p>
                                 <p>
                                     So The Atlantic still looks like The
-                                    Atlantic, small blogs stay unique, and you
+                                    Atlantic, small blogs stay quirky, and you
                                     can still click interactive graphs.
                                 </p>
                             </>
@@ -103,7 +103,7 @@ export default function Home({ repoStars, releases }) {
                     />
                     <VideoExample
                         boldTitle="Customize"
-                        title="how you read the web."
+                        title="how you read the web"
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -131,9 +131,30 @@ export default function Home({ repoStars, releases }) {
                         video="media/clips/theme.webm"
                         whiteReplayLogo
                     />
+                    <VideoExample
+                        boldTitle="Save highlights"
+                        title="by simply selecting them"
+                        icon={<></>}
+                        description={
+                            <>
+                                <p>
+                                    Saving highlights you want to remember
+                                    shouldn&apos;t take multiple clicks or
+                                    elaborate synchronization setups.
+                                </p>
+                                <p>
+                                    Just select the text you want to save, then
+                                    search across it later. Directly in your
+                                    browser.
+                                </p>
+                            </>
+                        }
+                        video="media/clips/annotations.webm"
+                        whiteReplayLogo
+                    />
                     {/* <VideoExample
                         boldTitle="Navigate"
-                        title="long reads."
+                        title="long reads"
                         description={
                             <>
                                 Unclutter generates{" "}
@@ -166,27 +187,6 @@ export default function Home({ repoStars, releases }) {
                             </>
                         }
                         video="media/clips/social.webm"
-                    />
-                    <VideoExample
-                        boldTitle="Save highlights"
-                        title="by simply selecting text."
-                        icon={<></>}
-                        description={
-                            <>
-                                <p>
-                                    Saving highlights you want to remember
-                                    shouldn&apos;t take multiple clicks or
-                                    elaborate synchronization setups.
-                                </p>
-                                <p>
-                                    Just select the text you want to save, then
-                                    search across it later. Directly in your
-                                    browser.
-                                </p>
-                            </>
-                        }
-                        video="media/clips/annotations.webm"
-                        whiteReplayLogo
                     />
 
                     <div className="" />
@@ -221,7 +221,7 @@ function SecondInstallSection({ repoStars }) {
         >
             <h2 className="text-lg md:text-[26px]">
                 <b className="font-bold text-2xl md:text-3xl">Try it out</b> in
-                your <span className="md:hidden">desktop </span>browser:
+                your <span className="md:hidden">desktop </span>browser
             </h2>
 
             <InstallLinks repoStars={repoStars} />
@@ -246,7 +246,7 @@ function ContributeSection({ repoStars }) {
         >
             <h2 className="text-lg md:text-[26px]">
                 <b className="font-bold text-2xl md:text-3xl">Contribute</b> to
-                the open-source project:
+                the open-source project
             </h2>
 
             <div className="flex gap-3 md:gap-7 flex-wrap">
