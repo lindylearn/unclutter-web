@@ -88,14 +88,14 @@ export default function Home({ repoStars, releases }) {
                                     Unlike all other reader modes or
                                     read-it-later apps, Unclutter dynamically
                                     modifies a website&apos;s{" "}
-                                    <InlineLink href="https://github.com/lindylearn/unclutter#how-this-works">
+                                    <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/DEVELOPMENT.md#how-unclutter-works">
                                         CSS styles
                                     </InlineLink>{" "}
                                     to remove annoyances.
                                 </p>
                                 <p>
-                                    So The Atlantic still looks like The
-                                    Atlantic, small blogs stay quirky, and you
+                                    So The Guardian still looks like The
+                                    Guardian, small blogs stay quirky, and you
                                     can still click interactive graphs.
                                 </p>
                             </>
@@ -125,9 +125,9 @@ export default function Home({ repoStars, releases }) {
 
                                 <p>
                                     With the Unclutter browser extension your
-                                    favorite reading settings are only one click
-                                    away. No need to open a seperate website or
-                                    to find your phone.
+                                    favorite settings are one click away. No
+                                    need to open some seperate website or to
+                                    find your phone.
                                 </p>
                             </>
                         }
@@ -146,9 +146,9 @@ export default function Home({ repoStars, releases }) {
                                 </p>
                                 <p>
                                     Add them to your reading queue, find
-                                    information when you need it, or track what
-                                    you've read in the last weeks. Nobody has
-                                    time for everything.
+                                    information when you need it, or at least
+                                    know that no knowledge is lost. This also
+                                    includes a nice activity graph!
                                 </p>
                             </>
                         }
@@ -178,15 +178,14 @@ export default function Home({ repoStars, releases }) {
                     />
                     <VideoExample
                         boldTitle="Social comments, "
-                        title="outline chapters, automatic activation, ..."
+                        title="outline chapters, automatic activation, element blocker, ..."
                         icon={<></>}
                         description={
                             <>
                                 <p>Continuing this list would get boring.</p>
                                 <p>
-                                    Want to see what other people think about
-                                    articles or quickly navigate long pages?
-                                    Simply try out Unclutter for yourself.
+                                    Just try out the extension to find all the
+                                    features. It's free and open-source!
                                 </p>
                             </>
                         }
