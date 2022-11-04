@@ -51,11 +51,11 @@ export default function Home({ repoStars }) {
                     </div>
 
                     <div className="mt-3 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
-                        <ExamplePage index={0} />
-                        <ExamplePage index={7} />
-                        <ExamplePage index={3} />
-                        <ExamplePage index={5} />
-                        <ExamplePage index={6} />
+                        <ExamplePage index={0} inView={true} />
+                        <ExamplePage index={7} inView={true} />
+                        <ExamplePage index={3} inView={true} />
+                        <ExamplePage index={5} inView={true} />
+                        <ExamplePage index={6} inView={true} />
                     </div>
                 </div>
 
