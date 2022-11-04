@@ -192,7 +192,7 @@ export default function Home({ repoStars, releases }) {
                     <div className="" />
                     <ReviewsSection />
                     <div className="" />
-                    <SecondInstallSection />
+                    <SecondInstallSection repoStars={repoStars} />
                     {/* <div className="hidden md:block" />
                     <ContributeSection repoStars={repoStars} /> */}
                     <div className="" />
@@ -204,7 +204,7 @@ export default function Home({ repoStars, releases }) {
     );
 }
 
-function SecondInstallSection({}) {
+function SecondInstallSection({ repoStars }) {
     const { ref, inView } = useInView({
         threshold: 1.0,
         rootMargin: "0px 0px -20% 0px",
@@ -224,7 +224,7 @@ function SecondInstallSection({}) {
                 your <span className="md:hidden">desktop </span>browser:
             </h2>
 
-            <InstallLinks />
+            <InstallLinks repoStars={repoStars} />
         </div>
     );
 }

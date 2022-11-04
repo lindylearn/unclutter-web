@@ -120,7 +120,7 @@ export function GithubButton({
             animationIndex={animationIndex}
             className={clsx("mr-10", className)}
         >
-            <div className="absolute -right-10">
+            <div className="absolute -right-10 md:-right-14">
                 <div className="bg-white px-1.5 py-0.5 rounded-lg shadow-md text-md md:text-lg">
                     {repoStars}
                 </div>
