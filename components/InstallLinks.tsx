@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useInView } from "react-intersection-observer";
+import { useMediaQuery } from "usehooks-ts";
 
 export default function InstallLinks({ repoStars = 72, initial = false }) {
     const { ref, inView } = useInView({
@@ -7,6 +8,8 @@ export default function InstallLinks({ repoStars = 72, initial = false }) {
         rootMargin: `0px 0px ${initial ? "-5%" : "-20%"} 0px`,
         triggerOnce: true,
     });
+
+    const isMobile = useMediaQuery("(max-width: 767px)");
 
     return (
         <div
@@ -34,6 +37,9 @@ export default function InstallLinks({ repoStars = 72, initial = false }) {
                 <GithubButton
                     repoStars={repoStars}
                     inView={inView}
+                    className={
+                        isMobile && "hidden"
+                    } /* hide using CSS, to avoid hydration problems */
                     animationIndex={2}
                 />
             )}
@@ -48,6 +54,7 @@ export function InstallButton({
     animationIndex,
     inView,
     children,
+    className,
 }: {
     title: string;
     iconPath?: string;
@@ -55,17 +62,18 @@ export function InstallButton({
     animationIndex?: number;
     inView?: boolean;
     children?: React.ReactNode;
+    className?: string;
 }) {
     return (
         <a
             className={clsx(
-                "w-max text-lg md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all relative",
+                "w-max text-md md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all relative",
                 `desktop:hover:shadow-lg desktop:hover:${
                     animationIndex % 2 === 0 ? "" : "-"
                 }rotate-1`,
                 animationIndex !== undefined &&
                     (inView ? "animate-slidein" : "opacity-0"),
-                children && "mr-14"
+                className
             )}
             style={{
                 animationDelay: animationIndex && `${animationIndex * 50}ms`,
@@ -92,10 +100,12 @@ export function GithubButton({
     repoStars,
     animationIndex,
     inView,
+    className,
 }: {
     repoStars: number;
     animationIndex?: number;
     inView?: boolean;
+    className?: string;
 }) {
     return (
         <InstallButton
@@ -104,9 +114,10 @@ export function GithubButton({
             href="https://github.com/lindylearn/unclutter"
             inView={inView}
             animationIndex={animationIndex}
+            className={clsx("mr-10", className)}
         >
-            <div className="absolute -right-11 md:-right-14">
-                <div className="bg-white px-1.5 py-0.5 rounded-md shadow-md text-sm md:text-lg">
+            <div className="absolute -right-10">
+                <div className="bg-white px-1.5 py-0.5 rounded-lg shadow-md text-md md:text-lg">
                     {repoStars}
                 </div>
                 <div className="left-arrow"></div>

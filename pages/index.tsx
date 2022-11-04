@@ -38,7 +38,8 @@ export default function Home({ repoStars, releases }) {
                             Unclutter
                         </b>{" "}
                         is a new kind of reader mode.
-                        <br className="hidden md:block" /> Directly in your
+                        <br className="hidden md:block" /> Directly in your{" "}
+                        <span className="md:hidden">desktop </span>
                         browser, without boring walls of text.
                     </h1>
                 </header>
@@ -220,7 +221,7 @@ function SecondInstallSection({}) {
         >
             <h2 className="text-lg md:text-[26px]">
                 <b className="font-bold text-2xl md:text-3xl">Try it out</b> in
-                your <span className="md:hidden">desktop</span> browser:
+                your <span className="md:hidden">desktop </span>browser:
             </h2>
 
             <InstallLinks />

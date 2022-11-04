@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useInView } from "react-intersection-observer";
+import { useMediaQuery } from "usehooks-ts";
 
 export default function ExampleLayout({
     boldTitle,
@@ -11,9 +12,11 @@ export default function ExampleLayout({
     defaultVisible = false,
     onInView = () => {},
 }) {
+    const isMobile = useMediaQuery("(max-width: 767px)");
+
     const { ref, inView } = useInView({
         threshold: defaultVisible ? 0.1 : 0.4,
-        rootMargin: "0px 0px -20% 0px",
+        rootMargin: `0px 0px ${isMobile ? "-40%" : "-20%"} 0px`,
         triggerOnce: true,
         onChange: (inView) => {
             if (inView) {
