@@ -146,8 +146,8 @@ export default function Home({ repoStars, releases }) {
                                 <p>
                                     Add them to your reading queue, find
                                     information when you need it, or at least
-                                    know that no knowledge is lost. There's also
-                                    a nice activity graph!
+                                    know that no knowledge is lost. There&apos;s
+                                    also a nice activity graph!
                                 </p>
                             </>
                         }
