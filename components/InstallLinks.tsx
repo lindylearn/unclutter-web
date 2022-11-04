@@ -2,7 +2,11 @@ import clsx from "clsx";
 import { useInView } from "react-intersection-observer";
 import { useMediaQuery } from "usehooks-ts";
 
-export default function InstallLinks({ repoStars = 72, initial = false }) {
+export default function InstallLinks({
+    repoStars = 72,
+    initial = false,
+    showGithub = true,
+}) {
     const { ref, inView } = useInView({
         threshold: 1.0,
         rootMargin: `0px 0px ${initial ? "-5%" : "-20%"} 0px`,
@@ -33,12 +37,12 @@ export default function InstallLinks({ repoStars = 72, initial = false }) {
                 animationIndex={1}
             />
 
-            {initial && (
+            {showGithub && (
                 <GithubButton
                     repoStars={repoStars}
                     inView={inView}
                     className={
-                        isMobile && "hidden"
+                        isMobile && initial && "hidden"
                     } /* hide using CSS, to avoid hydration problems */
                     animationIndex={2}
                 />

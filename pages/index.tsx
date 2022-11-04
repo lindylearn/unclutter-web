@@ -191,10 +191,10 @@ export default function Home({ repoStars, releases }) {
 
                     <div className="" />
                     <ReviewsSection />
-                    <div className="hidden md:block" />
+                    <div className="" />
                     <SecondInstallSection />
-                    <div className="hidden md:block" />
-                    <ContributeSection repoStars={repoStars} />
+                    {/* <div className="hidden md:block" />
+                    <ContributeSection repoStars={repoStars} /> */}
                     <div className="" />
                 </div>
 
