@@ -48,7 +48,7 @@ export default function Home({ repoStars, releases }) {
 
                 <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg">
                     <div
-                        className="intro-video video-container relative overflow-hidden bg-white  animate-slidein"
+                        className="intro-video video-container relative overflow-hidden animate-slidein"
                         style={{
                             aspectRatio: "2412 / 1616",
                             animationFillMode: "both",
