@@ -4,8 +4,18 @@ import { useEffect, useRef, useState } from "react";
 import { ExamplePage } from "../components/ExamplePageList";
 import { GithubFloatingIcon } from "../components/GithubButton";
 
+type BrowserType = "chromium" | "firefox";
+export function getBrowserType(): BrowserType {
+    // @ts-ignore
+    if (typeof browser !== "undefined") {
+        return "firefox";
+    } else {
+        return "chromium";
+    }
+}
+
 export default function Home({ repoStars }) {
-    const videoRefs = [useRef()];
+    const videoRefs = [useRef(), useRef()];
     const [showExamplePages, setShowExamplePages] = useState(false);
 
     useEffect(() => {
@@ -13,8 +23,17 @@ export default function Home({ repoStars }) {
             () => (videoRefs[0].current as HTMLVideoElement)?.play(),
             1000
         );
-        setTimeout(() => setShowExamplePages(true), 4000);
+        setTimeout(
+            () => (videoRefs[1].current as HTMLVideoElement)?.play(),
+            6000
+        );
+        setTimeout(() => setShowExamplePages(true), 9000);
     }, []);
+
+    const unclutterLibraryLink =
+        getBrowserType() === "firefox"
+            ? "https://addons.mozilla.org/en-GB/firefox/addon/unclutter-library"
+            : "https://chrome.google.com/webstore/detail/bghgkooimeljolohebojceacblokenjn";
 
     return (
         <div className="font-display text-stone-900">
@@ -31,15 +50,32 @@ export default function Home({ repoStars }) {
                     Welcome to Unclutter!
                 </h1>
 
-                <div className="flex gap-10">
+                <div className="grid grid-cols-2 gap-10">
                     <div className="">
                         <div className="text-lg">
-                            Click the extension icon to unclutter articles:
+                            1. Click the extension icon to unclutter articles
                         </div>
                         <video
                             ref={videoRefs[0]}
                             className="mt-3 w-80"
                             src={`media/tutorial/1.mov`}
+                            muted
+                        />
+                    </div>
+                    <div
+                        className="animate-slidein"
+                        style={{
+                            animationDelay: "4.5s",
+                            animationFillMode: "both",
+                        }}
+                    >
+                        <div className="text-lg">
+                            2. Press TAB to open your library
+                        </div>
+                        <video
+                            ref={videoRefs[1]}
+                            className="mt-3 w-full"
+                            src={`media/tutorial/2.mov`}
                             muted
                         />
                     </div>
@@ -49,11 +85,11 @@ export default function Home({ repoStars }) {
                     <div
                         className="text-lg animate-slidein"
                         style={{
-                            animationDelay: "4s",
+                            animationDelay: "9s",
                             animationFillMode: "both",
                         }}
                     >
-                        Here are some examples to try:
+                        3. Here are some examples to try:
                     </div>
 
                     <div className="mt-3 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
@@ -68,31 +104,40 @@ export default function Home({ repoStars }) {
                 <div
                     className="text-lg flex flex-col gap-1 animate-slidein"
                     style={{
-                        animationDelay: "6s",
+                        animationDelay: "11s",
                         animationFillMode: "both",
                     }}
                 >
                     <div className="">
-                        See the{" "}
+                        4. See the{" "}
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             onClick={openExtensionSettings}
                         >
                             extension settings
                         </a>{" "}
-                        or{" "}
+                        for more. Install the{" "}
                         <a
-                            className="inline-block font-bold cursor-pointer desktop:hover:-rotate-1 transition-all"
-                            href="https://github.com/lindylearn/unclutter/tree/main/docs"
+                            className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
+                            href={unclutterLibraryLink}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                         >
-                            documentation
+                            Unclutter New Tab
                         </a>{" "}
-                        for more.
+                        to access your reading queue from your new tab page.
                     </div>
+                </div>
+
+                <div
+                    className="text-lg flex flex-col gap-1 animate-slidein"
+                    style={{
+                        animationDelay: "13s",
+                        animationFillMode: "both",
+                    }}
+                >
                     <div>
-                        This project is open source! Add ideas to our{" "}
+                        5. This project is open source! Add your ideas to our{" "}
                         <a
                             href="https://unclutter.canny.io"
                             target="_blank"
