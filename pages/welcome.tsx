@@ -1,16 +1,19 @@
 import axios from "axios";
 import Head from "next/head";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ExamplePage } from "../components/ExamplePageList";
 import { GithubFloatingIcon } from "../components/GithubButton";
 
 export default function Home({ repoStars }) {
     const videoRefs = [useRef()];
+    const [showExamplePages, setShowExamplePages] = useState(false);
+
     useEffect(() => {
         setTimeout(
             () => (videoRefs[0].current as HTMLVideoElement)?.play(),
             1000
         );
+        setTimeout(() => setShowExamplePages(true), 4000);
     }, []);
 
     return (
@@ -42,20 +45,23 @@ export default function Home({ repoStars }) {
                     </div>
                 </div>
 
-                <div
-                    className="animate-slidein"
-                    style={{ animationDelay: "4s", animationFillMode: "both" }}
-                >
-                    <div className="text-lg">
+                <div className="">
+                    <div
+                        className="text-lg animate-slidein"
+                        style={{
+                            animationDelay: "4s",
+                            animationFillMode: "both",
+                        }}
+                    >
                         Here are some examples to try:
                     </div>
 
                     <div className="mt-3 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
-                        <ExamplePage index={0} inView={true} />
-                        <ExamplePage index={7} inView={true} />
-                        <ExamplePage index={3} inView={true} />
-                        <ExamplePage index={5} inView={true} />
-                        <ExamplePage index={6} inView={true} />
+                        <ExamplePage index={0} inView={showExamplePages} />
+                        <ExamplePage index={7} inView={showExamplePages} />
+                        <ExamplePage index={3} inView={showExamplePages} />
+                        <ExamplePage index={5} inView={showExamplePages} />
+                        <ExamplePage index={6} inView={showExamplePages} />
                     </div>
                 </div>
 
@@ -76,7 +82,7 @@ export default function Home({ repoStars }) {
                         </a>{" "}
                         or{" "}
                         <a
-                            className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
+                            className="inline-block font-bold cursor-pointer desktop:hover:-rotate-1 transition-all"
                             href="https://github.com/lindylearn/unclutter/tree/main/docs"
                             target="_blank"
                             rel="noreferrer"
@@ -86,17 +92,25 @@ export default function Home({ repoStars }) {
                         for more.
                     </div>
                     <div>
-                        This project is open-source! Please post any bugs you
-                        find{" "}
+                        This project is open source! Add ideas to our{" "}
                         <a
-                            className="inline-block font-bold desktop:hover:rotate-1 transition-all"
+                            href="https://unclutter.canny.io"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block font-bold cursor-pointer desktop:hover:-rotate-1 transition-all"
+                        >
+                            open roadmap
+                        </a>{" "}
+                        or contribute{" "}
+                        <a
                             href="https://github.com/lindylearn/unclutter/issues"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
+                            className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                         >
                             on GitHub
-                        </a>
-                        !
+                        </a>{" "}
+                        to improve reading on the web for everyone.
                     </div>
                 </div>
             </main>
