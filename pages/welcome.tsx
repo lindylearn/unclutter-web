@@ -2,7 +2,6 @@ import axios from "axios";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { ExamplePage } from "../components/ExamplePageList";
-import { GithubFloatingIcon } from "../components/GithubButton";
 
 type BrowserType = "chromium" | "firefox";
 export function getBrowserType(): BrowserType {
@@ -25,9 +24,9 @@ export default function Home({ repoStars }) {
         );
         setTimeout(
             () => (videoRefs[1].current as HTMLVideoElement)?.play(),
-            6000
+            6500
         );
-        setTimeout(() => setShowExamplePages(true), 9000);
+        setTimeout(() => setShowExamplePages(true), 9500);
     }, []);
 
     const unclutterLibraryLink =
@@ -43,7 +42,7 @@ export default function Home({ repoStars }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <GithubFloatingIcon repoStars={repoStars} />
+            {/* <GithubFloatingIcon repoStars={repoStars} /> */}
 
             <main className="pt-5 pb-10 max-w-4xl mx-auto flex flex-col gap-10">
                 <h1 className="text-3xl font-semibold">
@@ -65,7 +64,7 @@ export default function Home({ repoStars }) {
                     <div
                         className="animate-slidein"
                         style={{
-                            animationDelay: "4.5s",
+                            animationDelay: "5s",
                             animationFillMode: "both",
                         }}
                     >
@@ -85,7 +84,7 @@ export default function Home({ repoStars }) {
                     <div
                         className="text-lg animate-slidein"
                         style={{
-                            animationDelay: "9s",
+                            animationDelay: "9.5s",
                             animationFillMode: "both",
                         }}
                     >
@@ -104,7 +103,7 @@ export default function Home({ repoStars }) {
                 <div
                     className="text-lg flex flex-col gap-1 animate-slidein"
                     style={{
-                        animationDelay: "11s",
+                        animationDelay: "12s",
                         animationFillMode: "both",
                     }}
                 >
@@ -132,7 +131,7 @@ export default function Home({ repoStars }) {
                 <div
                     className="text-lg flex flex-col gap-1 animate-slidein"
                     style={{
-                        animationDelay: "13s",
+                        animationDelay: "14s",
                         animationFillMode: "both",
                     }}
                 >
