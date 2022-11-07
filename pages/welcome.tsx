@@ -5,19 +5,23 @@ import { ExamplePage } from "../components/ExamplePageList";
 
 type BrowserType = "chromium" | "firefox";
 export function getBrowserType(): BrowserType {
-    // @ts-ignore
-    if (typeof browser !== "undefined") {
-        return "firefox";
-    } else {
+    if (typeof window === "undefined") {
         return "chromium";
     }
+    if (window.navigator.userAgent.includes("Firefox")) {
+        return "firefox";
+    }
+    return "chromium";
 }
 
 export default function Home({ repoStars }) {
     const videoRefs = [useRef(), useRef()];
     const [showExamplePages, setShowExamplePages] = useState(false);
+    const [browserType, setBrowserType] = useState<BrowserType>("chromium");
 
     useEffect(() => {
+        setBrowserType(getBrowserType());
+
         setTimeout(
             () => (videoRefs[0].current as HTMLVideoElement)?.play(),
             1000
@@ -30,7 +34,7 @@ export default function Home({ repoStars }) {
     }, []);
 
     const unclutterLibraryLink =
-        getBrowserType() === "firefox"
+        browserType === "firefox"
             ? "https://addons.mozilla.org/en-GB/firefox/addon/unclutter-library"
             : "https://chrome.google.com/webstore/detail/bghgkooimeljolohebojceacblokenjn";
 
