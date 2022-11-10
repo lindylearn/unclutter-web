@@ -40,7 +40,7 @@ export default function Releases({ repoStars, releases }) {
                                         className={
                                             "flex gap-5 " +
                                             (inView
-                                                ? "animate-slideinSlightly"
+                                                ? "animate-slidein"
                                                 : "opacity-0")
                                         }
                                         style={{
