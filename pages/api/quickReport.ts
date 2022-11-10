@@ -15,11 +15,12 @@ export default async function handler(req, res) {
         {
             method: "POST",
             body: JSON.stringify({
-                title: `Quick report`,
+                title: `Feedback`,
                 body: `${data.message}
 
+Browser type: \`${data.browserType}\`
 Unclutter version: \`${data.unclutterVersion}\`
-Browser type: \`${data.browserType}\``,
+Unclutter New Tab version: \`${data.newTabVersion}\``,
                 labels: [],
             }),
             headers: {
