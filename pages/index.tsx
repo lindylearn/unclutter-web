@@ -25,8 +25,8 @@ export default function Home({ repoStars, releases }) {
     return (
         <div className="font-display text-stone-900">
             <Head
-                title="Unclutter — Modern Reader Mode"
-                description="Unclutter is a modern reader mode and article library for your browser."
+                title="Unclutter — Reader Mode for Chrome & Firefox"
+                description="Unclutter makes articles readable and customizable. Unclutter articles, block ads and popups, save highlights, organize your read-it-later list & more. Instantly in your browser, and free."
             />
 
             <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center">
