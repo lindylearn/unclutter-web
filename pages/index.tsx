@@ -145,9 +145,9 @@ export default function Home({ repoStars, releases }) {
                                 </p>
                                 <p>
                                     Add them to your reading queue, find
-                                    information when you need it, or at least
-                                    know that no knowledge is lost. There&apos;s
-                                    also a nice activity graph!
+                                    information when you need it, and know that
+                                    no knowledge is lost. There&apos;s also a
+                                    nice reading activity graph!
                                 </p>
                             </>
                         }
@@ -181,9 +181,8 @@ export default function Home({ repoStars, releases }) {
                         icon={<></>}
                         description={
                             <>
-                                <p>Continuing this list would get boring.</p>
                                 <p>
-                                    Just try out the extension to find all the
+                                    Try out the extension to find all the
                                     features. It&apos;s free and open-source!
                                 </p>
                             </>
