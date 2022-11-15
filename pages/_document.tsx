@@ -1,4 +1,4 @@
-import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import NextDocument, { Head, Html, Main, NextScript } from "next/document";
 
 class Document extends NextDocument {
     render() {
@@ -38,7 +38,13 @@ class Document extends NextDocument {
                         rel="stylesheet"
                     />
                 </Head>
-                <body>
+                <body
+                    className="bg-gradient-to-b to-blue-400 via-green-300 from-yellow-400"
+                    style={{
+                        backgroundImage:
+                            "linear-gradient(160deg, var(--tw-gradient-stops))",
+                    }}
+                >
                     <Main />
                     <NextScript />
                 </body>

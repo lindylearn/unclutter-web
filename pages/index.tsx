@@ -32,7 +32,7 @@ export default function Home({ repoStars, releases }) {
             <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center">
                 <header className="w-full md:max-w-5xl flex gap-3">
                     <img
-                        className="hidden md:block w-[4.5rem]"
+                        className="hidden md:block w-[4.5rem] drop-shadow-sm"
                         src="/icon.svg"
                     />
                     <h1 className="text-lg md:text-[26px]">
@@ -65,7 +65,7 @@ export default function Home({ repoStars, releases }) {
                     </div>
                 </div>
 
-                <div className="max-w-5xl w-full">
+                <div className="max-w-5xl w-full md:-mt-3">
                     <InstallLinks repoStars={repoStars} initial />
                 </div>
 
