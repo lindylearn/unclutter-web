@@ -39,10 +39,10 @@ class Document extends NextDocument {
                     />
                 </Head>
                 <body
-                    className="bg-gradient-to-b to-blue-400 via-green-300 from-yellow-400"
+                    className="bg-gradient-to-b to-amber-400 via-yellow-400 from-amber-300"
                     style={{
                         backgroundImage:
-                            "linear-gradient(160deg, var(--tw-gradient-stops))",
+                            "linear-gradient(120deg, var(--tw-gradient-stops))",
                     }}
                 >
                     <Main />
