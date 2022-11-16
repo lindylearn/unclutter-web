@@ -8,9 +8,10 @@ Basic public website for the Unclutter browser extension.
 wget --output-document public/feedback.html "https://tally.so/embed/npb6xB?alignLeft=1&hideTitle=1&transparentBackground=1"
 sed -i '' 's/\/_next/https:\/\/tally.so\/_next/g' public/feedback.html
 
-
-<script src="./iframeResizer.contentWindow.min.js"></script>
+<script>window.addEventListener('Tally.FormPageView', () => document.querySelectorAll(".tally-required-indicator, [class*=PoweredByContainer]").forEach(n => n.remove()));</script>
 <style>main {min-height: 0 !important;}</style>
+<script src="./iframeResizer.contentWindow.min.js"></script>
+
 
 sed -i '' 's/<\/script><style>/<\/script><script src=".\/iframeResizer.contentWindow.min.js"><\/script><style>main {min-height: 0 !important;}<\/style><style>/g' public/feedback.html
 
