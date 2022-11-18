@@ -96,7 +96,7 @@ export function ExamplePage({ index, inView = false }) {
     );
 }
 
-const exampleUrls = [
+export const exampleUrls = [
     "http://www.paulgraham.com/ds.html",
     "https://kk.org/thetechnium/1000-true-fans/ ",
     "https://www.joelonsoftware.com/2001/04/21/dont-let-architecture-astronauts-scare-you/",

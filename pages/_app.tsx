@@ -1,5 +1,6 @@
 import PlausibleProvider from "next-plausible";
 import "../styles/globals.css";
+import "../styles/looper.css";
 
 function MyApp({ Component, pageProps }) {
     return (
