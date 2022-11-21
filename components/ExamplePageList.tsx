@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -84,13 +85,13 @@ export function ExamplePage({ index, inView = false }) {
             target="_blank"
             rel="noreferrer"
         >
-            <img
+            <Image
                 className="rounded-lg"
                 src={`https://storage.googleapis.com/unclutter-screenshots-serverless/articles/current/${encodeURIComponent(
                     exampleUrls[index]
                 ).replaceAll("%", "%25")}.webp`}
-                width={1360}
-                height={1600}
+                width={192}
+                height={226}
             />
         </a>
     );
