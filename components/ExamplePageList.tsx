@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -71,7 +70,7 @@ export function ExamplePage({ index, inView = false }) {
     return (
         <a
             className={clsx(
-                "w-28 sm:w-36 xl:w-48 flex rounded-lg shadow-lg desktop:hover:shadow-2xl transition-all",
+                "w-28 sm:w-36 xl:w-48 rounded-md shadow-xl desktop:hover:shadow-2xl transition-all",
                 inView ? "animate-slidein" : "opacity-0",
                 index % 3 === 0
                     ? "desktop:hover:-rotate-1"
@@ -85,37 +84,32 @@ export function ExamplePage({ index, inView = false }) {
             target="_blank"
             rel="noreferrer"
         >
-            <Image
+            <img
                 className="rounded-lg"
-                src={`/media/pages/screenshot_${index}.png`}
+                src={`https://storage.googleapis.com/unclutter-screenshots-serverless/articles/current/${encodeURIComponent(
+                    exampleUrls[index]
+                ).replaceAll("%", "%25")}.webp`}
                 width={1360}
                 height={1600}
-                priority={index < 7}
             />
         </a>
     );
 }
 
 export const exampleUrls = [
-    "http://www.paulgraham.com/ds.html",
-    "https://kk.org/thetechnium/1000-true-fans/ ",
-    "https://www.joelonsoftware.com/2001/04/21/dont-let-architecture-astronauts-scare-you/",
-    "https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html",
-    "https://www.tesla.com/blog/secret-tesla-motors-master-plan-just-between-you-and-me",
-    "https://arstechnica.com/science/2014/09/the-little-known-soviet-mission-to-rescue-a-dead-space-station/ ",
-    "https://blog.samaltman.com/the-days-are-long-but-the-decades-are-short ",
-    "https://www.theguardian.com/lifeandstyle/2014/jul/19/change-your-life-sit-down-and-think ",
+    "http://www.paulgraham.com/vb.html",
+    "https://www.theatlantic.com/magazine/archive/2022/05/social-media-democracy-trust-babel/629369/",
+    "https://etiennefd.substack.com/p/reinvent-the-wheel",
+    "https://www.theverge.com/2022/11/7/23446262/elon-musk-twitter-paywall-possible",
+    "https://paulosman.me/2022/10/17/being-on-a-board/",
+    "https://www.economist.com/leaders/2022/11/03/the-world-is-missing-its-lofty-climate-targets-time-for-some-realism",
     "https://sive.rs/kimo",
-    "http://www.aaronsw.com/weblog/rewritingreddit ",
-    "https://www.fastcompany.com/28121/they-write-right-stuff ",
-    "http://antirez.com/news/61 ",
-    "https://www.economist.com/open-future/2018/11/26/ai-thinks-like-a-corporation-and-thats-worrying ",
-    "https://www.bloomberg.com/news/features/2018-05-03/the-gambler-who-cracked-the-horse-racing-code ",
-    "https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/ ",
-    "https://martinfowler.com/bliki/MonolithFirst.html ",
-    "https://www.raptitude.com/2016/12/five-things-you-notice-when-you-quit-the-news/ ",
-    "https://www.newyorker.com/tech/annals-of-technology/walking-helps-us-think ",
-    "https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/",
-    "https://www.nytimes.com/2012/07/15/fashion/the-challenge-of-making-friends-as-an-adult.html ",
-    "https://www.theatlantic.com/magazine/archive/1982/02/have-you-ever-tried-to-sell-a-diamond/304575/ ",
+    "https://www.kalzumeus.com/2012/01/23/salary-negotiation/",
+    "https://www.damninteresting.com/to-hell-with-facebook/",
+    "https://arstechnica.com/gadgets/2022/11/rip-google-hangouts-googles-last-best-chance-to-compete-with-imessage/",
+    "https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html",
+    "https://tonsky.me/blog/disenchantment/",
+    "https://www.raptitude.com/2016/12/five-things-you-notice-when-you-quit-the-news/",
+    "https://www.theguardian.com/lifeandstyle/2014/jul/19/change-your-life-sit-down-and-think",
+    // "https://blog.samaltman.com/the-days-are-long-but-the-decades-are-short",
 ];

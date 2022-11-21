@@ -92,15 +92,15 @@ export default function Home({ repoStars }) {
                             animationFillMode: "both",
                         }}
                     >
-                        3. Here are some examples to try:
+                        3. Here are some great examples to try:
                     </div>
 
                     <div className="mt-3 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
                         <ExamplePage index={0} inView={showExamplePages} />
-                        <ExamplePage index={7} inView={showExamplePages} />
-                        <ExamplePage index={3} inView={showExamplePages} />
-                        <ExamplePage index={5} inView={showExamplePages} />
+                        <ExamplePage index={1} inView={showExamplePages} />
+                        <ExamplePage index={2} inView={showExamplePages} />
                         <ExamplePage index={6} inView={showExamplePages} />
+                        <ExamplePage index={10} inView={showExamplePages} />
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@ export default function Home({ repoStars }) {
                         >
                             extension settings
                         </a>{" "}
-                        for more. Install the{" "}
+                        for more. Install{" "}
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             href={unclutterLibraryLink}
