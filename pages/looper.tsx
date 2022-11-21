@@ -3,9 +3,21 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { exampleUrls } from "../components/ExamplePageList";
 
 export default function NetflixPage({}) {
+    return <LoopedPageList />;
+}
+
+export function LoopedPageList({}) {
     return (
-        <div className="py-10">
-            <InfiniteLooper speed={20} direction="right">
+        <div className="py-5 flex flex-col gap-5 w-full overflow-hidden">
+            <InfiniteLooper duration={20} direction="right">
+                {Array.from(Array(10).keys()).map((i) => (
+                    <div className="">
+                        <ExamplePage key={i} index={i} />
+                    </div>
+                ))}
+            </InfiniteLooper>
+
+            <InfiniteLooper duration={15} direction="right">
                 {Array.from(Array(10).keys()).map((i) => (
                     <div className="">
                         <ExamplePage key={i} index={i} />
@@ -36,11 +48,11 @@ export function ExamplePage({ index }) {
 
 // from https://blog.finiam.com/blog/infinite-looping-react-component
 function InfiniteLooper({
-    speed,
+    duration,
     direction,
     children,
 }: {
-    speed: number;
+    duration: number;
     direction: "right" | "left";
     children: React.ReactNode;
 }) {
@@ -107,7 +119,7 @@ function InfiniteLooper({
                         key={ind}
                         className="looper__listInstance flex gap-2 sm:gap-5"
                         style={{
-                            animationDuration: `${speed}s`,
+                            animationDuration: `${duration}s`,
                             animationDirection:
                                 direction === "right" ? "reverse" : "normal",
                         }}
