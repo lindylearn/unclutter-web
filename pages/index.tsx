@@ -71,8 +71,8 @@ export default function Home({ repoStars, releases }) {
 
                 <div className="mt-3 md:mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-full md:max-w-7xl">
                     <VideoExample
-                        boldTitle="Remove ads,"
-                        title="cookie banners & popups"
+                        boldTitle="Focus"
+                        title="on just reading"
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +85,7 @@ export default function Home({ repoStars, releases }) {
                         description={
                             <>
                                 <p>
-                                    Unlike all other reader modes or
-                                    read-it-later apps, Unclutter dynamically
+                                    Unlike all other reader modes, Unclutter
                                     modifies a website&apos;s{" "}
                                     <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/DEVELOPMENT.md#how-unclutter-works">
                                         CSS styles
