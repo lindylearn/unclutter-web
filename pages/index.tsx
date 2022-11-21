@@ -30,7 +30,7 @@ export default function Home({ repoStars, releases }) {
             />
 
             <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center">
-                <header className="w-full md:max-w-5xl flex gap-3">
+                <header className="w-full md:max-w-5xl flex gap-4">
                     <img
                         className="hidden md:block w-[4.5rem] drop-shadow-sm"
                         src="/icon.svg"

@@ -13,11 +13,11 @@ export default function SiteHead({ title, description }) {
 
             <meta
                 property="og:image"
-                content="https://unclutter.lindylearn.io/ogimageb.png"
+                content="https://unclutter.lindylearn.io/ogimagec.png"
             />
             <meta
                 name="twitter:image"
-                content="https://unclutter.lindylearn.io/ogimageb.png"
+                content="https://unclutter.lindylearn.io/ogimagec.png"
             />
 
             <meta name="twitter:card" content="summary_large_image" />
