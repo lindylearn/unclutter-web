@@ -71,7 +71,7 @@ export function ExamplePage({ index, inView = false }) {
     return (
         <a
             className={clsx(
-                "w-28 sm:w-36 xl:w-48 rounded-md shadow-xl desktop:hover:shadow-2xl transition-all",
+                "h-full w-28 sm:w-36 xl:w-48 rounded-md shadow-xl desktop:hover:shadow-2xl transition-all text-[0]",
                 inView ? "animate-slidein" : "opacity-0",
                 index % 3 === 0
                     ? "desktop:hover:-rotate-1"
