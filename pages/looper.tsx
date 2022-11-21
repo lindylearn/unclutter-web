@@ -11,7 +11,7 @@ export function LoopedPageList({}) {
         <div className="py-5 flex flex-col gap-5 w-full overflow-hidden">
             <InfiniteLooper duration={20} direction="right">
                 {Array.from(Array(10).keys()).map((i) => (
-                    <div className="">
+                    <div key={i} className="">
                         <ExamplePage key={i} index={i} />
                     </div>
                 ))}
@@ -19,7 +19,7 @@ export function LoopedPageList({}) {
 
             <InfiniteLooper duration={15} direction="right">
                 {Array.from(Array(10).keys()).map((i) => (
-                    <div className="">
+                    <div key={i} className="">
                         <ExamplePage key={i} index={i} />
                     </div>
                 ))}
