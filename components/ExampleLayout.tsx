@@ -37,14 +37,12 @@ export default function ExampleLayout({
                 {children}
             </div>
 
-            <div className="flex flex-col md:mt-3 gap-3 md:gap-5 items-start">
+            <div className="flex flex-col gap-3 md:gap-5 items-start">
                 <div className="flex gap-3 items-center">
                     {/* {icon} */}
-                    <h2 className="text-lg md:text-[26px]">
-                        <b className="font-bold text-2xl md:text-3xl">
-                            {boldTitle}
-                        </b>{" "}
-                        {title}
+                    <h2 className="text-lg md:text-[26px] bg-white px-3 py-2 rounded-xl">
+                        <span className="">{boldTitle}</span>
+                        {/* {title} */}
                     </h2>
                 </div>
 

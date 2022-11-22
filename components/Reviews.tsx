@@ -63,7 +63,7 @@ function Review({ text, href, index }) {
     return (
         <a
             className={clsx(
-                "flex flex-col gap-2 md:gap-3 justify-between",
+                "flex flex-col gap-2 md:gap-5 justify-between",
                 inView ? "animate-slidein" : "opacity-0"
             )}
             style={{

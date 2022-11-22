@@ -34,24 +34,24 @@ export default function Home({ repoStars, releases }) {
                 description="Unclutter makes articles readable and customizable. Unclutter articles, block ads and popups, save highlights, organize your read-it-later list & more. Instantly in your browser, and free."
             />
 
-            <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center">
+            <main className="m-3 md:mt-7 flex flex-col gap-5 md:gap-10 items-center">
                 <header className="w-full md:max-w-5xl flex gap-4 items-center">
                     <img
-                        className="hidden md:block w-[4rem] drop-shadow-sm"
+                        className="hidden md:block w-[3.5rem] drop-shadow-sm"
                         src="/icon.svg"
                     />
-                    <h1 className="text-lg md:text-[26px]">
-                        <b className="font-bold text-2xl md:text-3xl underline-offset-1">
+                    <h1 className="text-lg md:text-[26px] leading-normal">
+                        <span className="bg-white px-2.5 py-0.5 rounded-xl">
                             Unclutter
-                        </b>{" "}
-                        is a new kind of reader mode.
-                        <br className="hidden md:block" /> Directly in your{" "}
+                        </span>{" "}
+                        articles, right in your browser.
+                        {/* <br className="hidden md:block" /> Directly in your{" "}
                         <span className="md:hidden">desktop </span>
-                        browser, without boring walls of text.
+                        browser, without boring walls of text. */}
                     </h1>
                 </header>
 
-                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg">
+                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg -mt-3">
                     <div
                         className="intro-video video-container relative overflow-hidden animate-slidein"
                         style={{
@@ -142,7 +142,7 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
                     <VideoExample
-                        boldTitle="Save articles"
+                        boldTitle="Save for later"
                         title="for later"
                         icon={<></>}
                         description={
@@ -163,7 +163,7 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
                     <VideoExample
-                        boldTitle="Save highlights"
+                        boldTitle="Highlight"
                         title="by selecting them"
                         icon={<></>}
                         description={
@@ -184,7 +184,7 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
                     <VideoExample
-                        boldTitle="Find comments, "
+                        boldTitle="Find comments"
                         title="follow feeds, browse chapters, automatically activate, ..."
                         icon={<></>}
                         description={
@@ -230,8 +230,8 @@ function SecondInstallSection({ repoStars }) {
             ref={ref}
         >
             <h2 className="text-lg md:text-[26px]">
-                <b className="font-bold text-2xl md:text-3xl">Try it out</b> in
-                your <span className="md:hidden">desktop </span>browser
+                Try it out in your <span className="md:hidden">desktop </span>
+                browser:
             </h2>
 
             <InstallLinks repoStars={repoStars} />
@@ -299,16 +299,16 @@ export function InlineLink({ href, children, className = "" }) {
 }
 
 export async function getStaticProps() {
+    // GitHub API seems to be rate-limited
     let releases = [];
-    let repoStars = 73;
+    let repoStars = 473;
     try {
-        // GitHub API seems to be rate-limited
-        releases = (
-            await axios.get(
-                "https://api.github.com/repos/lindylearn/unclutter/releases"
-            )
-        ).data;
-        releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
+        // releases = (
+        //     await axios.get(
+        //         "https://api.github.com/repos/lindylearn/unclutter/releases"
+        //     )
+        // ).data;
+        // releases[releases.length - 1].published_at = "2022-03-18T10:25:29Z";
 
         repoStars = (
             await axios.get("https://api.github.com/repos/lindylearn/unclutter")

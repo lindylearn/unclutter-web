@@ -10,7 +10,7 @@ export default function InstallLinks({
 }) {
     const { ref, inView } = useInView({
         threshold: 1.0,
-        rootMargin: `0px 0px ${initial ? "-5%" : "-20%"} 0px`,
+        rootMargin: `0px 0px ${initial ? "-10%" : "-20%"} 0px`,
         triggerOnce: true,
     });
 
