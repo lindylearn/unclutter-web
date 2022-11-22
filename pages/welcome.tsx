@@ -38,8 +38,10 @@ export default function Home({ repoStars }) {
             ? "https://addons.mozilla.org/en-GB/firefox/addon/unclutter-library"
             : "https://chrome.google.com/webstore/detail/bghgkooimeljolohebojceacblokenjn";
 
+    // return <div className="h-screen w-screen"></div>;
+
     return (
-        <div className="font-display text-stone-900">
+        <div className="font-display text-stone-900 min-h-screen">
             <Head>
                 <title>Welcome to Unclutter!</title>
                 <meta name="description" content="" />
@@ -48,20 +50,18 @@ export default function Home({ repoStars }) {
 
             {/* <GithubFloatingIcon repoStars={repoStars} /> */}
 
-            <main className="pt-5 pb-10 max-w-4xl mx-auto flex flex-col gap-10">
-                <h1 className="text-3xl font-semibold">
-                    Welcome to Unclutter!
-                </h1>
+            <main className="pt-10 pb-10 max-w-5xl mx-auto flex flex-col gap-10">
+                {/* <h1 className="text-3xl">Welcome to Unclutter!</h1> */}
 
                 <div className="grid grid-cols-2 gap-10">
                     <div className="">
-                        <div className="text-lg">
-                            1. Click the extension icon to unclutter articles
+                        <div className="text-xl">
+                            Click the extension icon to unclutter articles
                         </div>
                         <video
                             ref={videoRefs[0]}
-                            className="mt-3 w-80"
-                            src={`media/tutorial/1.mov`}
+                            className="mt-2 w-full h-72 object-cover object-left-top"
+                            src={`/media/tutorial/1.mov`}
                             muted
                         />
                     </div>
@@ -72,13 +72,13 @@ export default function Home({ repoStars }) {
                             animationFillMode: "both",
                         }}
                     >
-                        <div className="text-lg">
-                            2. Press TAB to open your library
+                        <div className="text-xl">
+                            Press TAB to open your library
                         </div>
                         <video
                             ref={videoRefs[1]}
-                            className="mt-3 w-full"
-                            src={`media/tutorial/2.mov`}
+                            className="mt-2 pt-5 w-full h-72 object-cover object-left-top"
+                            src={`/media/tutorial/2.mov`}
                             muted
                         />
                     </div>
@@ -86,16 +86,16 @@ export default function Home({ repoStars }) {
 
                 <div className="">
                     <div
-                        className="text-lg animate-slidein"
+                        className="text-xl animate-slidein"
                         style={{
                             animationDelay: "9.5s",
                             animationFillMode: "both",
                         }}
                     >
-                        3. Here are some great examples to try:
+                        Here are some great examples to try:
                     </div>
 
-                    <div className="mt-3 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
+                    <div className="mt-5 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
                         <ExamplePage index={0} inView={showExamplePages} />
                         <ExamplePage index={1} inView={showExamplePages} />
                         <ExamplePage index={2} inView={showExamplePages} />
@@ -105,21 +105,22 @@ export default function Home({ repoStars }) {
                 </div>
 
                 <div
-                    className="text-lg flex flex-col gap-1 animate-slidein"
+                    className="text-xl flex flex-col gap-1 animate-slidein mt-10"
                     style={{
                         animationDelay: "12s",
                         animationFillMode: "both",
                     }}
                 >
                     <div className="">
-                        4. See the{" "}
+                        See the{" "}
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             onClick={openExtensionSettings}
                         >
                             extension settings
                         </a>{" "}
-                        for more. Install{" "}
+                        for more.
+                        {/* Install{" "}
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             href={unclutterLibraryLink}
@@ -128,19 +129,19 @@ export default function Home({ repoStars }) {
                         >
                             Unclutter New Tab
                         </a>{" "}
-                        to access your reading queue from your new tab page.
+                        to easily access your reading queue. */}
                     </div>
                 </div>
 
                 <div
-                    className="text-lg flex flex-col gap-1 animate-slidein"
+                    className="text-xl flex flex-col gap-1 animate-slidein -mt-5"
                     style={{
-                        animationDelay: "14s",
+                        animationDelay: "13s",
                         animationFillMode: "both",
                     }}
                 >
                     <div>
-                        5. This project is open source! Add your ideas to our{" "}
+                        This project is open source! Add your ideas to our{" "}
                         <a
                             href="https://unclutter.canny.io"
                             target="_blank"
@@ -157,8 +158,8 @@ export default function Home({ repoStars }) {
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                         >
                             on GitHub
-                        </a>{" "}
-                        to improve reading on the web for everyone.
+                        </a>
+                        .
                     </div>
                 </div>
             </main>
