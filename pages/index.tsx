@@ -34,24 +34,24 @@ export default function Home({ repoStars, releases }) {
                 description="Unclutter makes articles readable and customizable. Unclutter articles, block ads and popups, save highlights, organize your read-it-later list & more. Instantly in your browser, and free."
             />
 
-            <main className="m-3 md:mt-7 flex flex-col gap-5 md:gap-10 items-center">
-                <header className="w-full md:max-w-5xl flex gap-4 items-center">
+            <main className="m-3 mt-5 md:mt-7 flex flex-col gap-5 md:gap-10 items-center">
+                <header className="w-full md:max-w-5xl flex gap-3 md:gap-5 items-center">
                     <img
-                        className="hidden md:block w-[3.5rem] drop-shadow-sm"
+                        className="w-10 md:w-16 drop-shadow-sm"
                         src="/icon.svg"
                     />
-                    <h1 className="text-lg md:text-[26px] leading-normal">
+                    <h1 className="hidden md:block text-lg md:text-[26px] leading-normal">
                         <span className="bg-white px-2.5 py-0.5 rounded-xl">
                             Unclutter
                         </span>{" "}
                         articles, right in your browser.
-                        {/* <br className="hidden md:block" /> Directly in your{" "}
-                        <span className="md:hidden">desktop </span>
-                        browser, without boring walls of text. */}
+                    </h1>
+                    <h1 className="block md:hidden text-xl leading-normal">
+                        Unclutter articles instantly.
                     </h1>
                 </header>
 
-                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg -mt-3">
+                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg md:-mt-3">
                     <div
                         className="intro-video video-container relative overflow-hidden animate-slidein"
                         style={{
@@ -70,13 +70,14 @@ export default function Home({ repoStars, releases }) {
                     </div>
                 </div>
 
-                <div className="max-w-5xl w-full md:-mt-3">
+                <div className="max-w-5xl w-full md:-mt-3 hidden md:block">
                     <InstallLinks
                         repoStars={repoStars}
                         initial
                         inViewOverride={showFirstInstallLinks}
                     />
                 </div>
+                <div className="block md:hidden"></div>
 
                 <div className="mt-3 md:mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-full md:max-w-7xl">
                     <VideoExample

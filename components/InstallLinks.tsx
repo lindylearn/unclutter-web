@@ -72,7 +72,7 @@ export function InstallButton({
     return (
         <a
             className={clsx(
-                "w-max text-md md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-xl shadow-md transition-all relative",
+                "w-max text-md md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg md:rounded-xl shadow-md transition-all relative",
                 `desktop:hover:shadow-lg desktop:hover:${
                     animationIndex % 2 === 0 ? "" : "-"
                 }rotate-1`,
@@ -121,7 +121,7 @@ export function GithubButton({
             animationIndex={animationIndex}
             className={clsx("mr-10", className)}
         >
-            <div className="absolute -right-10 md:-right-14">
+            <div className="absolute -right-11 md:-right-14">
                 <div className="bg-white px-1.5 py-0.5 rounded-lg shadow-md text-md md:text-lg">
                     {repoStars}
                 </div>
