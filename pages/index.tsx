@@ -1,6 +1,6 @@
 import axios from "axios";
 import clsx from "clsx";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import ExamplePageList from "../components/ExamplePageList";
 import Head from "../components/Head";
@@ -13,11 +13,16 @@ import VideoExample from "../components/VideoExample";
 
 export default function Home({ repoStars, releases }) {
     const mainVideoRef = useRef();
+    const [showFirstInstallLinks, setShowFirstInstallLinks] = useState(false);
     useEffect(() => {
         setTimeout(() => {
             const video = mainVideoRef.current as HTMLVideoElement;
             video?.play();
         }, 2000);
+
+        setTimeout(() => {
+            setShowFirstInstallLinks(true);
+        }, 6000);
     }, []);
 
     // return <></>;
@@ -30,9 +35,9 @@ export default function Home({ repoStars, releases }) {
             />
 
             <main className="m-3 md:mt-10 flex flex-col gap-5 md:gap-10 items-center">
-                <header className="w-full md:max-w-5xl flex gap-4">
+                <header className="w-full md:max-w-5xl flex gap-4 items-center">
                     <img
-                        className="hidden md:block w-[4.5rem] drop-shadow-sm"
+                        className="hidden md:block w-[4rem] drop-shadow-sm"
                         src="/icon.svg"
                     />
                     <h1 className="text-lg md:text-[26px]">
@@ -66,7 +71,11 @@ export default function Home({ repoStars, releases }) {
                 </div>
 
                 <div className="max-w-5xl w-full md:-mt-3">
-                    <InstallLinks repoStars={repoStars} initial />
+                    <InstallLinks
+                        repoStars={repoStars}
+                        initial
+                        inViewOverride={showFirstInstallLinks}
+                    />
                 </div>
 
                 <div className="mt-3 md:mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-full md:max-w-7xl">

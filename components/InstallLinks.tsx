@@ -6,6 +6,7 @@ export default function InstallLinks({
     repoStars = 72,
     initial = false,
     showGithub = true,
+    inViewOverride = false,
 }) {
     const { ref, inView } = useInView({
         threshold: 1.0,
@@ -26,21 +27,21 @@ export default function InstallLinks({
                 title="Add to Chrome"
                 iconPath="/icons/chrome.svg"
                 href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
-                inView={inView}
+                inView={inView || inViewOverride}
                 animationIndex={0}
             />
             <InstallButton
                 title="Add to Firefox"
                 iconPath="/icons/firefox.svg"
                 href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn"
-                inView={inView}
+                inView={inView || inViewOverride}
                 animationIndex={1}
             />
 
             {showGithub && (
                 <GithubButton
                     repoStars={repoStars}
-                    inView={inView}
+                    inView={inView || inViewOverride}
                     className={
                         isMobile && initial && "hidden"
                     } /* hide using CSS, to avoid hydration problems */
