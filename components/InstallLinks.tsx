@@ -72,7 +72,7 @@ export function InstallButton({
     return (
         <a
             className={clsx(
-                "w-max text-md md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg shadow-md transition-all relative",
+                "w-max text-md md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-xl shadow-md transition-all relative",
                 `desktop:hover:shadow-lg desktop:hover:${
                     animationIndex % 2 === 0 ? "" : "-"
                 }rotate-1`,

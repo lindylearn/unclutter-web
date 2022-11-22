@@ -33,7 +33,7 @@ export default function ExampleLayout({
             )}
             ref={ref}
         >
-            <div className="relative md:rounded-lg overflow-hidden shadow-lg -mx-3 md:mx-0">
+            <div className="relative md:rounded-xl overflow-hidden shadow-lg -mx-3 md:mx-0">
                 {children}
             </div>
 
@@ -57,7 +57,7 @@ export default function ExampleLayout({
                     {description}
                 </div>
 
-                {descriptionChildren}
+                {/* {descriptionChildren} */}
             </div>
         </div>
     );

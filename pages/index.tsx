@@ -81,7 +81,7 @@ export default function Home({ repoStars, releases }) {
                 <div className="mt-3 md:mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-full md:max-w-7xl">
                     <VideoExample
                         boldTitle="Focus"
-                        title="on just reading"
+                        title="on reading"
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@ export default function Home({ repoStars, releases }) {
                     />
                     <VideoExample
                         boldTitle="Customize"
-                        title="how you read the web"
+                        title="how you read"
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -132,9 +132,9 @@ export default function Home({ repoStars, releases }) {
                                 </p>
 
                                 <p>
-                                    With the Unclutter extension your favorite
-                                    settings are one click away. No need to open
-                                    a seperate website or to find your phone.
+                                    Your favorite settings are only one click
+                                    away. No need to open a seperate website or
+                                    to find your phone.
                                 </p>
                             </>
                         }
@@ -143,7 +143,7 @@ export default function Home({ repoStars, releases }) {
                     />
                     <VideoExample
                         boldTitle="Save articles"
-                        title="to read later"
+                        title="for later"
                         icon={<></>}
                         description={
                             <>
@@ -155,7 +155,7 @@ export default function Home({ repoStars, releases }) {
                                     Add them to your reading queue, find
                                     information when you need it, and know that
                                     no knowledge is lost. There&apos;s also a
-                                    nice reading activity graph!
+                                    nice activity graph!
                                 </p>
                             </>
                         }
@@ -170,8 +170,8 @@ export default function Home({ repoStars, releases }) {
                             <>
                                 <p>
                                     Saving quotes you want to remember
-                                    shouldn&apos;t take multiple clicks or
-                                    elaborate synchronization setups.
+                                    shouldn&apos;t take elaborate
+                                    synchronization setups.
                                 </p>
                                 <p>
                                     Just select the text you want to save, then
@@ -184,13 +184,14 @@ export default function Home({ repoStars, releases }) {
                         whiteReplayLogo
                     />
                     <VideoExample
-                        boldTitle="Social comments, "
-                        title="outline chapters, automatic activation, element blocker, ..."
+                        boldTitle="Find comments, "
+                        title="follow feeds, browse chapters, automatically activate, ..."
                         icon={<></>}
                         description={
                             <>
+                                <p>What else should I say?</p>
                                 <p>
-                                    Try out the extension to find all the
+                                    Just try out the extension to find all the
                                     features. It&apos;s free and open-source!
                                 </p>
                             </>
