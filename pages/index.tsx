@@ -104,8 +104,8 @@ export default function Home({ repoStars, releases }) {
                                 </p>
                                 <p>
                                     So The Guardian still looks like The
-                                    Guardian, small blogs stay weird, and you
-                                    can still click interactive graphs.
+                                    Guardian, and you can still click
+                                    interactive graphs.
                                 </p>
                             </>
                         }
@@ -133,9 +133,9 @@ export default function Home({ repoStars, releases }) {
                                 </p>
 
                                 <p>
-                                    Your favorite settings are only one click
-                                    away. No need to open a seperate website or
-                                    to find your phone.
+                                    Your favorite settings are one click away.
+                                    No need to open a seperate website or to
+                                    find your phone.
                                 </p>
                             </>
                         }
@@ -153,10 +153,9 @@ export default function Home({ repoStars, releases }) {
                                     your library.
                                 </p>
                                 <p>
-                                    Add them to your reading queue, find
-                                    information when you need it, and know that
-                                    no knowledge is lost. There&apos;s also a
-                                    nice activity graph!
+                                    Add them to your reading queue or find
+                                    information when you need it. There&apos;s
+                                    also a nice activity graph!
                                 </p>
                             </>
                         }
