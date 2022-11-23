@@ -2,7 +2,7 @@ import { useRef } from "react";
 import ExampleLayout from "./ExampleLayout";
 
 export default function VideoExample({
-    index,
+    index = null,
     boldTitle,
     title,
     icon,

@@ -1,10 +1,9 @@
 import clsx from "clsx";
-import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useMediaQuery } from "usehooks-ts";
 
 export default function ExampleLayout({
-    index,
+    index = null,
     boldTitle,
     title,
     icon,
@@ -35,7 +34,8 @@ export default function ExampleLayout({
             className={clsx(
                 "grid gap-4 md:gap-5 lg:gap-10 md:grid-cols-2",
                 inView && "animate-slidein",
-                !inView && ((isMobile && index === 0) ? "opacity-30" : "opacity-0")
+                !inView &&
+                    (isMobile && index === 0 ? "opacity-30" : "opacity-0")
             )}
             ref={ref}
         >
@@ -56,7 +56,10 @@ export default function ExampleLayout({
                     className={clsx(
                         "font-text text-base md:text-xl max-w-xl leading-snug mb-1 flex flex-col gap-3",
                         inView && "animate-slidein",
-                        !inView && ((isMobile && index === 0) ? "opacity-30" : "opacity-0")
+                        !inView &&
+                            (isMobile && index === 0
+                                ? "opacity-30"
+                                : "opacity-0")
                     )}
                 >
                     {description}
