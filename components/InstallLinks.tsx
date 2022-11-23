@@ -25,45 +25,41 @@ export default function InstallLinks({
             )}
             ref={ref}
         >
-            {showStores && <>
-                <InstallButton
-                title="Add to Chrome"
-                iconPath="/icons/chrome.svg"
-                href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
-                inView={inView || inViewOverride}
-                animationIndex={0}
-            />
-            <InstallButton
-                title="Add to Firefox"
-                iconPath="/icons/firefox.svg"
-                href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn"
-                inView={inView || inViewOverride}
-                animationIndex={1}
-            />
-            
-            </>}
-
-
-            {showGithub && (
-
-                    <GithubButton
-                        repoStars={repoStars}
+            {showStores && (
+                <>
+                    <InstallButton
+                        title="Add to Chrome"
+                        iconPath="/icons/chrome.svg"
+                        href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
                         inView={inView || inViewOverride}
-                        className={
-                            isMobile && initial && "hidden"
-                        } /* hide using CSS, to avoid hydration problems */
-                        animationIndex={2}
+                        animationIndex={0}
                     />
-
+                    <InstallButton
+                        title="Add to Firefox"
+                        iconPath="/icons/firefox.svg"
+                        href="https://addons.mozilla.org/en-GB/firefox/addon/lindylearn"
+                        inView={inView || inViewOverride}
+                        animationIndex={1}
+                    />
+                </>
             )}
 
+            {showGithub && (
+                <GithubButton
+                    repoStars={repoStars}
+                    inView={inView || inViewOverride}
+                    className={
+                        isMobile && initial && "hidden"
+                    } /* hide using CSS, to avoid hydration problems */
+                    animationIndex={2}
+                />
+            )}
 
             {showProductHunt && (
-
-                    <a className="shadow-md rounded-lg hover:rotate-1 transition-transform" href="https://www.producthunt.com/posts/unclutter-c9b0437e-5b84-4193-abe3-dee9c861d157?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-unclutter&#0045;c9b0437e&#0045;5b84&#0045;4193&#0045;abe3&#0045;dee9c861d157" target="_blank" rel="noreferrer">
-                        
-                        <img className="h-[40px] md:h-[45px]" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366985&theme=light" alt="Unclutter - Read&#0032;and&#0032;collect&#0032;articles&#0032;with&#0032;style | Product Hunt"/></a>
-
+                <ProductHuntButton
+                    inView={inView || inViewOverride}
+                    animationIndex={3}
+                />
             )}
         </div>
     );
@@ -114,6 +110,31 @@ export function InstallButton({
 
             <div className="">{title}</div>
             {children}
+        </a>
+    );
+}
+
+export function ProductHuntButton({ inView, animationIndex }) {
+    return (
+        <a
+            style={{
+                animationDelay: animationIndex && `${animationIndex * 50}ms`,
+                animationFillMode: "backwards",
+            }}
+            className={clsx(
+                "shadow-md rounded-lg hover:rotate-1 transition-transform",
+                animationIndex !== undefined &&
+                    (inView ? "animate-slidein" : "opacity-0")
+            )}
+            href="https://www.producthunt.com/posts/unclutter-c9b0437e-5b84-4193-abe3-dee9c861d157?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-unclutter&#0045;c9b0437e&#0045;5b84&#0045;4193&#0045;abe3&#0045;dee9c861d157"
+            target="_blank"
+            rel="noreferrer"
+        >
+            <img
+                className="h-[40px] md:h-[45px]"
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366985&theme=light"
+                alt="Unclutter - Read&#0032;and&#0032;collect&#0032;articles&#0032;with&#0032;style | Product Hunt"
+            />
         </a>
     );
 }
