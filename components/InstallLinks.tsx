@@ -5,7 +5,9 @@ import { useMediaQuery } from "usehooks-ts";
 export default function InstallLinks({
     repoStars = 72,
     initial = false,
+    showStores = true,
     showGithub = true,
+    showProductHunt = false,
     inViewOverride = false,
 }) {
     const { ref, inView } = useInView({
@@ -23,7 +25,8 @@ export default function InstallLinks({
             )}
             ref={ref}
         >
-            <InstallButton
+            {showStores && <>
+                <InstallButton
                 title="Add to Chrome"
                 iconPath="/icons/chrome.svg"
                 href="https://chrome.google.com/webstore/detail/ibckhpijbdmdobhhhodkceffdngnglpk"
@@ -37,16 +40,30 @@ export default function InstallLinks({
                 inView={inView || inViewOverride}
                 animationIndex={1}
             />
+            
+            </>}
+
 
             {showGithub && (
-                <GithubButton
-                    repoStars={repoStars}
-                    inView={inView || inViewOverride}
-                    className={
-                        isMobile && initial && "hidden"
-                    } /* hide using CSS, to avoid hydration problems */
-                    animationIndex={2}
-                />
+
+                    <GithubButton
+                        repoStars={repoStars}
+                        inView={inView || inViewOverride}
+                        className={
+                            isMobile && initial && "hidden"
+                        } /* hide using CSS, to avoid hydration problems */
+                        animationIndex={2}
+                    />
+
+            )}
+
+
+            {showProductHunt && (
+
+                    <a className="shadow-md rounded-lg hover:rotate-1 transition-transform" href="https://www.producthunt.com/posts/unclutter-c9b0437e-5b84-4193-abe3-dee9c861d157?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-unclutter&#0045;c9b0437e&#0045;5b84&#0045;4193&#0045;abe3&#0045;dee9c861d157" target="_blank">
+                        
+                        <img className="h-[40px] md:h-[45px]" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366985&theme=light" alt="Unclutter - Read&#0032;and&#0032;collect&#0032;articles&#0032;with&#0032;style | Product Hunt"/></a>
+
             )}
         </div>
     );
@@ -119,9 +136,9 @@ export function GithubButton({
             href="https://github.com/lindylearn/unclutter"
             inView={inView}
             animationIndex={animationIndex}
-            className={clsx("mr-10", className)}
+            className={clsx("mr-14", className)}
         >
-            <div className="absolute -right-11 md:-right-14">
+            <div className="absolute -right-12 md:-right-14">
                 <div className="bg-white px-1.5 py-0.5 rounded-lg shadow-md text-md md:text-lg">
                     {repoStars}
                 </div>

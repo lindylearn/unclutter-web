@@ -34,7 +34,7 @@ export default function Home({ repoStars, releases }) {
                 description="Unclutter makes articles readable and customizable. Unclutter articles, block ads and popups, save highlights, organize your read-it-later list & more. Instantly in your browser, and free."
             />
 
-            <main className="m-3 mt-5 md:mt-7 flex flex-col gap-5 md:gap-10 items-center">
+            <main className="m-3 mt-5 flex flex-col gap-5 md:gap-10 items-center">
                 <header className="w-full md:max-w-5xl flex gap-3 md:gap-5 items-center">
                     <img
                         className="w-10 md:w-16 drop-shadow-sm"
@@ -51,7 +51,7 @@ export default function Home({ repoStars, releases }) {
                     </h1>
                 </header>
 
-                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg md:-mt-3">
+                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg md:-mt-5">
                     <div
                         className="intro-video video-container relative overflow-hidden animate-slidein"
                         style={{
@@ -203,6 +203,7 @@ export default function Home({ repoStars, releases }) {
                     <ReviewsSection />
                     <div className="" />
                     <SecondInstallSection repoStars={repoStars} />
+                    <ThirdInstallSection repoStars={repoStars} />
                     {/* <div className="hidden md:block" />
                     <ContributeSection repoStars={repoStars} /> */}
                     <div className="" />
@@ -234,7 +235,31 @@ function SecondInstallSection({ repoStars }) {
                 browser:
             </h2>
 
-            <InstallLinks repoStars={repoStars} />
+            <InstallLinks repoStars={repoStars} showGithub={false} />
+        </div>
+    );
+}
+
+function ThirdInstallSection({ repoStars }) {
+    const { ref, inView } = useInView({
+        threshold: 1.0,
+        rootMargin: "0px 0px -20% 0px",
+        triggerOnce: true,
+    });
+
+    return (
+        <div
+            className={clsx(
+                "flex flex-col md:items-center gap-3 md:gap-5",
+                inView ? "animate-slidein" : "opacity-0"
+            )}
+            ref={ref}
+        >
+            <h2 className="text-lg md:text-[26px]">
+                Support the project:
+            </h2>
+
+            <InstallLinks repoStars={repoStars} showStores={false} showGithub showProductHunt/>
         </div>
     );
 }
