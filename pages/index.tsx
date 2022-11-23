@@ -62,11 +62,19 @@ export default function Home({ repoStars, releases }) {
                     >
                         <video
                             className="md:rounded-lg object-contain"
-                            src="media/clips/intro.webm"
                             poster="media/clips/intro.jpg"
                             muted
                             ref={mainVideoRef}
-                        ></video>
+                        >
+                            <source
+                                src="media/clips/intro.webm"
+                                type="video/webm"
+                            />
+                            <source
+                                src="media/clips/intro.mp4"
+                                type="video/mp4"
+                            />
+                        </video>
                     </div>
                 </div>
 
@@ -105,7 +113,8 @@ export default function Home({ repoStars, releases }) {
                                 </p>
                                 <p>
                                     So The Guardian still looks like The
-                                    Guardian, and The Atlantic like The Atlantic.
+                                    Guardian, and The Atlantic like The
+                                    Atlantic.
                                 </p>
                             </>
                         }
@@ -255,11 +264,14 @@ function ThirdInstallSection({ repoStars }) {
             )}
             ref={ref}
         >
-            <h2 className="text-lg md:text-[26px]">
-                Support the project:
-            </h2>
+            <h2 className="text-lg md:text-[26px]">Support the project:</h2>
 
-            <InstallLinks repoStars={repoStars} showStores={false} showGithub showProductHunt/>
+            <InstallLinks
+                repoStars={repoStars}
+                showStores={false}
+                showGithub
+                showProductHunt
+            />
         </div>
     );
 }

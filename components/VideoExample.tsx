@@ -27,12 +27,18 @@ export default function VideoExample({
             <div className="video-container">
                 <video
                     className="object-cover object-left-top"
-                    src={video}
                     poster={poster}
                     ref={videoRef}
                     muted
                     style={{ aspectRatio: "1806 / 1138" }}
-                ></video>
+                    // controls
+                >
+                    <source src={video} type="video/webm" />
+                    <source
+                        src={video.replace(".webm", ".mp4")}
+                        type="video/mp4"
+                    />
+                </video>
             </div>
         </ExampleLayout>
     );
