@@ -60,7 +60,7 @@ export default function InstallLinks({
 
             {showProductHunt && (
 
-                    <a className="shadow-md rounded-lg hover:rotate-1 transition-transform" href="https://www.producthunt.com/posts/unclutter-c9b0437e-5b84-4193-abe3-dee9c861d157?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-unclutter&#0045;c9b0437e&#0045;5b84&#0045;4193&#0045;abe3&#0045;dee9c861d157" target="_blank">
+                    <a className="shadow-md rounded-lg hover:rotate-1 transition-transform" href="https://www.producthunt.com/posts/unclutter-c9b0437e-5b84-4193-abe3-dee9c861d157?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-unclutter&#0045;c9b0437e&#0045;5b84&#0045;4193&#0045;abe3&#0045;dee9c861d157" target="_blank" rel="noreferrer">
                         
                         <img className="h-[40px] md:h-[45px]" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366985&theme=light" alt="Unclutter - Read&#0032;and&#0032;collect&#0032;articles&#0032;with&#0032;style | Product Hunt"/></a>
 
