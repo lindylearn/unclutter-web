@@ -100,12 +100,11 @@ export default function Home({ repoStars, releases }) {
                                     <InlineLink href="https://github.com/lindylearn/unclutter/blob/main/DEVELOPMENT.md#how-unclutter-works">
                                         CSS styles
                                     </InlineLink>{" "}
-                                    to remove annoyances.
+                                    to remove ads and popups.
                                 </p>
                                 <p>
                                     So The Guardian still looks like The
-                                    Guardian, and you can still click
-                                    interactive graphs.
+                                    Guardian, and The Atlantic like The Atlantic.
                                 </p>
                             </>
                         }
