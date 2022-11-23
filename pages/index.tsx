@@ -81,6 +81,7 @@ export default function Home({ repoStars, releases }) {
 
                 <div className="mt-3 md:mt-10 md:mx-5 flex flex-col gap-7 md:gap-10 justify-center max-w-full md:max-w-7xl">
                     <VideoExample
+                        index={0}
                         boldTitle="Focus"
                         title="on reading"
                         icon={

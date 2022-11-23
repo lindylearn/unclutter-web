@@ -1,8 +1,10 @@
 import clsx from "clsx";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useMediaQuery } from "usehooks-ts";
 
 export default function ExampleLayout({
+    index,
     boldTitle,
     title,
     icon,
@@ -12,11 +14,14 @@ export default function ExampleLayout({
     defaultVisible = false,
     onInView = () => {},
 }) {
-    const isMobile = useMediaQuery("(max-width: 767px)");
+    let isMobile = useMediaQuery("(max-width: 767px)");
+    // useEffect(() => {
+    //     isMobile = window.matchMedia("(max-width: 767px)").matches
+    // }, [])
 
     const { ref, inView } = useInView({
         threshold: defaultVisible ? 0.1 : 0.4,
-        rootMargin: `0px 0px ${isMobile ? "-50%" : "-30%"} 0px`,
+        rootMargin: `0px 0px ${isMobile && index === 0 ? "-50%" : "-30%"} 0px`,
         triggerOnce: true,
         onChange: (inView) => {
             if (inView) {
@@ -29,7 +34,8 @@ export default function ExampleLayout({
         <div
             className={clsx(
                 "grid gap-4 md:gap-5 lg:gap-10 md:grid-cols-2",
-                inView ? "animate-slidein" : "opacity-0"
+                inView && "animate-slidein",
+                !inView && ((isMobile && index === 0) ? "opacity-30" : "opacity-0")
             )}
             ref={ref}
         >
@@ -49,7 +55,8 @@ export default function ExampleLayout({
                 <div
                     className={clsx(
                         "font-text text-base md:text-xl max-w-xl leading-snug mb-1 flex flex-col gap-3",
-                        inView ? "animate-slidein" : "opacity-0"
+                        inView && "animate-slidein",
+                        !inView && ((isMobile && index === 0) ? "opacity-30" : "opacity-0")
                     )}
                 >
                     {description}
