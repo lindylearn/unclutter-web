@@ -45,7 +45,7 @@ export default function InstallLinks({
                 <GithubButton
                     repoStars={repoStars}
                     inView={inView || inViewOverride}
-                    className={showStores && "hidden md:block"}
+                    className={showStores && "hidden md:flex"}
                     animationIndex={2}
                 />
             )}

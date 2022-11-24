@@ -338,7 +338,7 @@ export function InlineLink({ href, children, className = "" }) {
 export async function getStaticProps() {
     // GitHub API seems to be rate-limited
     let releases = [];
-    let repoStars = 473;
+    let repoStars = 655;
     try {
         // releases = (
         //     await axios.get(
