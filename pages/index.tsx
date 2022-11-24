@@ -34,7 +34,7 @@ export default function Home({ repoStars, releases }) {
                 description="Unclutter makes articles readable and customizable. Unclutter articles, block ads and popups, save highlights, organize your read-it-later list & more. Instantly in your browser, and free."
             />
 
-            <main className="m-3 mt-5 flex flex-col gap-5 md:gap-10 items-center">
+            <main className="m-3 md:mt-5 flex flex-col gap-5 md:gap-10 items-center">
                 <header className="w-full md:max-w-5xl flex gap-3 md:gap-5 items-center">
                     <img
                         className="w-10 md:w-16 drop-shadow-sm"
@@ -51,9 +51,9 @@ export default function Home({ repoStars, releases }) {
                     </h1>
                 </header>
 
-                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg md:-mt-5">
+                <div className="w-full md:max-w-5xl overflow-hidden shadow-xl rounded md:rounded-lg -mt-2 md:-mt-5">
                     <div
-                        className="intro-video video-container relative overflow-hidden animate-slidein"
+                        className="intro-video video-container relative overflow-hidden md:animate-slidein"
                         style={{
                             aspectRatio: "2412 / 1616",
                             animationFillMode: "both",
@@ -78,7 +78,7 @@ export default function Home({ repoStars, releases }) {
                     </div>
                 </div>
 
-                <div className="max-w-5xl w-full md:-mt-3 hidden md:block">
+                <div className="max-w-5xl w-full md:-mt-3">
                     <InstallLinks
                         repoStars={repoStars}
                         initial

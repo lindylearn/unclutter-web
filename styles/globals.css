@@ -32,6 +32,19 @@ a {
     border-right: 8px solid white;
 }
 
+@media (max-width: 767px) {
+    .install-link {
+        opacity: 1 !important;
+        animation: none !important;
+    }
+    .example-layout.first-example.outside-view {
+        opacity: 30% !important;
+    }
+    .example-layout.first-example.in-view {
+        animation: none !important;
+    }
+}
+
 /* .video-container > .replay-icon {
     opacity: 0;
     transition: all 0.2s linear;

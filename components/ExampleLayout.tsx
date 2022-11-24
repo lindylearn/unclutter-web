@@ -14,9 +14,6 @@ export default function ExampleLayout({
     onInView = () => {},
 }) {
     let isMobile = useMediaQuery("(max-width: 767px)");
-    // useEffect(() => {
-    //     isMobile = window.matchMedia("(max-width: 767px)").matches
-    // }, [])
 
     const { ref, inView } = useInView({
         threshold: defaultVisible ? 0.1 : 0.4,
@@ -32,10 +29,9 @@ export default function ExampleLayout({
     return (
         <div
             className={clsx(
-                "grid gap-4 md:gap-5 lg:gap-10 md:grid-cols-2",
-                inView && "animate-slidein",
-                !inView &&
-                    (isMobile && index === 0 ? "opacity-30" : "opacity-0")
+                "example-layout grid gap-4 md:gap-5 lg:gap-10 md:grid-cols-2",
+                inView ? "in-view animate-slidein" : "outside-view opacity-0",
+                index === 0 && "first-example"
             )}
             ref={ref}
         >

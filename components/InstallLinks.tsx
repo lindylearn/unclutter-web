@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { useInView } from "react-intersection-observer";
-import { useMediaQuery } from "usehooks-ts";
 
 export default function InstallLinks({
     repoStars = 72,
@@ -15,8 +14,6 @@ export default function InstallLinks({
         rootMargin: `0px 0px ${initial ? "-10%" : "-20%"} 0px`,
         triggerOnce: true,
     });
-
-    const isMobile = useMediaQuery("(max-width: 767px)");
 
     return (
         <div
@@ -48,9 +45,7 @@ export default function InstallLinks({
                 <GithubButton
                     repoStars={repoStars}
                     inView={inView || inViewOverride}
-                    className={
-                        isMobile && initial && "hidden"
-                    } /* hide using CSS, to avoid hydration problems */
+                    className={showStores && "hidden md:block"}
                     animationIndex={2}
                 />
             )}
@@ -85,7 +80,7 @@ export function InstallButton({
     return (
         <a
             className={clsx(
-                "w-max text-md md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg md:rounded-xl shadow-md transition-all relative",
+                "install-link w-max text-md md:text-xl flex gap-2 md:gap-3 items-center bg-white px-1.5 md:px-2.5 py-1 md:py-1.5 rounded-lg md:rounded-xl shadow-md transition-all relative",
                 `desktop:hover:shadow-lg desktop:hover:${
                     animationIndex % 2 === 0 ? "" : "-"
                 }rotate-1`,
