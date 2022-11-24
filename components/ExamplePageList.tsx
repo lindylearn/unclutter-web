@@ -35,7 +35,7 @@ export default function ExamplePageList() {
     });
 
     return (
-        <div className="mb-5 xl:mx-5 flex flex-col gap-3 md:gap-5">
+        <div className="mb-5 xl:mx-5 flex flex-col gap-3 md:gap-5 overflow-hidden">
             <div
                 className={clsx(
                     "flex md:justify-center",
