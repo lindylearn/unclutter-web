@@ -143,7 +143,7 @@ export default function Home({ repoStars, releases }) {
 
                                 <p>
                                     Your favorite settings are one click away.
-                                    No need to open a seperate website or to
+                                    No need to open a separate website or to
                                     find your phone.
                                 </p>
                             </>
