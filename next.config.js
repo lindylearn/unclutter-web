@@ -6,6 +6,16 @@ const nextConfig = {
     images: {
         domains: ["storage.googleapis.com"],
     },
+
+    async redirects() {
+        return [
+            {
+                source: "/discord",
+                destination: "https://discord.gg/CThpNQjucB",
+                permanent: false,
+            },
+        ];
+    },
 };
 
 module.exports = withPlausibleProxy()(nextConfig);
