@@ -6,6 +6,7 @@ export default function InstallLinks({
     initial = false,
     showStores = true,
     showGithub = true,
+    showDiscord = false,
     showProductHunt = false,
     inViewOverride = false,
 }) {
@@ -41,21 +42,30 @@ export default function InstallLinks({
                 </>
             )}
 
+            {showDiscord && (
+                <InstallButton
+                    title="Join Discord"
+                    iconPath="/icons/discord.svg"
+                    href="https://unclutter.it/discord"
+                    inView={inView || inViewOverride}
+                    animationIndex={2}
+                />
+            )}
             {showGithub && (
                 <GithubButton
                     repoStars={repoStars}
                     inView={inView || inViewOverride}
                     className={showStores && "hidden md:flex"}
-                    animationIndex={2}
-                />
-            )}
-
-            {showProductHunt && (
-                <ProductHuntButton
-                    inView={inView || inViewOverride}
                     animationIndex={3}
                 />
             )}
+
+            {/* {showProductHunt && (
+                <ProductHuntButton
+                    inView={inView || inViewOverride}
+                    animationIndex={4}
+                />
+            )} */}
         </div>
     );
 }

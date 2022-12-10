@@ -271,6 +271,7 @@ function ThirdInstallSection({ repoStars }) {
                 showStores={false}
                 showGithub
                 showProductHunt
+                showDiscord
             />
         </div>
     );
