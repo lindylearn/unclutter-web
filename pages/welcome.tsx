@@ -1,4 +1,3 @@
-import axios from "axios";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { ExamplePage } from "../components/ExamplePageList";
@@ -23,22 +22,17 @@ export default function Home({ repoStars }) {
         setBrowserType(getBrowserType());
 
         setTimeout(
-            () => (videoRefs[0].current as HTMLVideoElement)?.play(),
+            () => (videoRefs[0]?.current as HTMLVideoElement)?.play(),
             1000
         );
-        setTimeout(
-            () => (videoRefs[1].current as HTMLVideoElement)?.play(),
-            6500
-        );
-        setTimeout(() => setShowExamplePages(true), 9500);
+        // setTimeout(
+        //     () => (videoRefs[1]?.current as HTMLVideoElement)?.play(),
+        //     6500
+        // );
+
+        setTimeout(() => setShowExamplePages(true), 4500);
+        // setTimeout(() => setShowExamplePages(true), 9500);
     }, []);
-
-    const unclutterLibraryLink =
-        browserType === "firefox"
-            ? "https://addons.mozilla.org/en-GB/firefox/addon/unclutter-library"
-            : "https://chrome.google.com/webstore/detail/bghgkooimeljolohebojceacblokenjn";
-
-    // return <div className="h-screen w-screen"></div>;
 
     return (
         <div className="font-display text-stone-900 min-h-screen">
@@ -48,15 +42,13 @@ export default function Home({ repoStars }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            {/* <GithubFloatingIcon repoStars={repoStars} /> */}
-
             <main className="pt-10 pb-10 max-w-5xl mx-auto flex flex-col gap-10">
                 {/* <h1 className="text-3xl">Welcome to Unclutter!</h1> */}
 
                 <div className="grid grid-cols-2 gap-10">
                     <div className="">
                         <div className="text-xl">
-                            Click the extension icon to unclutter articles
+                            Click the extension icon to unclutter articles:
                         </div>
                         <video
                             ref={videoRefs[0]}
@@ -65,7 +57,8 @@ export default function Home({ repoStars }) {
                             muted
                         />
                     </div>
-                    <div
+
+                    {/* <div
                         className="animate-slidein"
                         style={{
                             animationDelay: "5s",
@@ -81,14 +74,15 @@ export default function Home({ repoStars }) {
                             src={`/media/tutorial/2.mov`}
                             muted
                         />
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="">
                     <div
                         className="text-xl animate-slidein"
                         style={{
-                            animationDelay: "9.5s",
+                            animationDelay: "4.5s",
+                            // animationDelay: "9.5s",
                             animationFillMode: "both",
                         }}
                     >
@@ -98,42 +92,43 @@ export default function Home({ repoStars }) {
                     <div className="mt-5 xl:w-[1000px] flex justify-start gap-2 sm:gap-5">
                         <ExamplePage index={0} inView={showExamplePages} />
                         <ExamplePage index={1} inView={showExamplePages} />
-                        <ExamplePage index={2} inView={showExamplePages} />
                         <ExamplePage index={6} inView={showExamplePages} />
                         <ExamplePage index={10} inView={showExamplePages} />
+                        <ExamplePage index={2} inView={showExamplePages} />
                     </div>
                 </div>
 
                 <div
-                    className="text-xl flex flex-col gap-1 animate-slidein mt-10"
+                    className="text-xl flex flex-col gap-1 animate-slidein mt-5"
                     style={{
-                        animationDelay: "12s",
+                        animationDelay: "6s",
+                        // animationDelay: "12s",
                         animationFillMode: "both",
                     }}
                 >
-                    <div className="">
-                        See the{" "}
+                    <div className="max-w-xl">
+                        <a
+                            className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
+                            href="https://my.unclutter.it/signup"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Create an account
+                        </a>{" "}
+                        to unlock more features like saving articles & quotes,
+                        AI organization, and more.
+                        {/* See the{" "}
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             onClick={openExtensionSettings}
                         >
                             extension settings
                         </a>{" "}
-                        for more.
-                        {/* Install{" "}
-                        <a
-                            className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
-                            href={unclutterLibraryLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Unclutter New Tab
-                        </a>{" "}
-                        to easily access your reading queue. */}
+                        for more. */}
                     </div>
                 </div>
 
-                <div
+                {/* <div
                     className="text-xl flex flex-col gap-1 animate-slidein -mt-5"
                     style={{
                         animationDelay: "13s",
@@ -161,7 +156,7 @@ export default function Home({ repoStars }) {
                         </a>
                         .
                     </div>
-                </div>
+                </div> */}
             </main>
 
             <footer></footer>
@@ -174,16 +169,16 @@ function openExtensionSettings() {
     window.postMessage({ event: "openOptionsPage" }, "*");
 }
 
-export async function getStaticProps() {
-    let repoStars = 73;
-    try {
-        // GitHub API seems to be rate-limited
-        repoStars = (
-            await axios.get("https://api.github.com/repos/lindylearn/unclutter")
-        ).data?.stargazers_count;
-    } catch {}
+// export async function getStaticProps() {
+//     let repoStars = 73;
+//     try {
+//         // GitHub API seems to be rate-limited
+//         repoStars = (
+//             await axios.get("https://api.github.com/repos/lindylearn/unclutter")
+//         ).data?.stargazers_count;
+//     } catch {}
 
-    return {
-        props: { repoStars },
-    };
-}
+//     return {
+//         props: { repoStars },
+//     };
+// }
