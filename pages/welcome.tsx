@@ -46,7 +46,7 @@ export default function Home({ repoStars }) {
                 {/* <h1 className="text-3xl">Welcome to Unclutter!</h1> */}
 
                 <div className="grid grid-cols-2 gap-10">
-                    <div className="">
+                    <div className="animate-fadein">
                         <div className="text-xl">
                             Click the extension icon to unclutter articles:
                         </div>
