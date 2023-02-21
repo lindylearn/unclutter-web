@@ -99,14 +99,14 @@ export default function Home({ repoStars }) {
                 </div>
 
                 <div
-                    className="text-xl flex flex-col gap-1 animate-slidein mt-5"
+                    className="text-xl flex flex-col gap-1 animate-slidein"
                     style={{
-                        animationDelay: "6s",
+                        animationDelay: "6.5s",
                         // animationDelay: "12s",
                         animationFillMode: "both",
                     }}
                 >
-                    <div className="max-w-xl">
+                    <div className="max-w-2xl">
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
                             href="https://my.unclutter.it/signup"
@@ -115,8 +115,18 @@ export default function Home({ repoStars }) {
                         >
                             Create an account
                         </a>{" "}
-                        to unlock more features like saving articles & quotes,
-                        AI organization, and more.
+                        to make use of what you read by automatically saving,
+                        organizing, and connecting article quotes using AI.
+                        <a
+                            href="https://my.unclutter.it/signup"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                className="mt-5 w-full h-72 object-cover object-left-top"
+                                src={`https://my.unclutter.it/media/connect_ideas.png`}
+                            />
+                        </a>
                         {/* See the{" "}
                         <a
                             className="inline-block font-bold cursor-pointer desktop:hover:rotate-1 transition-all"
